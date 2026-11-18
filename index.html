@@ -183,7 +183,7 @@ async function tvmazeLookup(item){
 function showCover(wrap,item,url){
  if(!wrap||!url||wrap.querySelector('img.poster'))return;
  let pic=document.createElement('img');pic.className='poster';pic.alt='Cover art: '+item.title;pic.loading='lazy';pic.referrerPolicy='no-referrer';
- pic.onload=()=>{wrap.querySelector('.coverfallback')?.remove();wrap.append(pic);wrap.querySelectorAll('.posterback').forEach(el=>el.remove())};
+ pic.onload=()=>{if(wrap.querySelector('img.poster'))return;wrap.querySelector('.coverfallback')?.remove();wrap.append(pic);wrap.querySelectorAll('.posterback').forEach(el=>el.remove())};
  pic.src=url;
 }
 async function sourceArtwork(card){
@@ -194,8 +194,8 @@ async function sourceArtwork(card){
  if(fromTV?.poster){showCover(wrap,item,fromTV.poster);return}
  const found=await appleLookup(item);
  if(found?.poster){showCover(wrap,item,found.poster);return}
- await wikiCover(card);
- if(!card.querySelector('img.poster'))await wikiSearchCover(card)
+ const wikiFound=await wikiCover(card);
+ if(!wikiFound&&!card.querySelector('img.poster'))await wikiSearchCover(card)
 }
 async function videoFallback(title,platform){
  const item=D.items.find(e=>e.title===title&&(e.platform===platform||!platform));
@@ -227,7 +227,7 @@ async function wikiSearchCover(card){
   if(candidate)showCover(wrap,item,candidate.thumbnail.source)
  }catch{}
 }
-async function wikiCover(card){let item=D.items.find(e=>e.platform+'|'+e.cat+'|'+e.title===card.dataset.key);if(!item||item.poster)return;const wrap=card.querySelector('.posterwrap');if(!wrap)return;for(let title of wikiTitle(item)){try{const url='https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&prop=pageimages&piprop=thumbnail&pithumbsize=650&titles='+encodeURIComponent(title);let r=await fetch(url,{mode:'cors'});if(!r.ok)continue;let j=await r.json(),page=Object.values(j.query?.pages||{})[0],im=page?.thumbnail?.source;if(!im)continue;const poster=new Image();poster.className='poster';poster.alt=item.title+' artwork';poster.loading='lazy';poster.referrerPolicy='no-referrer';poster.onload=()=>{wrap.querySelector('.coverfallback')?.remove();wrap.append(poster);wrap.querySelectorAll('.posterback').forEach(el=>el.remove())};poster.src=im;return}catch(e){/* intact title fallback */}}}
+async function wikiCover(card){let item=D.items.find(e=>e.platform+'|'+e.cat+'|'+e.title===card.dataset.key);if(!item||item.poster)return;const wrap=card.querySelector('.posterwrap');if(!wrap)return;for(let title of wikiTitle(item)){try{const url='https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&prop=pageimages&piprop=thumbnail&pithumbsize=650&titles='+encodeURIComponent(title);let r=await fetch(url,{mode:'cors'});if(!r.ok)continue;let j=await r.json(),page=Object.values(j.query?.pages||{})[0],im=page?.thumbnail?.source;if(!im)continue;const poster=new Image();poster.className='poster';poster.alt=item.title+' artwork';poster.loading='lazy';poster.referrerPolicy='no-referrer';poster.onload=()=>{if(wrap.querySelector('img.poster'))return;wrap.querySelector('.coverfallback')?.remove();wrap.append(poster);wrap.querySelectorAll('.posterback').forEach(el=>el.remove())};poster.src=im;return true}catch(e){/* intact title fallback */}}}
 const cards=[...document.querySelectorAll('#platforms .card')];for(let card of cards){let img=card.querySelector('.poster');if(img){if(img.complete&&img.naturalWidth){card.querySelector('.coverfallback')?.remove()}img.addEventListener('load',()=>{card.querySelector('.coverfallback')?.remove();card.querySelectorAll('.posterback').forEach(el=>el.remove())});img.addEventListener('error',()=>{img.remove();let f=card.querySelector('.coverfallback');if(f)f.hidden=false})}}if('IntersectionObserver'in window){const ob=new IntersectionObserver(entries=>entries.forEach(z=>{if(z.isIntersecting){ob.unobserve(z.target);if(!z.target.querySelector('img.poster'))sourceArtwork(z.target)}}),{rootMargin:'500px'});cards.forEach(x=>{if(!x.querySelector('img.poster'))ob.observe(x)})}matchesAndFilter();
 })();
 </script></body></html>
