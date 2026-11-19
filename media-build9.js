@@ -27,6 +27,9 @@ const matches=[
 ['NBA Cup semifinals · teams TBD','5HVaM2cLX54','2025 NBA Cup final · Knicks vs Spurs; historical tournament context, not 2026 semifinals'],
 ['NBA Cup Championship · teams TBD','5HVaM2cLX54','2025 NBA Cup final · Knicks vs Spurs; historical tournament context, not 2026 championship'],
 ['Houston vs Philadelphia','rGZbTZYc90k','NBA official highlights · Rockets at 76ers, Jan 22, 2026'],
+['Los Angeles vs San Antonio','8npj6HXy63Y','San Antonio team preview · Spurs at Jazz, Nov 15, 2026. Los Angeles team not specified in schedule.'],
+['Los Angeles vs Miami','cnD8p6RBDsI','Miami team preview · Rockets at Heat, Nov 16, 2026. Los Angeles team not specified in schedule.'],
+['Denver vs Los Angeles','HX-mNTYf4x8','Denver team preview · Celtics at Nuggets, Nov 18, 2026. Los Angeles team not specified in schedule.'],
 ['David Benavidez vs Michal Cieslak','e0aJReDWcMY','Benavidez vs. Gilberto Ramirez · May 2026 fight highlights'],
 ['Tyson Fury vs Anthony Joshua','3P4QeH0e2ps','Fury vs. Joshua · press conference, not fight highlights']
 ];
