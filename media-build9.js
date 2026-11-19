@@ -14,6 +14,8 @@ const matches=[
 ['Detroit Pistons at Oklahoma City Thunder','EtlR54Whc4M','NBA official highlights · Pistons at Thunder, Mar 30, 2026'],
 ['Cleveland Cavaliers at Boston Celtics','Al3pDG23Vao','NBA official highlights · Cavaliers at Celtics, Feb 28, 2025'],
 ['Houston Rockets at Los Angeles Lakers','OFPR9zAVUlA','NBA official highlights · Rockets at Lakers, Mar 31, 2025'],
+['Denver Nuggets at Portland Trail Blazers','G-7HK7-3j14','NBA official highlights · Nuggets at Trail Blazers, Mar 21, 2025'],
+['New York Knicks at Chicago Bulls','kJ4yzvAqAQA','NBA official highlights · Knicks at Bulls, Jan 4, 2025'],
 ['David Benavidez vs Michal Cieslak','e0aJReDWcMY','Benavidez vs. Gilberto Ramirez · May 2026 fight highlights'],
 ['Tyson Fury vs Anthony Joshua','3P4QeH0e2ps','Fury vs. Joshua · press conference, not fight highlights']
 ];
