@@ -17,7 +17,7 @@ const matches=[
 ];
 const sportsVideos=new Map(matches.map(([name,id,description])=>[name,{id,description}]));
 const extraTrailers=new Map(Object.entries({
-'Chernobyl':'PMlwjCID3Io','Bring Her Back':'kBskrYZfhw8','Sorry, Baby':'Rc0jgWoZo9w'
+'The Boys':'M1bhOaLV4FU','The Underground Railroad':'_Pq5Usc_JDA','Companion':'Qr_kX0D3DNA','Chernobyl':'PMlwjCID3Io','Bring Her Back':'kBskrYZfhw8','Sorry, Baby':'Rc0jgWoZo9w'
 }));
 const clean=t=>String(t||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
 const waitImg=url=>new Promise((ok,no)=>{let img=new Image();img.onload=()=>ok(url);img.onerror=no;img.src=url});
