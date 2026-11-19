@@ -102,6 +102,18 @@ async function wikiMedia(item){
  }
  return null;
 }
+
+const pinnedPosterURLs={
+'Scrooge':'https://m.media-amazon.com/images/M/MV5BNDA4NTVjNDQtNjJiZC00MTZhLTk5NTAtOGNlYjYzYjQwODkzXkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg',
+'Beyond Tomorrow':'https://static.cinemagia.ro/img/resize/db/movie/57/78/94/beyond-tomorrow-195234l-600x0-w-f3e692c4.jpg',
+'Santa Claus Conquers the Martians':'https://m.media-amazon.com/images/M/MV5BYThlZTY0Y2MtMTM5MS00OGEyLTlhNTYtODc2YzUxNGI3ODAyXkEyXkFqcGc%40._V1_.jpg'
+};
+for(const card of document.querySelectorAll('#platforms .card')){
+ const item=data.items.find(e=>e.platform+'|'+e.cat+'|'+e.title===card.dataset.key);
+ if(!item||!pinnedPosterURLs[item.title]||card.querySelector('.poster'))continue;
+ waitImg(pinnedPosterURLs[item.title]).then(url=>posterFor(item,url,card)).catch(()=>{});
+}
+
 const queued=new Set();
 const posterObserver=new IntersectionObserver(entries=>{
  for(const entry of entries){if(!entry.isIntersecting)continue;posterObserver.unobserve(entry.target);
