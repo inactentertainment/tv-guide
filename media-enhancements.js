@@ -11,4 +11,23 @@ let id=e.trailer||additionalTrailers[e.title];if(id&&/^[\w-]{11}$/.test(id)){let
 if(series(e)){status.textContent='No verified in-page series trailer yet. Choose the publisher or official YouTube trailer from the links.';return}
 let request=modal.dataset.mediaRequest=Math.random().toString(36);fetch('https://itunes.apple.com/search?'+new URLSearchParams({term:e.title,entity:'movie',country:'us',limit:'20'})).then(r=>r.json()).then(j=>{if(modal.dataset.mediaRequest!==request||!modal.classList.contains('open'))return;let found=(j.results||[]).find(x=>clean(x.trackName||x.collectionName)===clean(e.title)&&x.previewUrl);if(!found){status.textContent='No in-page preview found. Use the title-specific trailer links.';return}let video=make('video');video.controls=true;video.playsInline=true;video.autoplay=true;video.src=found.previewUrl;video.onerror=()=>{video.remove();status.textContent='Preview not available; use the trailer links.'};box.prepend(video);status.textContent='Apple movie preview (not necessarily the official trailer).'}).catch(()=>{if(modal.dataset.mediaRequest===request)status.textContent='Preview lookup failed; use the trailer links.'})}
 document.addEventListener('click',ev=>{let b=ev.target.closest?.('.trailerBtn');if(!b)return;let e=items.find(x=>x.platform===b.dataset.platform&&x.title===b.dataset.title);if(!e)return;ev.preventDefault();ev.stopImmediatePropagation();open(e)},true);
+
+const yearLabel=e=>yr(e);
+const checked=new Set();
+async function retryPoster(card){
+ const item=items.find(x=>card.dataset.key===x.platform+'|'+x.cat+'|'+x.title);
+ if(!item)return;const wrap=card.querySelector('.posterwrap');if(!wrap||wrap.querySelector('img.poster'))return;
+ let candidates=series(item)?[item.title+' (TV series)',item.title+' (miniseries)',item.title]:[yearLabel(item)?item.title+' ('+yearLabel(item)+' film)':'',item.title+' (film)',item.title].filter(Boolean);
+ for(const t of candidates){try{
+ const u='https://en.wikipedia.org/w/api.php?'+new URLSearchParams({action:'query',origin:'*',format:'json',prop:'pageimages',piprop:'thumbnail',pithumbsize:'650',titles:t});
+ const resp=await fetch(u);if(!resp.ok)continue;const data=await resp.json(),page=Object.values(data.query?.pages||{})[0],src=page?.thumbnail?.source;if(!src)continue;
+ await new Promise((resolve,reject)=>{const test=new Image();test.onload=resolve;test.onerror=reject;test.src=src});
+ if(wrap.querySelector('img.poster'))return;const pic=make('img','poster');pic.src=src;pic.alt=item.title+' cover artwork';pic.loading='lazy';pic.referrerPolicy='no-referrer';wrap.querySelector('.coverfallback')?.remove();wrap.append(pic);return
+ }catch(_){continue}}
+}
+const posterObserver=new IntersectionObserver(es=>es.forEach(z=>{if(!z.isIntersecting)return;posterObserver.unobserve(z.target);
+const card=z.target;setTimeout(()=>{if(!card.querySelector('img.poster')&&!checked.has(card.dataset.key)){checked.add(card.dataset.key);retryPoster(card)}},2100);
+}),{rootMargin:'500px'});
+for(const card of document.querySelectorAll('#platforms .card'))posterObserver.observe(card);
+
 })();
