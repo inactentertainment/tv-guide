@@ -6,13 +6,14 @@ const matches=[
 ['Boston Celtics at Washington Wizards','YF4zAArzX2w','NBA official highlights · Celtics at Wizards, Dec 4, 2025'],
 ['Dallas Mavericks at Denver Nuggets','U31FrAT2KPE','NBA official highlights · Mavericks at Nuggets, Dec 1, 2025'],
 ['Utah Jazz at Golden State Warriors','IruzyinMb_c','NBA official highlights · Jazz at Warriors, Nov 24, 2025'],
+['Dallas Mavericks at Golden State Warriors','P6e9d5jOwX8','NBA official highlights · Mavericks at Warriors, Dec 25, 2025'],
 ['Philadelphia 76ers at Orlando Magic','2IFgffaqgAQ','NBA official highlights · 76ers at Magic, Nov 17, 2026'],
 ['David Benavidez vs Michal Cieslak','e0aJReDWcMY','Benavidez vs. Gilberto Ramirez · May 2026 fight highlights'],
 ['Tyson Fury vs Anthony Joshua','3P4QeH0e2ps','Fury vs. Joshua · press conference, not fight highlights']
 ];
 const sportsVideos=new Map(matches.map(([name,id,description])=>[name,{id,description}]));
 const extraTrailers=new Map(Object.entries({
-'Bring Her Back':'kBskrYZfhw8','Sorry, Baby':'Rc0jgWoZo9w'
+'Chernobyl':'PMlwjCID3Io','Bring Her Back':'kBskrYZfhw8','Sorry, Baby':'Rc0jgWoZo9w'
 }));
 const clean=t=>String(t||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
 const waitImg=url=>new Promise((ok,no)=>{let img=new Image();img.onload=()=>ok(url);img.onerror=no;img.src=url});
