@@ -123,6 +123,8 @@ async function wikiMedia(item){
 }
 
 const pinnedPosterURLs={
+'Black Doves':'https://dnm.nflximg.net/api/v6/2DuQlx0fM4wd1nzqm5BFBi6ILa8/AAAAQQfMIYnZp-Hg5hV8DU4kQHvcQu85EhYvAWshSW_dBdE9yhM-i5JJQSkBgtscrfF-Ukfw6D-w8Ixpl3y0TLS02QkAkU3nN7oJOwQPIOlvBOwooJOBm83QNWYUl6GrmDHzfgk2aTa5xhBrTnhi0qDqBNSm.jpg?r=8d9',
+'Blue Eye Samurai':'https://launchpad-backend-v2.onrender.com/api/v1/s3/image/assets/9576dc8e-4373-464f-94c3-3647252fd860/30-greatest-animated-tv-shows-made-for-adults_fef1770f/30-greatest-animated-tv-shows-made-for-adults_img_7_4b1c49ed.jpg',
 'Scrooge':'https://m.media-amazon.com/images/M/MV5BNDA4NTVjNDQtNjJiZC00MTZhLTk5NTAtOGNlYjYzYjQwODkzXkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg',
 'Beyond Tomorrow':'https://static.cinemagia.ro/img/resize/db/movie/57/78/94/beyond-tomorrow-195234l-600x0-w-f3e692c4.jpg',
 'Santa Claus Conquers the Martians':'https://m.media-amazon.com/images/M/MV5BYThlZTY0Y2MtMTM5MS00OGEyLTlhNTYtODc2YzUxNGI3ODAyXkEyXkFqcGc%40._V1_.jpg'
