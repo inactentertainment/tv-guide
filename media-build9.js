@@ -8,6 +8,10 @@ const matches=[
 ['Utah Jazz at Golden State Warriors','IruzyinMb_c','NBA official highlights · Jazz at Warriors, Nov 24, 2025'],
 ['Dallas Mavericks at Golden State Warriors','P6e9d5jOwX8','NBA official highlights · Mavericks at Warriors, Dec 25, 2025'],
 ['Philadelphia 76ers at Orlando Magic','2IFgffaqgAQ','NBA official highlights · 76ers at Magic, Nov 17, 2026'],
+['San Antonio Spurs at Cleveland Cavaliers','jLfVn8K8-f4','NBA official highlights · Spurs at Cavaliers, Dec 5, 2025'],
+['New York Knicks at Cleveland Cavaliers','02FgnWZWwmU','NBA official highlights · Knicks at Cavaliers, Feb 24, 2026'],
+['Minnesota Timberwolves at Denver Nuggets','prftZbHekVY','NBA official highlights · Timberwolves at Nuggets, Mar 1, 2026'],
+['Detroit Pistons at Oklahoma City Thunder','EtlR54Whc4M','NBA official highlights · Pistons at Thunder, Mar 30, 2026'],
 ['David Benavidez vs Michal Cieslak','e0aJReDWcMY','Benavidez vs. Gilberto Ramirez · May 2026 fight highlights'],
 ['Tyson Fury vs Anthony Joshua','3P4QeH0e2ps','Fury vs. Joshua · press conference, not fight highlights']
 ];
