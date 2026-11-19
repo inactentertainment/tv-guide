@@ -32,7 +32,7 @@ function player(id,title,notes,links=[]){
  links.forEach(([name,url])=>info.append(link(url,name)));box.append(info);
  modal.classList.add('open');document.body.classList.add('noscroll');
 }
-document.addEventListener('click',evt=>{
+window.addEventListener('click',evt=>{
  const trailer=evt.target.closest?.('#platforms .trailerBtn');
  if(trailer&&extraTrailers.has(trailer.dataset.title)){
  evt.preventDefault();evt.stopImmediatePropagation();
