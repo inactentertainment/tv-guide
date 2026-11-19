@@ -1,0 +1,126 @@
+(()=>{'use strict';
+const dataEl=document.getElementById('data');if(!dataEl)return;
+const data=JSON.parse(dataEl.textContent);
+const matches=[
+['Brooklyn Nets at Minnesota Timberwolves','Vx53f1syfZU','NBA official highlights · Nets at Timberwolves, Dec 27, 2025'],
+['Boston Celtics at Washington Wizards','YF4zAArzX2w','NBA official highlights · Celtics at Wizards, Dec 4, 2025'],
+['Dallas Mavericks at Denver Nuggets','U31FrAT2KPE','NBA official highlights · Mavericks at Nuggets, Dec 1, 2025'],
+['Utah Jazz at Golden State Warriors','IruzyinMb_c','NBA official highlights · Jazz at Warriors, Nov 24, 2025'],
+['Philadelphia 76ers at Orlando Magic','2IFgffaqgAQ','NBA official highlights · 76ers at Magic, Nov 17, 2026'],
+['David Benavidez vs Michal Cieslak','e0aJReDWcMY','Benavidez vs. Gilberto Ramirez · May 2026 fight highlights'],
+['Tyson Fury vs Anthony Joshua','3P4QeH0e2ps','Fury vs. Joshua · press conference, not fight highlights']
+];
+const sportsVideos=new Map(matches.map(([name,id,description])=>[name,{id,description}]));
+const extraTrailers=new Map(Object.entries({
+'Bring Her Back':'kBskrYZfhw8','Sorry, Baby':'Rc0jgWoZo9w'
+}));
+const clean=t=>String(t||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
+const waitImg=url=>new Promise((ok,no)=>{let img=new Image();img.onload=()=>ok(url);img.onerror=no;img.src=url});
+const modal=document.getElementById('videoModal'),box=document.getElementById('videoBox'),heading=document.getElementById('videoTitle');
+const link=(url,label)=>{let a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=label;a.className='mini media-link';return a};
+function player(id,title,notes,links=[]){
+ if(!modal||!box)return;
+ heading.textContent=title;box.replaceChildren();box.classList.add('media-picker');
+ let iframe=document.createElement('iframe');
+ iframe.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(id)+'?autoplay=1&rel=0';
+ iframe.title=title;iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';iframe.allowFullscreen=true;
+ box.append(iframe);
+ let info=document.createElement('div');info.className='media-panel';
+ let p=document.createElement('p');p.className='playnote';p.textContent=notes+' · If YouTube blocks playback, use the direct link.';info.append(p);
+ info.append(link('https://www.youtube.com/watch?v='+id,'Watch this video on YouTube ↗'));
+ links.forEach(([name,url])=>info.append(link(url,name)));box.append(info);
+ modal.classList.add('open');document.body.classList.add('noscroll');
+}
+document.addEventListener('click',evt=>{
+ const trailer=evt.target.closest?.('#platforms .trailerBtn');
+ if(trailer&&extraTrailers.has(trailer.dataset.title)){
+ evt.preventDefault();evt.stopImmediatePropagation();
+ const title=trailer.dataset.title;player(extraTrailers.get(title),title+' — Official Trailer','Official A24 trailer');return;
+ }
+ const anchor=evt.target.closest?.('#sports a');
+ if(!anchor)return;
+ const event=anchor.closest('.event');if(!event)return;
+ const title=event.querySelector('.sport-headline')?.textContent?.trim()||event.querySelector('.eventmain strong')?.textContent?.trim();
+ const video=sportsVideos.get(title);
+ if(!video)return;
+ evt.preventDefault();evt.stopImmediatePropagation();
+ player(video.id,title+' — Matchup Video',video.description,[['Other clips and news',anchor.href]]);
+},true);
+for(const e of document.querySelectorAll('#sports .event')){
+ const title=e.querySelector('.sport-headline')?.textContent?.trim()||e.querySelector('.eventmain strong')?.textContent?.trim();
+ if(sportsVideos.has(title)){
+  let button=document.createElement('button');button.type='button';button.className='mini sport-play';button.textContent='▶ Play highlight in guide';button.addEventListener('click',()=>{
+   let v=sportsVideos.get(title);player(v.id,title+' — Matchup Video',v.description);
+  });e.querySelector('.sport-links')?.prepend(button);
+ }
+}
+const style=document.createElement('style');style.textContent=
+'#sports .sport-play{border-color:#f9d98b;background:#e8bc67;color:#132035;font-weight:800}'+
+'#sports .sport-play:hover{background:#ffda8e}'+
+'.cover-loading{font-size:.7rem;letter-spacing:.06em;color:#e5e7e9}'+
+'#platforms .poster{max-height:430px}';document.head.append(style);
+const mediaStats={previews:sportsVideos.size,extraTrailers:extraTrailers.size};
+function posterFor(item,url,card){
+ if(!url||card.querySelector('.poster'))return;
+ const target=card.querySelector('.posterwrap');if(!target)return;
+ const img=document.createElement('img');img.className='poster';img.alt=item.title+' — cover artwork';img.loading='lazy';img.referrerPolicy='no-referrer';img.src=url;
+ img.addEventListener('error',()=>{img.remove();}, {once:true});
+ target.querySelector('.coverfallback')?.remove();target.append(img);
+}
+const tvcache=Object.create(null);
+async function tvMaze(item){
+ const isShow=item.cat==='Series'||(item.cat==='Black Cinema'&&/series|tv|mini/i.test(item.genre||''));
+ if(!isShow)return null;
+ let query=item.title.replace(/\s*\(.*?\)\s*$/,'');
+ if(query in tvcache)return tvcache[query];
+ try{
+ const ctrl=new AbortController();const timeout=setTimeout(()=>ctrl.abort(),7000);
+ const r=await fetch('https://api.tvmaze.com/search/shows?q='+encodeURIComponent(query),{signal:ctrl.signal});clearTimeout(timeout);
+ if(!r.ok)return null;
+ const arr=await r.json();
+ const exact=arr.find(o=>clean(o.show?.name)===clean(query));
+ let url=exact?.show?.image?.original||exact?.show?.image?.medium||null;
+ tvcache[query]=url;return url;
+ }catch{return null}
+}
+async function wikiMedia(item){
+ const q=item.title.replace(/\s*\((19|20)\d\d\)/,'');
+ const type=item.cat==='Series'?'television series':'film';
+ const queries=[q+' '+type+' poster',q+' movie poster'];
+ for(const term of queries){
+  try{
+   let url='https://commons.wikimedia.org/w/api.php?'+new URLSearchParams({action:'query',generator:'search',gsrsearch:'filetype:bitmap '+term,gsrnamespace:'6',gsrlimit:'8',prop:'imageinfo',iiprop:'url|mime',iiurlwidth:'560',format:'json',origin:'*'});
+   let r=await fetch(url);if(!r.ok)continue;let d=await r.json();let pages=Object.values(d.query?.pages||{});
+   pages.sort((a,b)=>((clean(b.title).includes(clean(q))?2:0)-(clean(a.title).includes(clean(q))?2:0)));
+   for(let p of pages){
+    let source=p.imageinfo?.[0]?.thumburl||p.imageinfo?.[0]?.url;
+    if(!source||!clean(p.title).includes(clean(q)))continue;
+    try{await waitImg(source);return source}catch{}
+   }
+  }catch{}
+ }
+ return null;
+}
+const queued=new Set();
+const posterObserver=new IntersectionObserver(entries=>{
+ for(const entry of entries){if(!entry.isIntersecting)continue;posterObserver.unobserve(entry.target);
+ const card=entry.target;const key=card.dataset.key;
+ if(queued.has(key))continue;queued.add(key);
+ const item=data.items.find(e=>e.platform+'|'+e.cat+'|'+e.title===key);if(!item)return;
+ setTimeout(async()=>{
+  if(card.querySelector('.poster'))return;
+  let tv=await tvMaze(item);
+  if(tv){try{await waitImg(tv);posterFor(item,tv,card);return}catch{}}
+  // Apple's movie catalog and title-matched Wikipedia covers run in the base page.
+  // Commons is a final source for title-exact film artwork.
+  let wiki=await wikiMedia(item);
+  if(wiki&&!card.querySelector('.poster'))posterFor(item,wiki,card);
+ },2300);
+ }
+},{rootMargin:'550px'});
+document.querySelectorAll('#platforms .card').forEach(c=>posterObserver.observe(c));
+document.querySelectorAll('#platforms .trailerBtn').forEach(b=>{
+ if(extraTrailers.has(b.dataset.title)){b.textContent='▶ Play official trailer';}
+});
+window.WilliamsMediaStats=mediaStats;
+})();
