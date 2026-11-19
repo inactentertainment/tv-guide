@@ -20,6 +20,12 @@ const matches=[
 ['Toronto Raptors vs Detroit Pistons','IRsNBdv2JcA','NBA official highlights · Raptors at Pistons, Mar 31, 2026'],
 ['Los Angeles Lakers at Houston Rockets','sruAMHYutvU','NBA official highlights · Lakers at Rockets, Jan 5, 2025'],
 ['Miami Heat at Dallas Mavericks','syY-6nN8tQg','NBA official highlights · Heat at Mavericks, Feb 13, 2025'],
+['Miami Heat vs New York Knicks','z2lHG4Osjok','NBA official highlights · Heat at Knicks, Dec 21, 2025'],
+['Denver vs Minnesota','Xxb6WaISx1g','NBA official highlights · Nuggets at Timberwolves, Nov 15, 2025'],
+['Erislandy Lara vs Tim Tszyu','0gMfvq7z_Io','PBC fight highlights · Errol Spence vs Tim Tszyu, Jul 25, 2026; Lara matchup preview'],
+['NBA Cup quarterfinals · teams TBD','5HVaM2cLX54','2025 NBA Cup final · Knicks vs Spurs; historical tournament context, not 2026 quarterfinals'],
+['NBA Cup semifinals · teams TBD','5HVaM2cLX54','2025 NBA Cup final · Knicks vs Spurs; historical tournament context, not 2026 semifinals'],
+['NBA Cup Championship · teams TBD','5HVaM2cLX54','2025 NBA Cup final · Knicks vs Spurs; historical tournament context, not 2026 championship'],
 ['David Benavidez vs Michal Cieslak','e0aJReDWcMY','Benavidez vs. Gilberto Ramirez · May 2026 fight highlights'],
 ['Tyson Fury vs Anthony Joshua','3P4QeH0e2ps','Fury vs. Joshua · press conference, not fight highlights']
 ];
