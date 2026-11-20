@@ -23,6 +23,7 @@ const results=await readJSON('https://api.tvmaze.com/search/shows?q='+encodeURIC
 const match=results.find(e=>exactMatch(e.show?.name,item.title));
 return match?.show?.image?.original||match?.show?.image?.medium||null;
 }
+async function cinemeta(item){const type=isSeries(item)?'series':'movie';const url='https://v3-cinemeta.strem.io/catalog/'+type+'/top/search='+encodeURIComponent(item.title)+'.json';const results=(await readJSON(url)).metas||[];const year=yearOf(item);const match=results.find(m=>exactMatch(m.name,item.title)&&(!year||!m.releaseInfo||String(m.releaseInfo).includes(year)));return match?.poster||null;}
 async function wikipedia(item){
 const title=item.title.replace(/\s*\((?:19|20)\d{2}\)\s*$/,'');
 const year=yearOf(item),proposals=isSeries(item)?[title+' (TV series)',title+' (miniseries)',title]:[year?title+' ('+year+' film)':'',title+' (film)',title].filter(Boolean);
@@ -33,7 +34,7 @@ return null;
 async function source(item){
 const key=item.platform+'|'+item.cat+'|'+item.title;
 if(cache[key])try{await imageOk(cache[key]);return cache[key]}catch{delete cache[key]}
-const methods=isSeries(item)?[tvmaze,apple,wikipedia]:[apple,wikipedia];
+const methods=isSeries(item)?[tvmaze,apple,cinemeta,wikipedia]:[apple,cinemeta,wikipedia];
 for(const method of methods){try{const url=await method(item);if(!url)continue;await imageOk(url);cache[key]=url;saveCache();return url}catch{}}
 return null;
 }
