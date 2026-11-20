@@ -2,7 +2,7 @@
 (async()=>{try{
 let source=await fetch('./index.html?v=12',{cache:'no-store'});if(!source.ok)throw Error('Unable to load approved guide');
 let html=await source.text();if(!html.includes('id="videoModal"'))throw Error('Guide markup changed unexpectedly');
-const response=await fetch('./media-build12-catalog.json?v=2',{cache:'no-store'});if(!response.ok)throw Error('Curated catalog not available');
+const response=await fetch('./media-build12-catalog.json?v=5',{cache:'no-store'});if(!response.ok)throw Error('Curated catalog not available');
 const additional=(await response.json()).items||[];
 const match=html.match(/(<script id="data" type="application\/json">)([\s\S]*?)(<\/script>)/);
 if(!match)throw Error('Catalog not found');
@@ -15,7 +15,7 @@ included++;
 }
 html=html.replace(match[0],match[1]+JSON.stringify(catalog)+match[3]);
 html=html.replace("if('IntersectionObserver'in window){const ob=","if(false){const ob=");
-const scripts=['media-build11-enhancements.js?v=1','media-build11-sports.js?v=1','media-build10.js?v=3','media-build11-posters.js?v=3','media-build11-trailers.js?v=3','media-build12-ui.js?v=3'];
+const scripts=['media-build11-enhancements.js?v=1','media-build11-sports.js?v=1','media-build10.js?v=3','media-build11-posters.js?v=3','media-build11-trailers.js?v=3','media-build12-ui.js?v=4','media-build12-trailers.js?v=1'];
 const insert=scripts.map(x=>'<script defer src="./'+x+'"></'+'script>').join('');
 html=html.replace(/<\/body>\s*<\/html>\s*$/i,insert+'</body></html>');
 document.open();document.write(html);document.close();
