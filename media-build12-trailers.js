@@ -1,0 +1,8 @@
+(()=>{'use strict';const known={"The Wiz":"CGtnHaEK66s","When They See Us":"-6SHPSFkUGE"};const root=document.getElementById('platforms');if(!root)return;
+for(const b of root.querySelectorAll('.trailerBtn')){if(!known[b.dataset.title])continue;b.textContent='Watch Trailer';b.classList.add('verified');b.classList.remove('unverified');b.title='Watch a title-specific theatrical or series trailer in this guide'}
+window.addEventListener('click',e=>{const b=e.target.closest?.('#platforms .trailerBtn');if(!b||!known[b.dataset.title])return;e.preventDefault();e.stopImmediatePropagation();const id=known[b.dataset.title],modal=document.getElementById('videoModal'),box=document.getElementById('videoBox');if(!modal||!box)return;
+const heading=document.getElementById('videoTitle');if(heading)heading.textContent=b.dataset.title+' — Trailer';box.replaceChildren();box.classList.add('media-picker');
+const iframe=document.createElement('iframe');iframe.title=b.dataset.title+' trailer';iframe.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';iframe.allow='autoplay;encrypted-media;picture-in-picture';iframe.allowFullscreen=true;iframe.style.cssText='width:100%;aspect-ratio:16/9;min-height:270px;border:0';box.append(iframe);
+let a=document.createElement('a');a.href='https://www.youtube.com/watch?v='+id;a.textContent='Watch on YouTube if embedding is restricted';a.target='_blank';a.rel='noopener noreferrer';a.className='mini media-link';box.append(a);modal.classList.add('open');document.body.classList.add('noscroll');
+},true);
+})();
