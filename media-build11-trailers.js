@@ -1,0 +1,8 @@
+(()=>{'use strict';const titles={"Marty Supreme":"s9gSuKaKcqM","If I Had Legs I'd Kick You":"ywFDoT7LBbQ","Lurker":"876d5ZnyzzQ"};const root=document.getElementById('platforms');if(!root)return;
+function play(title,id){const modal=document.getElementById('videoModal'),box=document.getElementById('videoBox');if(!modal||!box)return;
+document.getElementById('videoTitle').textContent=title+' — Official Trailer';box.replaceChildren();box.classList.add('media-picker');const f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';f.title=title+' official trailer';f.allow='autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;f.style.cssText='width:100%;height:auto;aspect-ratio:16/9;border:0;min-height:260px';box.append(f);
+const a=document.createElement('a');a.href='https://www.youtube.com/watch?v='+id;a.target='_blank';a.rel='noopener noreferrer';a.className='mini media-link';a.textContent='Watch official trailer on YouTube if embedding is blocked';box.append(a);
+modal.classList.add('open');document.body.classList.add('noscroll')}
+window.addEventListener('click',ev=>{const b=ev.target.closest?.('#platforms .trailerBtn');if(!b||!titles[b.dataset.title])return;ev.preventDefault();ev.stopImmediatePropagation();play(b.dataset.title,titles[b.dataset.title])},true);
+for(const b of document.querySelectorAll('#platforms .trailerBtn'))if(titles[b.dataset.title])b.textContent='▶ Play official trailer';
+})();
