@@ -4,7 +4,7 @@ const dock=document.querySelector('#guideDock');if(!dock)return;
 document.querySelectorAll('#guideJukebox,.dock-actions,#guideDock .dock-favs,#guideDock .dock-music,#guideDock .dock-top').forEach(x=>x.remove());
 const fav=document.getElementById('watchlist');
 const trailing=document.createElement('div');trailing.className='dock-trailing';
-if(fav){fav.textContent='★ Favorites';fav.title='';fav.setAttribute('aria-label','Favorites');trailing.append(fav)}
+if(fav){const n=fav.querySelector('#savedCount');const label=document.createTextNode('★ Favorites ');for(const child of [...fav.childNodes])if(child!==n)child.remove();fav.insertBefore(label,n||null);fav.title='';fav.setAttribute('aria-label','Favorites');trailing.append(fav)}
 const jukebox=document.createElement('button');jukebox.type='button';jukebox.className='dock-jukebox';jukebox.innerHTML='<i></i><i></i><i></i><i></i>';jukebox.setAttribute('aria-label','Holiday Jukebox');jukebox.setAttribute('aria-expanded','false');trailing.append(jukebox);
 const toTop=document.createElement('button');toTop.type='button';toTop.className='dock-top';toTop.textContent='↑';toTop.setAttribute('aria-label','Back to top');toTop.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});trailing.append(toTop);
 dock.insertBefore(trailing,dock.querySelector('.dock-search-toggle'));
