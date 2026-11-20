@@ -1,0 +1,53 @@
+{
+  "trailers": {
+    "Ma Rainey's Black Bottom": {
+      "id": "ord7gP151vk",
+      "source": "Netflix official YouTube"
+    },
+    "Da 5 Bloods": {
+      "id": "D5RDTPfsLAI",
+      "source": "Netflix official YouTube"
+    },
+    "The Forty-Year-Old Version": {
+      "id": "RRpGNnaDzeE",
+      "source": "Netflix official YouTube"
+    },
+    "Undone": {
+      "id": "6uWCNHQgfnc",
+      "source": "Prime Video official YouTube"
+    },
+    "The Crown": {
+      "id": "JWtnJjn6ng0",
+      "source": "Netflix official YouTube"
+    },
+    "Robin Robin": {
+      "id": "Khyk6VEvJ18",
+      "source": "Netflix official YouTube"
+    },
+    "The Best Christmas Pageant Ever": {
+      "id": "cT7x4HpCICc",
+      "source": "Lionsgate official YouTube"
+    },
+    "A Very English Scandal": {
+      "id": "ggDTJc470Co",
+      "source": "BBC official YouTube"
+    },
+    "The Expanse": {
+      "id": "kQuTAPWJxNo",
+      "source": "Season 1 trailer (identified in season trailer archive)"
+    },
+    "The Shop Around the Corner": {
+      "id": "euyWdsbZQAo",
+      "source": "Warner Bros Classics YouTube"
+    }
+  },
+  "posterImdb": {
+    "Hit Man": "tt20215968",
+    "His Three Daughters": "tt28491891",
+    "Blue Eye Samurai": "tt13309742",
+    "Da 5 Bloods": "tt9777644",
+    "The Forty-Year-Old Version": "tt10642834",
+    "Maid": "tt11337908"
+  },
+  "notes": "Title-exact trailer selection. Poster IDs verified against IMDb listings; generated poster endpoints may be blocked by provider. Streaming availability not implied."
+}
