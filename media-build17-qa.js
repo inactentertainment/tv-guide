@@ -1,0 +1,11 @@
+(()=>{'use strict';const node=document.getElementById('data');if(!node)return;const D=JSON.parse(node.textContent);
+const itemMap=new Map(D.items.map(x=>[x.platform+'|'+x.cat+'|'+x.title,x]));
+for(const card of document.querySelectorAll('#platforms .card')){
+ const item=itemMap.get(card.dataset.key);
+ const warn=card.querySelector('.warning');if(warn){warn.textContent='Critic score unavailable';warn.title='No verified published Rotten Tomatoes Tomatometer for this title or listed edition';}
+ const btn=card.querySelector('.trailerBtn');if(btn){const id=item?.trailer;if(!id||!/^[A-Za-z0-9_-]{11}$/.test(id)){btn.title='Direct video not linked yet. Available title-specific previews may still be shown.';btn.classList.add('pending')}else{btn.title='Watch title-specific trailer';btn.classList.remove('pending')}}
+ const summary=card.querySelector('.summary');if(summary&&!summary.textContent.trim()){summary.textContent='A detailed synopsis is not available for this title.'}
+}
+const scan=()=>{const cards=[...document.querySelectorAll('#platforms .card')];return {total:cards.length,scored:cards.filter(x=>!!x.querySelector('.score')).length,scoreUnavailable:cards.filter(x=>!!x.querySelector('.warning')).length,posterLoaded:cards.filter(x=>{const i=x.querySelector('img.poster');return !!(i?.complete&&i.naturalWidth>0)}).length,posterNotConfirmed:cards.filter(x=>{const i=x.querySelector('img.poster');return !(i?.complete&&i.naturalWidth>0)}).length,trailerIDs:cards.filter(x=>/^[A-Za-z0-9_-]{11}$/.test(x.querySelector('.trailerBtn')?.dataset.id||'')).length,unlinkedTrailer:cards.filter(x=>!/^[A-Za-z0-9_-]{11}$/.test(x.querySelector('.trailerBtn')?.dataset.id||'')).length,navBars:document.querySelectorAll('.quicknav').length,duplicateNavs:document.querySelectorAll('#guideDock').length,sportsEvents:document.querySelectorAll('#sports .event').length,sportsPlayable:document.querySelectorAll('#sports .event .sport-play').length}};
+window.WilliamsQACheck={scan,limitations:'Static field and currently loaded browser image checks; cannot certify YouTube embed permissions or streaming catalog availability.'};
+})();
