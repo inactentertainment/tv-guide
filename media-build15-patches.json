@@ -1,0 +1,127 @@
+{
+  "trailers": {
+    "Ma Rainey's Black Bottom": {
+      "id": "ord7gP151vk",
+      "source": "Netflix official YouTube"
+    },
+    "Da 5 Bloods": {
+      "id": "D5RDTPfsLAI",
+      "source": "Netflix official YouTube"
+    },
+    "The Forty-Year-Old Version": {
+      "id": "RRpGNnaDzeE",
+      "source": "Netflix official YouTube"
+    },
+    "Undone": {
+      "id": "6uWCNHQgfnc",
+      "source": "Prime Video official YouTube"
+    },
+    "The Crown": {
+      "id": "JWtnJjn6ng0",
+      "source": "Netflix official YouTube"
+    },
+    "Robin Robin": {
+      "id": "Khyk6VEvJ18",
+      "source": "Netflix official YouTube"
+    },
+    "The Best Christmas Pageant Ever": {
+      "id": "cT7x4HpCICc",
+      "source": "Lionsgate official YouTube"
+    },
+    "A Very English Scandal": {
+      "id": "ggDTJc470Co",
+      "source": "BBC official YouTube"
+    },
+    "The Expanse": {
+      "id": "kQuTAPWJxNo",
+      "source": "Season 1 trailer (identified in season trailer archive)"
+    },
+    "The Shop Around the Corner": {
+      "id": "euyWdsbZQAo",
+      "source": "Warner Bros Classics YouTube"
+    },
+    "Meet Me in St. Louis": {
+      "id": "dLNa7mp0wWo",
+      "source": "Warner Bros Classics official"
+    },
+    "Whiplash": {
+      "id": "Df1xkYYbYrY",
+      "source": "Sony Pictures Classics official"
+    },
+    "The President's Cake": {
+      "id": "EIhlE3lfu6w",
+      "source": "Sony Pictures Classics official"
+    },
+    "Boys Go to Jupiter": {
+      "id": "CGebWTi6APE",
+      "source": "Cartuna distributor official"
+    },
+    "Going to Mars: The Nikki Giovanni Project": {
+      "id": "kyb3NV1U9SA",
+      "source": "HBO official YouTube"
+    },
+    "A Christmas Carol (1938)": {
+      "id": "1Cn4VuODI4c",
+      "source": "Title-matched 1938 MGM trailer, referenced by WTOP; upload publisher not independently confirmed"
+    },
+    "Klaus": {
+      "id": "taE3PwurhYM",
+      "source": "Netflix official trailer"
+    },
+    "Poker Face": {
+      "id": "4x2NzusLAqk",
+      "source": "Peacock official trailer (2023 series)"
+    },
+    "The Fabelmans": {
+      "id": "D1G2iLSzOe8",
+      "source": "Universal Pictures official trailer"
+    },
+    "Get Out": {
+      "id": "sRfnevzM9kQ",
+      "source": "Universal Pictures official theatrical trailer"
+    },
+    "The Northman": {
+      "id": "oMSdFM12hOw",
+      "source": "Focus Features official trailer"
+    },
+    "The Bad Guys": {
+      "id": "zpDuBXB_glk",
+      "source": "Universal Pictures official trailer 2"
+    },
+    "American Fiction": {
+      "id": "i0MbLCpYJPA",
+      "source": "Amazon MGM Studios official trailer"
+    },
+    "A League of Their Own": {
+      "id": "H8qMhtkB18k",
+      "source": "Prime Video official series trailer"
+    },
+    "Maid": {
+      "id": "cLd0dN25i5g",
+      "source": "Netflix official teaser"
+    }
+  },
+  "posterImdb": {
+    "Hit Man": "tt20215968",
+    "His Three Daughters": "tt28491891",
+    "Blue Eye Samurai": "tt13309742",
+    "Da 5 Bloods": "tt9777644",
+    "The Forty-Year-Old Version": "tt10642834",
+    "Maid": "tt11337908",
+    "Stranger Things": "tt4574334",
+    "The Crown": "tt4786824",
+    "Unbelievable": "tt7909970",
+    "Baby Reindeer": "tt13649112",
+    "Dark": "tt5753856",
+    "The Expanse": "tt3230854",
+    "Klaus": "tt4729430",
+    "Poker Face": "tt14269590",
+    "The Fabelmans": "tt14208870",
+    "The Northman": "tt11138512",
+    "American Fiction": "tt23561236",
+    "The Bad Guys": "tt8115900",
+    "Get Out": "tt5052448",
+    "A League of Their Own": "tt8226360"
+  },
+  "notes": "Build 15: title-specific verified official videos added for nine catalog titles. Poster identifiers checked against IMDb where available; image endpoint success is not guaranteed."
+}
