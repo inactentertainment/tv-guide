@@ -179,7 +179,7 @@
     "Get Out": "tt5052448",
     "A League of Their Own": "tt8226360"
   },
-  "notes": "Build 17 source-verified ratings applied only where Rotten Tomatoes publishes a score; NR displayed for titles without adequate critic reviews. Trailer IDs are source-matched but publisher embed restrictions can still apply.",
+  "notes": "Build 17 source-verified ratings applied only where Rotten Tomatoes publishes a score; NR displayed for titles without adequate critic reviews. Trailer IDs are source-matched but publisher embed restrictions can still apply. A Christmas Carol entry covers multiple editions, so no single edition's critic score is attributed to it.",
   "auditVersion": 16,
   "criticScores": {
     "Columbo": {
@@ -206,11 +206,6 @@
       "score": 27,
       "basis": "Rotten Tomatoes film (1964)",
       "url": "https://www.rottentomatoes.com/m/santa_claus_conquers_the_martians"
-    },
-    "A Christmas Carol": {
-      "score": 100,
-      "basis": "Rotten Tomatoes 1938 film; not the 1984 or 2009 versions",
-      "url": "https://www.rottentomatoes.com/m/1004125-christmas_carol"
     },
     "Star": {
       "score": 35,
