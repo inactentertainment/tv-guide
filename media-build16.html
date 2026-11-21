@@ -13,7 +13,7 @@ let idx=catalog.items.findIndex(e=>e.platform===movie.platform&&e.cat===movie.ca
 if(movie.priority==='front'&&idx!==-1)catalog.items.splice(idx,0,movie);else catalog.items.push(movie);
 included++;
 }
-const qa=await fetch('./media-build16-patches.json?v=1',{cache:'no-store'});
+const qa=await fetch('./media-build16-patches.json?v=2',{cache:'no-store'});
 if(!qa.ok)throw Error('Video/poster QA update unavailable');
 const fixes=await qa.json();
 let updatedTrailers=0,updatedPosters=0;
