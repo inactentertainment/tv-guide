@@ -218,8 +218,7 @@
     "Alfred Hitchcock Presents": "tt0047708",
     "The Dick Van Dyke Show": "tt0054533",
     "The Carol Burnett Show": "tt0061240",
-    "Forensic Files": "tt0247882",
-    "Cold Case Files": "tt0429435"
+    "Forensic Files": "tt0247882"
   },
   "notes": "Build 17 source-verified ratings applied only where Rotten Tomatoes publishes a score; NR displayed for titles without adequate critic reviews. Trailer IDs are source-matched but publisher embed restrictions can still apply. A Christmas Carol entry covers multiple editions, so no single edition's critic score is attributed to it.",
   "auditVersion": 16,
