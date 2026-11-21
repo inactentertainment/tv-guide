@@ -250,7 +250,15 @@
     "Alfred Hitchcock Presents": "tt0047708",
     "The Dick Van Dyke Show": "tt0054533",
     "The Carol Burnett Show": "tt0061240",
-    "Forensic Files": "tt0247882"
+    "Forensic Files": "tt0247882",
+    "Black Doves": "tt27995113",
+    "Train Dreams": "tt29768334",
+    "Wallace & Gromit: Vengeance Most Fowl": "tt17163970",
+    "Wake Up Dead Man: A Knives Out Mystery": "tt14364480",
+    "The President's Cake": "tt36580119",
+    "Supacell": "tt16283758",
+    "Ma Rainey's Black Bottom": "tt10514222",
+    "Robin Robin": "tt11332850"
   },
   "notes": "Build 17 source-verified ratings applied only where Rotten Tomatoes publishes a score; NR displayed for titles without adequate critic reviews. Trailer IDs are source-matched but publisher embed restrictions can still apply. A Christmas Carol entry covers multiple editions, so no single edition's critic score is attributed to it. Build 18 verified YouTube source IDs and retains honest source labels for previews that are not original season trailers.",
   "auditVersion": 16,
@@ -284,6 +292,11 @@
       "score": 35,
       "basis": "Rotten Tomatoes Season 1",
       "url": "https://www.rottentomatoes.com/tv/star/s01"
+    },
+    "Greenleaf": {
+      "score": 81,
+      "basis": "Rotten Tomatoes Season 1; this is season-specific",
+      "url": "https://www.rottentomatoes.com/tv/greenleaf/s01"
     }
   },
   "posterQa": {
