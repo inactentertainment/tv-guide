@@ -13,7 +13,7 @@ let idx=catalog.items.findIndex(e=>e.platform===movie.platform&&e.cat===movie.ca
 if(movie.priority==='front'&&idx!==-1)catalog.items.splice(idx,0,movie);else catalog.items.push(movie);
 included++;
 }
-const qa=await fetch('./media-build17-patches.json?v=3',{cache:'no-store'});
+const qa=await fetch('./media-build17-patches.json?v=4',{cache:'no-store'});
 if(!qa.ok)throw Error('Video/poster QA update unavailable');
 const fixes=await qa.json();
 let updatedTrailers=0,updatedPosters=0;
@@ -38,7 +38,7 @@ if(!Number.isFinite(film.score) && (film.score===null||film.score===undefined||f
 }
 html=html.replace(match[0],match[1]+JSON.stringify(catalog)+match[3]);
 html=html.replace("if('IntersectionObserver'in window){const ob=","if(false){const ob=");
-const scripts=['media-build11-enhancements.js?v=1','media-build17-sports.js?v=1','media-build10.js?v=3','media-build17-posters.js?v=1','media-build11-trailers.js?v=3','media-build13-jukebox.js?v=2','media-build12-trailers.js?v=1','media-build16-audit.js?v=2'];
+const scripts=['media-build11-enhancements.js?v=1','media-build17-sports.js?v=1','media-build10.js?v=3','media-build17-posters.js?v=1','media-build11-trailers.js?v=3','media-build13-jukebox.js?v=2','media-build12-trailers.js?v=1','media-build16-audit.js?v=2','media-build17-navfix.js?v=1','media-build17-qa.js?v=1'];
 const insert=scripts.map(x=>'<script defer src="./'+x+'"></'+'script>').join('');
 html=html.replace(/<\/body>\s*<\/html>\s*$/i,insert+'</body></html>');
 document.open();document.write(html);document.close();
