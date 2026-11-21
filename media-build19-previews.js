@@ -1,0 +1,11 @@
+(()=>{'use strict';const previews={"The Office":{"id":"CtZz2xbVxCo","label":"Peacock character highlights","detail":"Official 2026 Peacock compilation—not an original series trailer."},"Parks and Recreation":{"id":"1DPfPgsP5ig","label":"Parks and Recreation best moments","detail":"Official series channel highlights—not an original trailer."},"The Prisoner":{"id":"s9AJlhE2-qw","label":"Series retrospective","detail":"Independent historical retrospective about the 1967 series—not an original trailer."},"Band of Brothers":{"id":"IjLg0X59fMA","label":"HBO Max anniversary retrospective","detail":"Official HBO Max anniversary retrospective—not a Season 1 trailer."}};
+for(const b of document.querySelectorAll('#platforms .trailerBtn')){if(previews[b.dataset.title]){b.textContent='Watch Preview';b.setAttribute('aria-label','Watch '+previews[b.dataset.title].label)}}
+window.addEventListener('click',event=>{const b=event.target.closest?.('#platforms .trailerBtn');if(!b)return;const v=previews[b.dataset.title];if(!v)return;
+const modal=document.getElementById('videoModal'),box=document.getElementById('videoBox');if(!modal||!box)return;
+event.preventDefault();event.stopImmediatePropagation();
+const heading=document.getElementById('videoTitle');if(heading)heading.textContent=b.dataset.title+' — '+v.label;
+box.replaceChildren();const frame=document.createElement('iframe');frame.title=b.dataset.title+' '+v.label;frame.src='https://www.youtube-nocookie.com/embed/'+v.id+'?autoplay=1&rel=0';frame.allow='autoplay;encrypted-media;picture-in-picture';frame.allowFullscreen=true;frame.style.cssText='aspect-ratio:16/9;width:100%;height:auto;min-height:270px;border:0';box.append(frame);
+const caption=document.createElement('p');caption.className='playnote';caption.textContent=v.detail;box.append(caption);
+const link=document.createElement('a');link.className='mini media-link';link.target='_blank';link.rel='noopener noreferrer';link.href='https://www.youtube.com/watch?v='+v.id;link.textContent='Open this video directly on YouTube';box.append(link);
+modal.classList.add('open');document.body.classList.add('noscroll')},true);
+})();
