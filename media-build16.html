@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Williams TV Guide — Build 16</title><style>body{font:18px system-ui;background:#081220;color:#fff;padding:30px}a{color:#ffdc6c}</style></head><body><p>Opening Williams TV Guide…</p><script>
+(async()=>{try{
+let source=await fetch('./index.html?v=12',{cache:'no-store'});if(!source.ok)throw Error('Unable to load approved guide');
+let html=await source.text();if(!html.includes('id="videoModal"'))throw Error('Guide markup changed unexpectedly');
+const response=await fetch('./media-build12-catalog.json?v=7',{cache:'no-store'});if(!response.ok)throw Error('Curated catalog not available');
+const additional=(await response.json()).items||[];
+const match=html.match(/(<script id="data" type="application\/json">)([\s\S]*?)(<\/script>)/);
+if(!match)throw Error('Catalog not found');
+const catalog=JSON.parse(match[2]);
+let included=0;for(const movie of additional){
+if(catalog.items.some(e=>e.platform===movie.platform&&e.title===movie.title&&e.cat===movie.cat))continue;
+let idx=catalog.items.findIndex(e=>e.platform===movie.platform&&e.cat===movie.cat);
+if(movie.priority==='front'&&idx!==-1)catalog.items.splice(idx,0,movie);else catalog.items.push(movie);
+included++;
+}
+const qa=await fetch('./media-build16-patches.json?v=1',{cache:'no-store'});
+if(!qa.ok)throw Error('Video/poster QA update unavailable');
+const fixes=await qa.json();
+let updatedTrailers=0,updatedPosters=0;
+for(const film of catalog.items){
+const matchTrailer=fixes.trailers[film.title];
+if(matchTrailer && film.trailer!==matchTrailer.id){
+film.trailer=matchTrailer.id;
+film.verifiedTrailer=true;
+updatedTrailers++;
+}
+if(!film.poster && fixes.posterImdb[film.title]){
+film.poster='https://images.metahub.space/poster/medium/'+fixes.posterImdb[film.title]+'/img';
+updatedPosters++;
+}
+}
+html=html.replace(match[0],match[1]+JSON.stringify(catalog)+match[3]);
+html=html.replace("if('IntersectionObserver'in window){const ob=","if(false){const ob=");
+const scripts=['media-build11-enhancements.js?v=1','media-build11-sports.js?v=1','media-build10.js?v=3','media-build11-posters.js?v=3','media-build11-trailers.js?v=3','media-build13-jukebox.js?v=2','media-build12-trailers.js?v=1','media-build16-audit.js?v=1'];
+const insert=scripts.map(x=>'<script defer src="./'+x+'"></'+'script>').join('');
+html=html.replace(/<\/body>\s*<\/html>\s*$/i,insert+'</body></html>');
+document.open();document.write(html);document.close();
+}catch(err){document.body.innerHTML='<h1>Unable to open the TV Guide</h1><p>'+String(err.message)+'</p><p><a href="./media-build11.html">Open the previous working edition</a></p>';}})();
+</script></body></html>
