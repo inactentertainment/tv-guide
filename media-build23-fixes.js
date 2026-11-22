@@ -7,7 +7,7 @@ const byKey=new Map(items.map(i=>[i.platform+'|'+i.cat+'|'+i.title,i]));
 const byTitle=new Map(items.map(i=>[clean(i.title),i]));
 const named={
 'Watchmen':{id:'zymgtV99Rko',note:'HBO official teaser (2019)',label:'Watch HBO Teaser'},
-'Scrooge':{id:'eNIQyoIeYeM',note:'Filmzie: Scrooge (1951) trailer',label:'Watch 1951 Trailer'},
+'Scrooge':{url:'https://www.pbs.org/video/scrooge-jxwae4/',note:'PBS presentation of Scrooge (1935), Seymour Hicks; feature, not a trailer',label:'Open 1935 Film'},
 'The Man with the Bag':{id:'PEVkJHLq4rQ',note:'Prime Video official trailer',label:'Watch Trailer'},
 'Bad Day':{id:'zHSYXDLH4io',note:'Netflix official trailer',label:'Watch Trailer'},
 'The Family Stone':{url:'https://tubitv.com/movies/622727/the-family-stone-trailer',note:'Tubi trailer for the 2005 film',label:'Open Trailer'},
