@@ -7,14 +7,14 @@ const byKey=new Map(items.map(i=>[i.platform+'|'+i.cat+'|'+i.title,i]));
 const byTitle=new Map(items.map(i=>[clean(i.title),i]));
 const named={
 'Watchmen':{id:'zymgtV99Rko',note:'HBO official teaser (2019)',label:'Watch HBO Teaser'},
-'Scrooge':{url:'https://www.pbs.org/video/scrooge-jxwae4/',note:'PBS presentation of Scrooge (1935), Seymour Hicks; feature, not a trailer',label:'Open 1935 Film'},
+'Scrooge':{url:'https://www.pbs.org/video/scrooge-1935-y64qdm/',note:'PBS presentation of Scrooge (1935), Seymour Hicks; feature, not a trailer',label:'Open 1935 Film'},
 'The Man with the Bag':{id:'PEVkJHLq4rQ',note:'Prime Video official trailer',label:'Watch Trailer'},
 'Bad Day':{id:'zHSYXDLH4io',note:'Netflix official trailer',label:'Watch Trailer'},
 'The Family Stone':{url:'https://tubitv.com/movies/622727/the-family-stone-trailer',note:'Tubi trailer for the 2005 film',label:'Open Trailer'},
 'Give Me Some Sugah':{url:'https://www.netflix.com/tudum/articles/tyler-perry-give-me-some-sugah',note:'Netflix official trailer page',label:'Open Netflix Trailer'},
 'Beyond Tomorrow':{url:'https://www.tcm.com/watchtcm/titles/21556',note:'TCM film clips; not an original trailer',label:'Open Film Clips'},
-'The Further Adventures of Cliff Booth':{url:'https://www.youtube.com/results?search_query=The+Further+Mis-Adventures+of+Cliff+Booth+Netflix+official+trailer',note:'No confirmed direct trailer yet'},
-'The Further Mis-Adventures of Cliff Booth':{url:'https://www.youtube.com/results?search_query=The+Further+Mis-Adventures+of+Cliff+Booth+Netflix+official+trailer',note:'No confirmed direct trailer yet'}};
+'The Further Adventures of Cliff Booth':{id:'RjEZaUBbUvU',note:'Netflix official trailer, September 2026',label:'Watch Trailer'},
+'The Further Mis-Adventures of Cliff Booth':{id:'RjEZaUBbUvU',note:'Netflix official trailer, September 2026',label:'Watch Trailer'}};
 const overrides=new Map(Object.entries(named).map(([k,v])=>[clean(k),v]));
 const css=document.createElement('style');css.textContent='#platforms .trailerBtn.media-connected,#platforms .trailerBtn.media-external{background:#e9bd62!important;color:#162334!important;border:1px solid #f9d783!important;opacity:1!important;filter:none!important;font-weight:750!important}#platforms .trailerBtn.media-search{background:#485363!important;color:#f1f2f4!important;border:1px solid #718090!important;opacity:1!important;filter:none!important}#sports .sport-category-label{font:700 12px system-ui;color:#ffe2a4;display:block;margin:6px 0}#sports .sport-clips-note{font:13px system-ui;color:#e9d9b7;padding:12px;border-left:3px solid #e9bd62;background:#ffffff0b;margin:16px 0}';document.head.append(css);
 const records=[];
@@ -42,9 +42,19 @@ modal.classList.add('open');document.body.classList.add('noscroll');
 window.addEventListener('click',event=>{
 const button=event.target.closest?.('#platforms .trailerBtn');if(!button)return;
 const card=button.closest('.card'),item=byKey.get(card?.dataset.key)||byTitle.get(clean(button.dataset.title));if(!item)return;
-const source=overrides.get(clean(item.title));if(!source)return;
+const source=overrides.get(clean(item.title));
 event.preventDefault();event.stopImmediatePropagation();
-if(source.id)openPlayer(item,source.id,source.label);else if(source.url)window.open(source.url,'_blank','noopener,noreferrer');
+const mode=button.dataset.build23Media;
+if(source?.id){openPlayer(item,source.id,source.label||'Trailer');return;}
+if(source?.url){window.open(source.url,'_blank','noopener,noreferrer');return;}
+if(mode==='connected'){
+ const id=button.dataset.id;
+ if(valid(id))openPlayer(item,id,button.textContent.trim()||'Trailer');
+ return;
+}
+const year=(String(item.genre||'').match(/\b(?:19|20)\d{2}\b/)||[])[0]||'';
+const search=[item.title,year,item.cat==='Series'?'series':'film','trailer'].filter(Boolean).join(' ');
+window.open('https://www.youtube.com/results?search_query='+encodeURIComponent(search),'_blank','noopener,noreferrer');
 },true);
 const sports=document.getElementById('sports');
 if(sports){
