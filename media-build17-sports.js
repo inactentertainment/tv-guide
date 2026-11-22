@@ -35,7 +35,7 @@ const matches=[
 ];
 const sportsVideos=new Map(matches.map(([name,id,description])=>[name,{id,description}]));
 const extraTrailers=new Map(Object.entries({
-'The Resort':'0DmeT1GLQn8','Bel-Air':'_-_P9DPMuy8','Watchmen':'FeFpwFo1osg','I May Destroy You':'DTjlurdbNnw','His Three Daughters':'K0jwAP2fS1E','Wake Up Dead Man: A Knives Out Mystery':'0hc8yz5-d5Y','Train Dreams':'_Nk8TrBHOrA','Wallace & Gromit: Vengeance Most Fowl':'kQqrBzJ5wIc','Unbelievable':'QTIkUzkbzQk','Baby Reindeer':'eafm1gB6SCM','The Diplomat':'lV6sJlBbhPs','The Boys':'M1bhOaLV4FU','The Underground Railroad':'_Pq5Usc_JDA','Companion':'Qr_kX0D3DNA','Chernobyl':'PMlwjCID3Io','Bring Her Back':'kBskrYZfhw8','Sorry, Baby':'Rc0jgWoZo9w'
+'The Resort':'0DmeT1GLQn8','Bel-Air':'_-_P9DPMuy8','I May Destroy You':'DTjlurdbNnw','His Three Daughters':'K0jwAP2fS1E','Wake Up Dead Man: A Knives Out Mystery':'0hc8yz5-d5Y','Train Dreams':'_Nk8TrBHOrA','Wallace & Gromit: Vengeance Most Fowl':'kQqrBzJ5wIc','Unbelievable':'QTIkUzkbzQk','Baby Reindeer':'eafm1gB6SCM','The Diplomat':'lV6sJlBbhPs','The Boys':'M1bhOaLV4FU','The Underground Railroad':'_Pq5Usc_JDA','Companion':'Qr_kX0D3DNA','Chernobyl':'PMlwjCID3Io','Bring Her Back':'kBskrYZfhw8','Sorry, Baby':'Rc0jgWoZo9w'
 }));
 const clean=t=>String(t||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
 const waitImg=url=>new Promise((ok,no)=>{let img=new Image();img.onload=()=>ok(url);img.onerror=no;img.src=url});
@@ -73,7 +73,7 @@ window.addEventListener('click',evt=>{
  const trailer=evt.target.closest?.('#platforms .trailerBtn');
  if(trailer&&extraTrailers.has(trailer.dataset.title)){
  evt.preventDefault();evt.stopImmediatePropagation();
- const title=trailer.dataset.title;player(extraTrailers.get(title),title+' — Official Trailer','Official A24 trailer');return;
+ const title=trailer.dataset.title;player(extraTrailers.get(title),title+' — Trailer / Preview','Title-specific trailer or preview; verify the publisher');return;
  }
  const anchor=evt.target.closest?.('#sports a');
  if(!anchor)return;
