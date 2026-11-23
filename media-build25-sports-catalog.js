@@ -45,11 +45,11 @@ const fightsData=[
  {date:'2026-12-12',title:'Erislandy Lara vs. Tim Tszyu',detail:'WBA middleweight boxing · Gold Coast, Australia · DAZN',url:'https://www.cbssports.com/boxing/news/boxing-schedule-for-2026-dates-tyson-fury-vs-anthony-joshua-david-benavidez-dmitry-bivol/',kind:'Boxing'},
  {date:'2026-12-19',title:'Devin Haney vs. Liam Paro',detail:'Unified welterweight boxing · San Francisco · DAZN',url:'https://www.cbssports.com/boxing/news/boxing-schedule-for-2026-dates-tyson-fury-vs-anthony-joshua-david-benavidez-dmitry-bivol/',kind:'Boxing'},
  {date:'2026-12-19',title:'Anthony Cacace vs. Nick Ball',detail:'WBA junior lightweight boxing · Belfast · DAZN',url:'https://www.cbssports.com/boxing/news/boxing-schedule-for-2026-dates-tyson-fury-vs-anthony-joshua-david-benavidez-dmitry-bivol/',kind:'Boxing'},
- {date:'2026-12-05',title:'David Benavidez vs. Michal Cieslak',detail:'Cruiserweight title unification · Glendale, Arizona · DAZN / Prime Video PPV',url:'https://www.premierboxingchampions.com/events/391735',kind:'Boxing'},
- {date:'2026-12-05',title:'Vergil Ortiz Jr. vs. Keith Thurman',detail:'Boxing co-main event · Glendale, Arizona',url:'https://www.premierboxingchampions.com/events/391735',kind:'Boxing'},
- {date:'2026-12-05',title:'UFC Fight Night: Israel Adesanya vs. Shara Magomedov',detail:'Mixed martial arts · Riyadh, Saudi Arabia · Paramount+',url:'https://www.ufc.com/events',kind:'UFC'},
- {date:'2026-12-11',title:'Tyson Fury vs. Anthony Joshua',detail:'Heavyweight boxing · Cardiff, Wales · Netflix',url:'https://www.cbssports.com/boxing/news/boxing-schedule-for-2026-dates-tyson-fury-vs-anthony-joshua-david-benavidez-dmitry-bivol/',kind:'Boxing'},
- {date:'2026-12-12',title:'UFC 335: Charles Oliveira vs. Diego Lopes',detail:'Mixed martial arts · Las Vegas · Paramount+',url:'https://www.ufc.com/events',kind:'UFC'}
+ {date:'2026-12-05',title:'David Benavidez vs. Michal Cieslak',detail:'Cruiserweight title unification · Dec 5, 8:00 PM ET event · DAZN PPV via Prime Video',url:'https://www.premierboxingchampions.com/events/391735',kind:'Boxing'},
+ {date:'2026-12-05',title:'Vergil Ortiz Jr. vs. Keith Thurman',detail:'Boxing co-main event · Dec 5, 8:00 PM ET event · DAZN PPV via Prime Video',url:'https://www.premierboxingchampions.com/events/391735',kind:'Boxing'},
+ {date:'2026-12-05',title:'UFC Fight Night: Israel Adesanya vs. Shara Magomedov',detail:'UFC Fight Night · Dec 5, 1:00 PM ET main card · Paramount+',url:'https://www.ufc.com/event/ufc-fight-night-december-05-2026',kind:'UFC'},
+ {date:'2026-12-11',title:'Tyson Fury vs. Anthony Joshua',detail:'Heavyweight boxing · Dec 11, 8:00 PM ET event · Netflix',url:'https://www.cbssports.com/boxing/news/boxing-schedule-for-2026-dates-tyson-fury-vs-anthony-joshua-david-benavidez-dmitry-bivol/',kind:'Boxing'},
+ {date:'2026-12-12',title:'UFC 335: Charles Oliveira vs. Diego Lopes',detail:'UFC 335 · Dec 12, 9:00 PM ET main card · Paramount+',url:'https://www.ufc.com/event/ufc-fight-night-december-05-2026',kind:'UFC'}
 ];
 function sportsCard(event){
  const card=make('article','event tvguide-sport-card');
@@ -72,12 +72,12 @@ football.append(make('h2','tvguide-subtitle','Football'));
 const footballList=make('div','tvguide-sports-events');
 football.append(footballList);
 const footballGames=[
- {date:'2026-11-25',title:'Green Bay Packers at Los Angeles Rams',detail:'Thanksgiving Eve · Prime-time NFL football',url:'https://www.nfl.com/schedules/2026/by-week/week-12'},
- {date:'2026-11-26',title:'Kansas City Chiefs at Buffalo Bills',detail:'Thanksgiving · NFL',url:'https://www.nfl.com/thanksgiving'},
- {date:'2026-11-27',title:'Denver Broncos at Pittsburgh Steelers',detail:'Black Friday · Prime Video',url:'https://www.nfl.com/schedules/2026/by-week/week-12'},
- {date:'2026-12-06',title:'Houston Texans at Pittsburgh Steelers',detail:'Sunday Night Football · NBC / Peacock',url:'https://www.peacocktv.com/blog/how-to-watch-the-nfl-on-peacock-for-2026-2027-season-full-schedule'},
- {date:'2026-12-07',title:'Dallas Cowboys at Seattle Seahawks',detail:'Monday Night Football · ESPN',url:'https://www.nfl.com/schedules/2026/prime-time/monday-night-football'},
- {date:'2026-12-20',title:'Detroit Lions at Minnesota Vikings',detail:'Sunday Night Football · NBC / Peacock',url:'https://www.peacocktv.com/blog/how-to-watch-the-nfl-on-peacock-for-2026-2027-season-full-schedule'}
+ {date:'2026-11-25',title:'Green Bay Packers at Los Angeles Rams',detail:'Thanksgiving Eve · 8:00 PM ET · Netflix',url:'https://www.nfl.com/schedules/2026/by-week/week-12'},
+ {date:'2026-11-26',title:'Kansas City Chiefs at Buffalo Bills',detail:'Thanksgiving · 8:20 PM ET · NBC',url:'https://www.nfl.com/schedules/2026/by-week/week-12'},
+ {date:'2026-11-27',title:'Denver Broncos at Pittsburgh Steelers',detail:'Black Friday · 3:00 PM ET · Prime Video',url:'https://www.nfl.com/schedules/2026/by-week/week-12'},
+ {date:'2026-12-06',title:'Houston Texans at Pittsburgh Steelers',detail:'Sunday Night Football · 8:20 PM ET · NBC / Peacock',url:'https://www.nfl.com/schedules/2026/prime-time/sunday-night-football'},
+ {date:'2026-12-07',title:'Dallas Cowboys at Seattle Seahawks',detail:'Monday Night Football · 8:15 PM ET · ESPN',url:'https://www.nfl.com/schedules/2026/by-week/week-13'},
+ {date:'2026-12-20',title:'Detroit Lions at Minnesota Vikings',detail:'Sunday Night Football · 8:20 PM ET · NBC / Peacock',url:'https://www.nfl.com/schedules/2026/prime-time/sunday-night-football'}
 ];
 footballGames.filter(e=>sportsEvent(e.date)).forEach(e=>{
 const card=make('article','event tvguide-sport-card');
