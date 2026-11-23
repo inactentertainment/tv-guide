@@ -93,9 +93,7 @@ for(const kind of ['fights','football']){
  }
 }
 const known=[
- {match:'David Benavidez',id:'e0aJReDWcMY',caption:'Benavidez vs. Gilberto Ramírez · May 2026 highlights (previous fight)'},
- {match:'Tyson Fury vs. Anthony Joshua',id:'MrPiIT23Jb8',caption:'Anthony Joshua vs. Kristian Prenga · July 2026 highlights (previous fight, DAZN)'},
- {match:'Erislandy Lara',id:'0gMfvq7z_Io',caption:'Related boxer footage — actual opponent and date may differ'}
+ {match:'Green Bay Packers at Los Angeles Rams',id:'__Po3YTD_2w',caption:'NBC Sports preview: Packers and Rams Thanksgiving Eve matchup (discussion published May 14, 2026; not game highlights)'}
 ];
 function openInPage(title,video){
  const modal=$('#videoModal'),box=$('#videoBox');if(!modal||!box)return false;
