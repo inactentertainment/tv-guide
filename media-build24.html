@@ -9,6 +9,13 @@ if(!match)throw Error('Catalog not found');
 const catalog=JSON.parse(match[2]);
 // Requested exclusion: never include Moonlight in this viewing edition.
 catalog.items=catalog.items.filter(item=>item.title!=='Moonlight');
+for(const title of catalog.items){
+ if(title.title==='The Further Adventures of Cliff Booth')title.title='The Further Mis-Adventures of Cliff Booth';
+}
+// Remove duplicate aliases of the same film within a platform/category.
+const seenEdition=new Set();
+catalog.items=catalog.items.filter(film=>{const key=film.platform+'|'+film.cat+'|'+film.title;if(seenEdition.has(key))return false;seenEdition.add(key);return true});
+
 const netflixFirst=catalog.items.findIndex(item=>item.platform==='Netflix'&&item.cat!=='Series');
 const sugah={
  platform:'Netflix',cat:netflixFirst>=0?catalog.items[netflixFirst].cat:'Movies',
@@ -39,6 +46,14 @@ if(!qa.ok)throw Error('Video/poster QA update unavailable');
 const fixes=await qa.json();
 let updatedTrailers=0,updatedPosters=0;
 for(const film of catalog.items){
+const releases={
+ 'Bad Day':{date:'December 11, 2026',source:'Netflix'},
+ 'Give Me Some Sugah':{date:'December 16, 2026',source:'Netflix'},
+ 'The Further Mis-Adventures of Cliff Booth':{date:'December 23, 2026',source:'Netflix · IMAX November 25'},
+ 'The Man with the Bag':{date:'December 2, 2026',source:'Prime Video'}
+};
+const release=releases[film.title];
+if(release){film.status='Coming soon · '+release.date+' · '+release.source;film.releaseDateConfirmed=release.date;}
 const matchTrailer=fixes.trailers[film.title];
 if(matchTrailer && film.trailer!==matchTrailer.id){
 film.trailer=matchTrailer.id;
