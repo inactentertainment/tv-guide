@@ -7,6 +7,22 @@ const additional=((await response.json()).items||[]).filter(item=>item.title!=='
 const match=html.match(/(<script id="data" type="application\/json">)([\s\S]*?)(<\/script>)/);
 if(!match)throw Error('Catalog not found');
 const catalog=JSON.parse(match[2]);
+// Correct ambiguous NBA team names against the league's published 2026-27 fixtures.
+const identifiedNBA={
+ '2026-11-27|Los Angeles vs San Antonio':'Los Angeles Lakers at San Antonio Spurs',
+ '2026-12-18|Los Angeles vs Miami':'LA Clippers at Miami Heat',
+ '2026-12-23|Houston vs Philadelphia':'Houston Rockets at Philadelphia 76ers',
+ '2026-12-23|Denver vs Los Angeles':'Denver Nuggets at Los Angeles Lakers',
+ '2026-12-31|Denver vs Minnesota':'Denver Nuggets at Minnesota Timberwolves'
+};
+for(const game of catalog.sports||[]){
+ const matchName=identifiedNBA[game.date+'|'+game.match];
+ if(matchName)game.match=matchName;
+ if(game.date==='2026-12-18'&&matchName){
+  game.note='Start-time discrepancy: NBA lists 7:00 PM ET; Prime Video lists 6:30 PM ET. Confirm broadcast closer to game time.';
+ }
+}
+
 // Requested exclusion: never include Moonlight in this viewing edition.
 catalog.items=catalog.items.filter(item=>item.title!=='Moonlight');
 for(const title of catalog.items){
