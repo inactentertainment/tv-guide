@@ -105,8 +105,9 @@ function createEvent(e,type){
  card.append(E('p','tvtennis-status',e.status));
  const actions=E('div','tvtennis-links');
  actions.append(link('Official match lineup',e.url),link(type==='WTT'?'Free live stream information':'Live scores / schedule',type==='WTT'?scheduleURL:unitedLive));
+ if(type==='United Cup')actions.append(link('Check ATP Tennis Radio (coverage unconfirmed)','https://www.atptour.com/en/news/tennis-radio'));
  // No fabricated radio station or stream. A real free stream is linked only where the broadcaster confirms one.
- const radios=E('p','tvtennis-video-disclosure',type==='WTT'?'Official free stream: Fandango via the WTT match page. No confirmed radio outlet.':'No verified free radio audio stream; official scores and schedule update on the tournament site.');
+ const radios=E('p','tvtennis-video-disclosure',type==='WTT'?'Official free stream: Fandango via the WTT match page. No confirmed radio outlet.':'Free ATP Tennis Radio exists, but no confirmed station or United Cup audio schedule was found; the official scores and tournament schedule update online.');
  card.append(actions,radios);
  return card;
 }
