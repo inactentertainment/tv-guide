@@ -10,12 +10,11 @@ const named={
 'Scrooge':{url:'https://www.pbs.org/video/scrooge-1935-y64qdm/',note:'PBS presentation of Scrooge (1935), Seymour Hicks; feature, not a trailer',label:'Open 1935 Film'},
 'The Man with the Bag':{id:'PEVkJHLq4rQ',note:'Prime Video official trailer',label:'Watch Trailer'},
 'Bad Day':{id:'zHSYXDLH4io',note:'Netflix official trailer',label:'Watch Trailer'},
-'Give Me Some Sugah':{url:'https://www.netflix.com/tudum/articles/tyler-perry-give-me-some-sugah',note:'Netflix official trailer and promotional artwork',label:'Watch Official Trailer'},
 'The Family Stone':{url:'https://tubitv.com/movies/622727/the-family-stone-trailer',note:'Tubi trailer for the 2005 film',label:'Open Trailer'},
-'Give Me Some Sugah':{url:'https://www.netflix.com/tudum/articles/tyler-perry-give-me-some-sugah',note:'Netflix official trailer page',label:'Open Netflix Trailer'},
+'Give Me Some Sugah':{url:'https://www.netflix.com/tudum/articles/tyler-perry-give-me-some-sugah',note:'Netflix Tudum official film trailer and artwork · arriving December 16, 2026',label:'Watch Official Trailer'},
 'Beyond Tomorrow':{url:'https://www.tcm.com/watchtcm/titles/21556',note:'TCM film clips; not an original trailer',label:'Open Film Clips'},
-'The Further Adventures of Cliff Booth':{id:'RjEZaUBbUvU',note:'Netflix official trailer, September 2026',label:'Watch Trailer'},
-'The Further Mis-Adventures of Cliff Booth':{id:'RjEZaUBbUvU',note:'Netflix official trailer, September 2026',label:'Watch Trailer'}};
+'The Further Adventures of Cliff Booth':{url:'https://www.netflix.com/tudum/videos/the-further-mis-adventures-of-cliff-booth-trailer',note:'Netflix Tudum trailer for the official title The Further Mis-Adventures of Cliff Booth',label:'Watch Official Trailer'},
+'The Further Mis-Adventures of Cliff Booth':{url:'https://www.netflix.com/tudum/videos/the-further-mis-adventures-of-cliff-booth-trailer',note:'Netflix official trailer; IMAX November 25 and Netflix December 23, 2026',label:'Watch Official Trailer'}};
 const overrides=new Map(Object.entries(named).map(([k,v])=>[clean(k),v]));
 const css=document.createElement('style');css.textContent='#platforms .trailerBtn.media-connected,#platforms .trailerBtn.media-external{background:#e9bd62!important;color:#162334!important;border:1px solid #f9d783!important;opacity:1!important;filter:none!important;font-weight:750!important}#platforms .trailerBtn.media-search{background:#485363!important;color:#f1f2f4!important;border:1px solid #718090!important;opacity:1!important;filter:none!important}#sports .sport-category-label{font:700 12px system-ui;color:#ffe2a4;display:block;margin:6px 0}#sports .sport-clips-note{font:13px system-ui;color:#e9d9b7;padding:12px;border-left:3px solid #e9bd62;background:#ffffff0b;margin:16px 0}';document.head.append(css);
 const records=[];
@@ -28,7 +27,7 @@ button.classList.remove('media-connected','media-external','media-search','pendi
 button.classList.add('media-'+mode);
 button.dataset.build23Media=mode;button.style.opacity='1';
 if(mode==='connected'){button.dataset.id=id;button.textContent=override?.label||(button.textContent.toLowerCase().includes('preview')?'Watch Preview':'Watch Trailer');button.title=override?.note||'Video linked; embedding depends on publisher permissions.'}
-else if(mode==='external'){button.textContent=override.label;button.title=override.note+' (opens publisher page)'}
+else if(mode==='external'){button.textContent=override.label;button.title=override.note+' (opens an in-guide publisher preview panel)'}
 else{button.textContent='Find Title Preview';button.title='No confirmed direct video; opens title-specific search'}
 records.push({title:item.title,platform:item.platform,mode,id:valid(id)?id:''});
 }
@@ -40,6 +39,19 @@ const iframe=document.createElement('iframe');iframe.src='https://www.youtube-no
 const a=document.createElement('a');a.className='mini media-link';a.textContent='Watch directly on YouTube if blocked';a.href='https://www.youtube.com/watch?v='+id;a.target='_blank';a.rel='noopener noreferrer';box.append(a);
 modal.classList.add('open');document.body.classList.add('noscroll');
 }
+function publisherPanel(item,source){
+const modal=document.getElementById('videoModal'),box=document.getElementById('videoBox');
+if(!modal||!box){window.open(source.url,'_blank','noopener,noreferrer');return}
+const heading=document.getElementById('videoTitle');
+if(heading)heading.textContent=item.title+' — Official Publisher Preview';
+box.replaceChildren();box.classList.add('media-picker');
+const wrap=document.createElement('section');wrap.style.cssText='padding:22px 18px;text-align:center;border:1px solid #bc9b62;border-radius:10px;background:#12223a';
+const label=document.createElement('p');label.textContent=source.note||'Official publisher page';label.className='playnote';
+const explanation=document.createElement('p');explanation.className='playnote';explanation.textContent='The official preview is on its publisher’s site. It is not confirmed embeddable here, so this panel avoids showing an unrelated video.';
+const action=document.createElement('a');action.className='mini media-link';action.textContent='Watch on official publisher site';action.href=source.url;action.target='_blank';action.rel='noopener noreferrer';
+wrap.append(label,explanation,action);box.append(wrap);
+modal.classList.add('open');document.body.classList.add('noscroll');
+}
 window.addEventListener('click',event=>{
 const button=event.target.closest?.('#platforms .trailerBtn');if(!button)return;
 const card=button.closest('.card'),item=byKey.get(card?.dataset.key)||byTitle.get(clean(button.dataset.title));if(!item)return;
@@ -47,7 +59,7 @@ const source=overrides.get(clean(item.title));
 event.preventDefault();event.stopImmediatePropagation();
 const mode=button.dataset.build23Media;
 if(source?.id){openPlayer(item,source.id,source.label||'Trailer');return;}
-if(source?.url){window.open(source.url,'_blank','noopener,noreferrer');return;}
+if(source?.url){publisherPanel(item,source);return;}
 if(mode==='connected'){
  const id=button.dataset.id;
  if(valid(id))openPlayer(item,id,button.textContent.trim()||'Trailer');
