@@ -10,6 +10,7 @@ const named={
 'Scrooge':{url:'https://www.pbs.org/video/scrooge-1935-y64qdm/',note:'PBS presentation of Scrooge (1935), Seymour Hicks; feature, not a trailer',label:'Open 1935 Film'},
 'The Man with the Bag':{id:'PEVkJHLq4rQ',note:'Prime Video official trailer',label:'Watch Trailer'},
 'Bad Day':{id:'zHSYXDLH4io',note:'Netflix official trailer',label:'Watch Trailer'},
+'Give Me Some Sugah':{url:'https://www.netflix.com/tudum/articles/tyler-perry-give-me-some-sugah',note:'Netflix official trailer and promotional artwork',label:'Watch Official Trailer'},
 'The Family Stone':{url:'https://tubitv.com/movies/622727/the-family-stone-trailer',note:'Tubi trailer for the 2005 film',label:'Open Trailer'},
 'Give Me Some Sugah':{url:'https://www.netflix.com/tudum/articles/tyler-perry-give-me-some-sugah',note:'Netflix official trailer page',label:'Open Netflix Trailer'},
 'Beyond Tomorrow':{url:'https://www.tcm.com/watchtcm/titles/21556',note:'TCM film clips; not an original trailer',label:'Open Film Clips'},
