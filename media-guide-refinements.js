@@ -112,7 +112,7 @@ for(const sectionId of ['fights','football']){
  const candidate=known.find(v=>title.includes(v.match));
  const play=doc.createElement('button');play.type='button';play.className='tvguide-inline-video';
  if(candidate){
- play.textContent='▶ Watch fighter highlights';play.dataset.status='connected';
+ play.textContent=sectionId==='football'?'▶ Watch matchup preview':'▶ Watch fighter highlights';play.dataset.status='connected';
  play.onclick=()=>{openInPage(title,candidate)};
  }else{
  play.textContent='▶ Find video preview';play.dataset.status='search';
