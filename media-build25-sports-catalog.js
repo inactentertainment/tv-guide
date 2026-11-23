@@ -109,7 +109,7 @@ const glove='<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M13 33C7 26 8 
 const footballIcon='<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 32C6 17 21 7 42 11c0 18-14 31-34 27z" fill="#84502f" stroke="#42291c" stroke-width="2.4"/><path d="M13 32 34 17M19 24l7 7M24 20l7 7M29 16l7 7" stroke="#e9d8b5" stroke-width="2.1" fill="none"/><path d="M8 34q5-2 6 4M35 11q2 5 6 6" stroke="#f2e4c8" stroke-width="2" fill="none"/></svg>';
 const navSources=$('a[href="#sports"]',document.querySelector('.quicknav')||document.querySelector('#guideDock')||document.querySelector('.toplogos')||document);
 const iconSpecs=[['Basketball','#basketball',ball],['Fights','#fights',glove],['Football','#football',footballIcon]];
-const targets=navSources.length?navSources:$$('.brand.sports');
+const targets=navSources.length?navSources:$('.brand.sports');
 for(const src of targets){
  const parent=src.parentElement;if(!parent)continue;
  const wrap=make('span','tvguide-sport-nav');
