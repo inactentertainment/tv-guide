@@ -49,7 +49,7 @@ const fightsData=[
  {date:'2026-12-05',title:'Vergil Ortiz Jr. vs. Keith Thurman',detail:'Boxing co-main event · Dec 5, 8:00 PM ET event · DAZN PPV via Prime Video',url:'https://www.premierboxingchampions.com/events/391735',kind:'Boxing'},
  {date:'2026-12-05',title:'UFC Fight Night: Israel Adesanya vs. Shara Magomedov',detail:'UFC Fight Night · Dec 5, 1:00 PM ET main card · Paramount+',url:'https://www.ufc.com/event/ufc-fight-night-december-05-2026',kind:'UFC'},
  {date:'2026-12-11',title:'Tyson Fury vs. Anthony Joshua',detail:'Heavyweight boxing · Dec 11, 8:00 PM ET event · Netflix',url:'https://www.cbssports.com/boxing/news/boxing-schedule-for-2026-dates-tyson-fury-vs-anthony-joshua-david-benavidez-dmitry-bivol/',kind:'Boxing'},
- {date:'2026-12-12',title:'UFC 335: Charles Oliveira vs. Diego Lopes',detail:'UFC 335 · Dec 12, 9:00 PM ET main card · Paramount+',url:'https://www.ufc.com/event/ufc-fight-night-december-05-2026',kind:'UFC'}
+ {date:'2026-12-12',title:'UFC 335: Charles Oliveira vs. Diego Lopes',detail:'UFC 335 · Dec 12, 9:00 PM ET main card · Paramount+',url:'https://www.ufc.com/event/ufc-335',kind:'UFC'}
 ];
 function sportsCard(event){
  const card=make('article','event tvguide-sport-card');
