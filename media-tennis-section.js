@@ -8,7 +8,7 @@ const E=(tag,cls,content)=>{const n=doc.createElement(tag);if(cls)n.className=cl
 const link=(text,url,cls)=>{const a=E('a',cls,text);a.href=url;a.target='_blank';a.rel='noopener noreferrer';return a};
 const scheduleURL='https://www.wtt.com/schedule';
 const wttPress='https://www.versantmedia.com/usa-sports/press-releases/world-team-tennis-announces-broadcast-partnership-versants-usa-sports';
-const unitedURL='https://www.unitedcup.com/en/scores/schedule';
+const unitedURL='https://www.unitedcup.com/en/scores/2027-schedule';
 const unitedLive='https://www.unitedcup.com/en/scores';
 const players=[
  {name:'Coco Gauff',status:'World Team Tennis · Dec 14–15; United Cup · Jan 2 & 4',note:'United States singles; Florida Flamingos',wiki:'Coco_Gauff',highlight:'Coco Gauff WTA official highlights'},
