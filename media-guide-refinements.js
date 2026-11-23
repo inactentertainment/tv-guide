@@ -136,6 +136,22 @@ const player=$('#holidayJukebox');if(player&&!player.querySelector('.tvguide-juk
  const link=doc.createElement('a');link.className='tvguide-jukebox-source';link.href='https://inactentertainment.github.io/ie/holiday-jukebox.html';link.textContent='Open original InAct Jukebox';link.target='_blank';link.rel='noopener';
  const head=player.querySelector('.holiday-top');if(head)head.after(link);else player.prepend(link);
 }
+
+// Keep the existing animated control, and reconnect it if an earlier navigation script detached its handler.
+const jukeboxButton=$('.quicknav .dock-jukebox')||$('#guideDock .dock-jukebox');
+if(jukeboxButton&&player){
+ const original='https://inactentertainment.github.io/ie/holiday-jukebox.html';
+ const frame=player.querySelector('iframe');
+ if(frame){frame.dataset.src=original;frame.setAttribute('title','InAct Entertainment original jukebox');}
+ if(typeof jukeboxButton.onclick!=='function'){
+  jukeboxButton.addEventListener('click',()=>{
+   const opening=!player.classList.contains('open');
+   player.classList.toggle('open',opening);
+   if(frame)frame.src=opening?original:'about:blank';
+   jukeboxButton.setAttribute('aria-expanded',String(opening));
+  });
+ }
+}
 function removeBlockByTitle(pattern){
  for(const el of $$('h1,h2,h3,h4,h5,summary')){
  if(!pattern.test(clean(el.textContent)))continue;
