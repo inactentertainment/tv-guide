@@ -23,10 +23,11 @@ if(nba){
 }
 const heading=$('.section-title',sports);
 if(heading)heading.textContent='Basketball';
-const basketballTitle=make('h2','tvguide-subtitle','Basketball');
+const basketballTitle=heading||make('h2','tvguide-subtitle','Basketball');
 basketballTitle.id='basketball';
+basketballTitle.classList.add('tvguide-subtitle');
 const schedule=$('.schedule',sports);
-if(schedule)sports.insertBefore(basketballTitle,schedule);else sports.prepend(basketballTitle);
+if(!heading){if(schedule)sports.insertBefore(basketballTitle,schedule);else sports.prepend(basketballTitle);}
 // Move the existing boxing list, preserving card rendering and event links, into its own Fights section.
 const boxing=$('#boxingList');
 const fights=make('section',sepClass+' fights-section');
@@ -94,6 +95,8 @@ for(let wk=12;wk<=17;wk++)schedules.append(link('Week '+wk,'https://www.nfl.com/
 football.append(schedules);
 const anchor=schedule||nba||sports.lastElementChild;
 if(anchor){anchor.after(fights);fights.after(football)}else sports.append(fights,football);
+// Avoid extra sports explainers; retain clean approved section layout.
+for(const extra of $('.sport-clips-note,.notice2',sports))extra.remove();
 // Existing promotional text and redundant boxing headings are suppressed without altering the movie cards.
 for(const el of $$('h1,h2,h3,h4',sports)){
  if(el===heading||el===basketballTitle||fights.contains(el)||football.contains(el))continue;
