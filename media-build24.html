@@ -59,7 +59,7 @@ if(!Number.isFinite(film.score) && (film.score===null||film.score===undefined||f
 }
 html=html.replace(match[0],match[1]+JSON.stringify(catalog)+match[3]);
 html=html.replace("if('IntersectionObserver'in window){const ob=","if(false){const ob=");
-const scripts=['media-build11-enhancements.js?v=1','media-build17-sports.js?v=1','media-build10.js?v=3','media-build17-posters.js?v=2','media-build11-trailers.js?v=3','media-build13-jukebox.js?v=2','media-build12-trailers.js?v=1','media-build17-navfix.js?v=1','media-build17-qa.js?v=2','media-build19-previews.js?v=1','media-build24-video-fallback.js?v=1','media-build23-fixes.js?v=3','media-build25-sports-catalog.js?v=5','media-sticky-sports-nav.js?v=1','media-guide-refinements.js?v=3','media-tennis-section.js?v=3','media-ie-jukebox-connection.js?v=1'];
+const scripts=['media-build11-enhancements.js?v=1','media-build17-sports.js?v=1','media-build10.js?v=3','media-build17-posters.js?v=2','media-build11-trailers.js?v=3','media-build13-jukebox.js?v=2','media-build12-trailers.js?v=1','media-build17-navfix.js?v=1','media-build17-qa.js?v=2','media-build19-previews.js?v=1','media-build24-video-fallback.js?v=1','media-build23-fixes.js?v=3','media-build25-sports-catalog.js?v=5','media-sticky-sports-nav.js?v=1','media-guide-refinements.js?v=3','media-tennis-section.js?v=4','media-ie-jukebox-connection.js?v=1'];
 const insert=scripts.map(x=>'<script defer src="./'+x+'"></'+'script>').join('');
 html=html.replace(/<\/body>\s*<\/html>\s*$/i,insert+'</body></html>');
 document.open();document.write(html);document.close();
