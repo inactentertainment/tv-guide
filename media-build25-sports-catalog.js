@@ -104,7 +104,7 @@ for(const el of $$('h1,h2,h3,h4',sports)){
 const ball='<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="19" fill="#b7783c" stroke="#4a2e1b" stroke-width="2.3"/><path d="M6 24h36M24 5v38M9 13Q24 24 9 35M39 13Q24 24 39 35" fill="none" stroke="#432819" stroke-width="2.3"/></svg>';
 const glove='<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M13 33C7 26 8 16 16 11c4-4 11-5 16-1 4 3 6 9 4 13-2 4-5 7-5 11l-1 5H15z" fill="#a34233" stroke="#5c2821" stroke-width="2.3"/><path d="M16 33q7 5 15-1M15 39h15M15 19c-3 2-3 7-1 10" stroke="#e8bb88" stroke-width="2" fill="none"/><path d="M17 39h14v5H17z" fill="#633326" stroke="#4d2920" stroke-width="1.6"/></svg>';
 const footballIcon='<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 32C6 17 21 7 42 11c0 18-14 31-34 27z" fill="#84502f" stroke="#42291c" stroke-width="2.4"/><path d="M13 32 34 17M19 24l7 7M24 20l7 7M29 16l7 7" stroke="#e9d8b5" stroke-width="2.1" fill="none"/><path d="M8 34q5-2 6 4M35 11q2 5 6 6" stroke="#f2e4c8" stroke-width="2" fill="none"/></svg>';
-const navSources=$$('a[href="#sports"]');
+const navSources=$('a[href="#sports"]',document.querySelector('.quicknav')||document.querySelector('#guideDock')||document.querySelector('.toplogos')||document);
 const iconSpecs=[['Basketball','#basketball',ball],['Fights','#fights',glove],['Football','#football',footballIcon]];
 const targets=navSources.length?navSources:$$('.brand.sports');
 for(const src of targets){
