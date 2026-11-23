@@ -39,6 +39,11 @@ if(boxing){
  boxing.hidden=true;
 }
 const fightsData=[
+ {date:'2026-11-28',title:'Agit Kabayel vs. Nelson Hysa',detail:'WBC heavyweight boxing · Düsseldorf, Germany · DAZN',url:'https://www.boxingscene.com/schedule',kind:'Boxing'},
+ {date:'2026-12-12',title:'Dmitry Bivol vs. Callum Smith',detail:'Unified light heavyweight boxing · Yekaterinburg, Russia',url:'https://www.cbssports.com/boxing/news/boxing-schedule-for-2026-dates-tyson-fury-vs-anthony-joshua-david-benavidez-dmitry-bivol/',kind:'Boxing'},
+ {date:'2026-12-12',title:'Erislandy Lara vs. Tim Tszyu',detail:'WBA middleweight boxing · Gold Coast, Australia · DAZN',url:'https://www.cbssports.com/boxing/news/boxing-schedule-for-2026-dates-tyson-fury-vs-anthony-joshua-david-benavidez-dmitry-bivol/',kind:'Boxing'},
+ {date:'2026-12-19',title:'Devin Haney vs. Liam Paro',detail:'Unified welterweight boxing · San Francisco · DAZN',url:'https://www.cbssports.com/boxing/news/boxing-schedule-for-2026-dates-tyson-fury-vs-anthony-joshua-david-benavidez-dmitry-bivol/',kind:'Boxing'},
+ {date:'2026-12-19',title:'Anthony Cacace vs. Nick Ball',detail:'WBA junior lightweight boxing · Belfast · DAZN',url:'https://www.cbssports.com/boxing/news/boxing-schedule-for-2026-dates-tyson-fury-vs-anthony-joshua-david-benavidez-dmitry-bivol/',kind:'Boxing'},
  {date:'2026-12-05',title:'David Benavidez vs. Michal Cieslak',detail:'Cruiserweight title unification · Glendale, Arizona · DAZN / Prime Video PPV',url:'https://www.premierboxingchampions.com/events/391735',kind:'Boxing'},
  {date:'2026-12-05',title:'Vergil Ortiz Jr. vs. Keith Thurman',detail:'Boxing co-main event · Glendale, Arizona',url:'https://www.premierboxingchampions.com/events/391735',kind:'Boxing'},
  {date:'2026-12-05',title:'UFC Fight Night: Israel Adesanya vs. Shara Magomedov',detail:'Mixed martial arts · Riyadh, Saudi Arabia · Paramount+',url:'https://www.ufc.com/events',kind:'UFC'},
@@ -150,22 +155,7 @@ const netflixItem={
  trailerPage:'https://www.netflix.com/tudum/articles/tyler-perry-give-me-some-sugah',
  facets:['Black Cinema','Drama','Family']
 };
-if(!card&&firstNetflix){
- card=firstNetflix.cloneNode(true);
- card.dataset.key='Netflix|Movies|Give Me Some Sugah';
- // Clone only structural elements; replace data, copy, media and all state-bearing identity attributes.
- for(const el of $$('[data-title]',card))el.dataset.title=netflixItem.title;
- for(const el of $$('[data-key]',card))el.dataset.key=card.dataset.key;
- for(const el of $$('[data-platform]',card))el.dataset.platform='Netflix';
- const poster=$('img.poster',card);if(poster){poster.src=netflixItem.poster;poster.alt='Official Netflix promotional image for Give Me Some Sugah';poster.onerror=()=>{poster.remove()}}
- const head=$('h2,h3,.movie-title,.cardtitle,.title',card);if(head)head.textContent=netflixItem.title;
- const summary=$('.summary',card);if(summary)summary.textContent=netflixItem.longDesc;
- const cast=$('.cast',card);if(cast)cast.textContent=netflixItem.cast;
- const fallback=$('.coverfallback',card);if(fallback)fallback.textContent=netflixItem.title;
- const trailer=$('.trailerBtn',card);if(trailer){trailer.dataset.title=netflixItem.title;trailer.dataset.platform='Netflix';trailer.dataset.id='';trailer.textContent='Watch Official Trailer';}
- const rating=$('.score',card);if(rating)rating.textContent='Coming soon';
- firstNetflix.before(card);
-}else if(card&&firstNetflix&&card!==firstNetflix){firstNetflix.before(card)}
+if(card&&firstNetflix&&card!==firstNetflix)firstNetflix.before(card);
 if(card){
  const label=make('span','tvguide-coming-label','Coming soon · Dec 16');
  const heading=$('h2,h3,.movie-title,.cardtitle,.title',card)||card.firstElementChild;
@@ -179,9 +169,6 @@ if(card){
  button.onclick=event=>{event.preventDefault();event.stopImmediatePropagation();window.open(netflixItem.trailerPage,'_blank','noopener,noreferrer')};
  }
 }
-// Append to the catalog data so search/audits can find the added title; avoid duplicate title.
-if(!catalog.items.some(i=>normalize(i.title)===normalize(netflixItem.title)&&i.platform==='Netflix'))catalog.items.unshift(netflixItem);
-data.textContent=JSON.stringify(catalog);
 // Keep footer minimal but preserve substantive legal requirements if present.
 for(const footer of $$('footer')){
  const old=footer.textContent;
