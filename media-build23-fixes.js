@@ -47,8 +47,8 @@ if(heading)heading.textContent=item.title+' — Official Publisher Preview';
 box.replaceChildren();box.classList.add('media-picker');
 const wrap=document.createElement('section');wrap.style.cssText='padding:22px 18px;text-align:center;border:1px solid #bc9b62;border-radius:10px;background:#12223a';
 const label=document.createElement('p');label.textContent=source.note||'Official publisher page';label.className='playnote';
-const explanation=document.createElement('p');explanation.className='playnote';explanation.textContent='The official preview is on its publisher’s site. It is not confirmed embeddable here, so this panel avoids showing an unrelated video.';
-const action=document.createElement('a');action.className='mini media-link';action.textContent='Watch on official publisher site';action.href=source.url;action.target='_blank';action.rel='noopener noreferrer';
+const explanation=document.createElement('p');explanation.className='playnote';explanation.textContent=source.url.includes('youtube.com/results')?'This title needs a verified trailer. You can open an exact-title video search if you want, without leaving the guide automatically.':'The official preview is on its publisher’s site. It is not confirmed embeddable here, so this panel avoids showing an unrelated video.';
+const action=document.createElement('a');action.className='mini media-link';action.textContent=source.url.includes('youtube.com/results')?'Search for this title’s preview':'Watch on official publisher site';action.href=source.url;action.target='_blank';action.rel='noopener noreferrer';
 wrap.append(label,explanation,action);box.append(wrap);
 modal.classList.add('open');document.body.classList.add('noscroll');
 }
@@ -67,7 +67,7 @@ if(mode==='connected'){
 }
 const year=(String(item.genre||'').match(/\b(?:19|20)\d{2}\b/)||[])[0]||'';
 const search=[item.title,year,item.cat==='Series'?'series':'film','trailer'].filter(Boolean).join(' ');
-window.open('https://www.youtube.com/results?search_query='+encodeURIComponent(search),'_blank','noopener,noreferrer');
+publisherPanel(item,{url:'https://www.youtube.com/results?search_query='+encodeURIComponent(search),note:'No confirmed official trailer or embeddable preview has been identified for this exact title and edition.'});
 },true);
 const sports=document.getElementById('sports');
 if(sports){
