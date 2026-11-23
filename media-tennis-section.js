@@ -79,7 +79,14 @@ function renderAvatar(name,wiki,container){
   };im.src=url;
  }).catch(()=>{});
 }
-function highlightURL(p){return 'https://www.youtube.com/results?search_query='+encodeURIComponent(p.highlight)}
+const officialHighlights={
+'Coco Gauff':'https://www.usopen.org/en_US/video/watch/2026/2026-us-open-player-spotlight-coco-gauff/17890107671177820',
+'Naomi Osaka':'https://www.wtatennis.com/videos/4599556/osaka-saves-triple-set-point-vs-paolini-advances-to-tokyo-second-round',
+'Taylor Townsend':'https://www.wtatennis.com/videos/doubles',
+'Frances Tiafoe':'https://www.usopen.org/en_US/video/watch/2026/vacherot-vs-tiafoe-extended-highlights-2026-round-3/17886569732794214',
+'Ben Shelton':'https://www.atptour.com/en/video/highlights-shelton-saves-3-championship-points-vs-fritz-for-dallas-2026-title'
+};
+function highlightURL(p){return officialHighlights[p.name]||'https://www.youtube.com/results?search_query='+encodeURIComponent(p.highlight)}
 for(const p of players){
  const card=E('article','tvtennis-player');
  renderAvatar(p.name,p.wiki,card);
