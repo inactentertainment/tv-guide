@@ -65,14 +65,14 @@ function showBadge(box,name,kind){
  const code=nfl[name];
  if(code)img.src='https://a.espncdn.com/i/teamlogos/nfl/500/'+code+'.png';else img.src='';
  }else{
- img.src='https://en.wikipedia.org/wiki/Special:Redirect/file/'+encodeURIComponent(name+'.jpg');
+ img.src='';
  // Resolve exact-person Wikipedia summary for a verified portrait. Do not rely on the guessed URL.
  fetch('https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(name)).then(r=>r.ok?r.json():null).then(p=>{
  if(!p?.thumbnail?.source||!p.title||clean(p.title).toLowerCase()!==clean(name).toLowerCase())throw Error('No exact portrait');
- img.src=p.thumbnail.source;
+ img.src=p.thumbnail.source;if(alt.isConnected)alt.replaceWith(img);
  }).catch(()=>{img.remove();if(!alt.isConnected)slot.insertBefore(alt,label)});
  }
- if(img.src)slot.append(img);else slot.append(alt);
+ if(kind==='football'&&img.src)slot.append(img);else slot.append(alt);
  slot.append(label);box.append(slot);
 }
 for(const kind of ['fights','football']){
