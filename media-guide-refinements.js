@@ -94,7 +94,7 @@ for(const kind of ['fights','football']){
 }
 const known=[
  {match:'David Benavidez',id:'e0aJReDWcMY',caption:'Benavidez vs. Gilberto Ramírez · May 2026 highlights (previous fight)'},
- {match:'Tyson Fury vs. Anthony Joshua',id:'9ZW2GSWyiaw',caption:'Independent match-up discussion / press-conference-style preview; not event footage'},
+ {match:'Tyson Fury vs. Anthony Joshua',id:'MrPiIT23Jb8',caption:'Anthony Joshua vs. Kristian Prenga · July 2026 highlights (previous fight, DAZN)'},
  {match:'Erislandy Lara',id:'0gMfvq7z_Io',caption:'Related boxer footage — actual opponent and date may differ'}
 ];
 function openInPage(title,video){
