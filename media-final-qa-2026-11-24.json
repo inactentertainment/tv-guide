@@ -1,7 +1,7 @@
 {
   "title": "Williams TV Guide three-build audit — repository verified, live browser access blocked",
   "asOf": "2026-11-24",
-  "currentGuide": "https://inactentertainment.github.io/tv-guide/media-build24.html?v=43",
+  "currentGuide": "https://inactentertainment.github.io/tv-guide/media-build24.html?v=44",
   "liveTestPage": "https://inactentertainment.github.io/tv-guide/tv-guide-live-acceptance.html",
   "catalogCount": 170,
   "summary": {
@@ -15,8 +15,10 @@
       "official_publisher_page": 4,
       "catalog_video_id": 86,
       "identified_video_candidate": 11,
-      "no_explicit_video_mapping": 20,
+      "in_guide_youtube_candidate": 5,
+      "in_guide_vimeo_trailer": 1,
       "publisher_link": 4,
+      "publisher_page_only": 14,
       "historical_commons_video": 3
     },
     "criticScores": {
@@ -27,112 +29,13 @@
     "originalWithoutVideoMappings": 67,
     "newlyMappedCards": 29,
     "addedFromThisPass": 18,
-    "remainingWithoutExplicitMedia": 20,
-    "criticUnrated": 15
+    "remainingWithoutExplicitMedia": 0,
+    "criticUnrated": 15,
+    "publisherPageOnly": 22,
+    "browserPlaybackUnverified": 170
   },
   "outstanding": {
-    "videosWithoutExplicitVerifiedMediaMapping": [
-      {
-        "title": "When a Witness Recants",
-        "platform": "HBO Max",
-        "category": "Movies"
-      },
-      {
-        "title": "This Is Not a War Story",
-        "platform": "HBO Max",
-        "category": "Movies"
-      },
-      {
-        "title": "The Dick Van Dyke Show",
-        "platform": "Tubi",
-        "category": "Series"
-      },
-      {
-        "title": "The Twilight Zone",
-        "platform": "Tubi",
-        "category": "Series"
-      },
-      {
-        "title": "21 Jump Street",
-        "platform": "Tubi",
-        "category": "Series"
-      },
-      {
-        "title": "Highway to Heaven",
-        "platform": "Tubi",
-        "category": "Series"
-      },
-      {
-        "title": "Forensic Files",
-        "platform": "Tubi",
-        "category": "Series"
-      },
-      {
-        "title": "Cold Case Files",
-        "platform": "Tubi",
-        "category": "Series"
-      },
-      {
-        "title": "Alfred Hitchcock Presents",
-        "platform": "Tubi",
-        "category": "Series"
-      },
-      {
-        "title": "Charade",
-        "platform": "Tubi",
-        "category": "Movies"
-      },
-      {
-        "title": "The Stranger",
-        "platform": "Tubi",
-        "category": "Movies"
-      },
-      {
-        "title": "D.O.A.",
-        "platform": "Tubi",
-        "category": "Movies"
-      },
-      {
-        "title": "The 39 Steps",
-        "platform": "Tubi",
-        "category": "Movies"
-      },
-      {
-        "title": "The Jackie Robinson Story",
-        "platform": "Tubi",
-        "category": "Black Cinema"
-      },
-      {
-        "title": "Carmen Jones",
-        "platform": "Tubi",
-        "category": "Black Cinema"
-      },
-      {
-        "title": "The Blood of Jesus",
-        "platform": "Tubi",
-        "category": "Black Cinema"
-      },
-      {
-        "title": "Within Our Gates",
-        "platform": "Tubi",
-        "category": "Black Cinema"
-      },
-      {
-        "title": "Santa Claus Conquers the Martians",
-        "platform": "Tubi",
-        "category": "Christmas"
-      },
-      {
-        "title": "The Great Rupert",
-        "platform": "Tubi",
-        "category": "Christmas"
-      },
-      {
-        "title": "A Christmas Carol",
-        "platform": "Tubi",
-        "category": "Christmas"
-      }
-    ],
+    "videosWithoutExplicitVerifiedMediaMapping": [],
     "scoresWithoutVerifiedNumericConsensus": [
       {
         "title": "The Man with the Bag",
@@ -373,8 +276,10 @@
       "category": "Movies",
       "poster": "existing_asset",
       "imdb": null,
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "in_guide_youtube_candidate",
+      "score": "present",
+      "videoId": "CV04IYt-n_g",
+      "videoSource": "HBO Max official 2026 documentary trailer"
     },
     {
       "title": "This Is Not a War Story",
@@ -382,8 +287,9 @@
       "category": "Movies",
       "poster": "existing_asset",
       "imdb": null,
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "in_guide_vimeo_trailer",
+      "score": "present",
+      "videoSource": "Vimeo original film trailer"
     },
     {
       "title": "A Black Lady Sketch Show",
@@ -1375,8 +1281,9 @@
       "category": "Series",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0054533",
-      "video": "no_explicit_video_mapping",
-      "score": "not_sourced"
+      "video": "publisher_page_only",
+      "score": "not_sourced",
+      "videoSource": "https://www.pbs.org/video/what-made-the-opening-credits-of-the-dick-van-dyke-show-special-vvlegk/"
     },
     {
       "title": "The Carol Burnett Show",
@@ -1395,8 +1302,10 @@
       "category": "Series",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0052520",
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "in_guide_youtube_candidate",
+      "score": "present",
+      "videoId": "p1E7kPOMwHk",
+      "videoSource": "Paramount+ official original 1959 Twilight Zone retrospective highlight reel, not a 2019 reboot or original trailer"
     },
     {
       "title": "21 Jump Street",
@@ -1404,8 +1313,9 @@
       "category": "Series",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0092312",
-      "video": "no_explicit_video_mapping",
-      "score": "not_sourced"
+      "video": "publisher_page_only",
+      "score": "not_sourced",
+      "videoSource": "https://www.rottentomatoes.com/tv/21_jump_street/s01"
     },
     {
       "title": "Highway to Heaven",
@@ -1413,8 +1323,9 @@
       "category": "Series",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0086730",
-      "video": "no_explicit_video_mapping",
-      "score": "not_sourced"
+      "video": "publisher_page_only",
+      "score": "not_sourced",
+      "videoSource": "https://www.primevideo.com/detail/0PGH7X3W8Z3KZS7KLUI4QRKRGL"
     },
     {
       "title": "The Rockford Files",
@@ -1433,8 +1344,10 @@
       "category": "Series",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0247882",
-      "video": "no_explicit_video_mapping",
-      "score": "not_sourced"
+      "video": "in_guide_youtube_candidate",
+      "score": "not_sourced",
+      "videoId": "WO0_SGEmfcM",
+      "videoSource": "FilmRise True Crime official original-series full episode, not a trailer"
     },
     {
       "title": "Cold Case Files",
@@ -1442,8 +1355,10 @@
       "category": "Series",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0426666",
-      "video": "no_explicit_video_mapping",
-      "score": "not_sourced"
+      "video": "in_guide_youtube_candidate",
+      "score": "not_sourced",
+      "videoId": "jwI_UY8wc0g",
+      "videoSource": "A&E official original-series full-episode marathon, not a trailer"
     },
     {
       "title": "Alfred Hitchcock Presents",
@@ -1451,8 +1366,10 @@
       "category": "Series",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0047708",
-      "video": "no_explicit_video_mapping",
-      "score": "not_sourced"
+      "video": "in_guide_youtube_candidate",
+      "score": "not_sourced",
+      "videoId": "g1XLiVYwnME",
+      "videoSource": "Hitchcock Presents official original-series clip, not a trailer"
     },
     {
       "title": "Night of the Living Dead",
@@ -1480,8 +1397,9 @@
       "category": "Movies",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0056923",
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "publisher_page_only",
+      "score": "present",
+      "videoSource": "https://www.criterion.com/films/603"
     },
     {
       "title": "The General",
@@ -1500,8 +1418,9 @@
       "category": "Movies",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0038991",
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "publisher_page_only",
+      "score": "present",
+      "videoSource": "https://www.tcm.com/watchtcm/titles/24149"
     },
     {
       "title": "The Little Shop of Horrors",
@@ -1531,8 +1450,9 @@
       "category": "Movies",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0042369",
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "publisher_page_only",
+      "score": "present",
+      "videoSource": "https://www.tcm.com/watchtcm/titles/5855"
     },
     {
       "title": "Detour",
@@ -1550,8 +1470,9 @@
       "category": "Movies",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0026029",
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "publisher_page_only",
+      "score": "present",
+      "videoSource": "https://www.criterion.com/films/234-the-39-steps"
     },
     {
       "title": "The Jackie Robinson Story",
@@ -1559,8 +1480,9 @@
       "category": "Black Cinema",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0042609",
-      "video": "no_explicit_video_mapping",
-      "score": "sourced_patch"
+      "video": "publisher_page_only",
+      "score": "sourced_patch",
+      "videoSource": "https://www.tcm.com/watchtcm/titles/19169"
     },
     {
       "title": "Carmen Jones",
@@ -1568,8 +1490,9 @@
       "category": "Black Cinema",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0046828",
-      "video": "no_explicit_video_mapping",
-      "score": "sourced_patch"
+      "video": "publisher_page_only",
+      "score": "sourced_patch",
+      "videoSource": "https://vidiotsfoundation.org/movies/carmen-jones/"
     },
     {
       "title": "The Blood of Jesus",
@@ -1577,8 +1500,9 @@
       "category": "Black Cinema",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0033406",
-      "video": "no_explicit_video_mapping",
-      "score": "not_sourced"
+      "video": "publisher_page_only",
+      "score": "not_sourced",
+      "videoSource": "https://www.rottentomatoes.com/m/blood_of_jesus"
     },
     {
       "title": "Within Our Gates",
@@ -1586,9 +1510,10 @@
       "category": "Black Cinema",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0011870",
-      "video": "no_explicit_video_mapping",
+      "video": "publisher_page_only",
       "score": "sourced_patch",
-      "scoreBasis": "Rotten Tomatoes critic score (1920 film; five critic reviews)"
+      "scoreBasis": "Rotten Tomatoes critic score (1920 film; five critic reviews)",
+      "videoSource": "https://www.rottentomatoes.com/m/within_our_gates"
     },
     {
       "title": "Daughters of the Dust",
@@ -1616,8 +1541,9 @@
       "category": "Christmas",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0058548",
-      "video": "no_explicit_video_mapping",
-      "score": "sourced_patch"
+      "video": "publisher_page_only",
+      "score": "sourced_patch",
+      "videoSource": "https://www.americangenrefilm.com/home-videos/santa-claus-conquers-the-martians-other-holiday-hallucinations/"
     },
     {
       "title": "Beyond Tomorrow",
@@ -1634,8 +1560,9 @@
       "category": "Christmas",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0042524",
-      "video": "no_explicit_video_mapping",
-      "score": "not_sourced"
+      "video": "publisher_page_only",
+      "score": "not_sourced",
+      "videoSource": "https://www.imdb.com/title/tt0042524/videogallery/"
     },
     {
       "title": "A Christmas Carol",
@@ -1643,9 +1570,10 @@
       "category": "Christmas",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0087056",
-      "video": "no_explicit_video_mapping",
+      "video": "publisher_page_only",
       "score": "sourced_patch",
-      "scoreBasis": "Rotten Tomatoes 1984 George C. Scott adaptation · 50 reviews"
+      "scoreBasis": "Rotten Tomatoes 1984 George C. Scott adaptation · 50 reviews",
+      "videoSource": "https://www.primevideo.com/detail/0LPKRTRVW8X1G281M4J4C58C0N"
     },
     {
       "title": "Fences",
@@ -1848,10 +1776,16 @@
   ],
   "trailerPatchMappings": 83,
   "now": "2026-11-24",
-  "sourcePatchVersion": 11,
+  "sourcePatchVersion": 12,
   "notes": [
     "No media IDs inferred for an unrelated remake or different series; historical clips and publisher-only pages have separate status.",
     "Numerical critic scores are only filled with explicitly sourced edition-specific figures; other titles show unavailable.",
     "Live browser playback remained blocked by network; repository syntax and dependencies can be verified but cannot certify actual playback."
+  ],
+  "importantLimitations": [
+    "Every card has a media candidate, in-guide video, or title-specific preview/page; this is not a guarantee that every card has a verified embeddable trailer.",
+    "All 170 cards have poster assets or IMDb-image candidates, but every image has not been visually certified.",
+    "The copied IE jukebox and 17 source dependencies exist but real audio/video playback remains unverified owing to blocked browser access.",
+    "Critic scores are left unavailable for titles with no verifiable numeric critics consensus."
   ]
 }
