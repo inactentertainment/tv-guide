@@ -416,7 +416,8 @@
     "The Resort": "tt11897688",
     "Dr. Death": "tt9179552",
     "How the Grinch Stole Christmas": "tt0170016",
-    "Cold Case Files": "tt0426666"
+    "Cold Case Files": "tt0426666",
+    "A Christmas Carol": "tt0087056"
   },
   "notes": "Build 17 source-verified ratings applied only where Rotten Tomatoes publishes a score; NR displayed for titles without adequate critic reviews. Trailer IDs are source-matched but publisher embed restrictions can still apply. A Christmas Carol entry covers multiple editions, so no single edition's critic score is attributed to it. Build 18 verified YouTube source IDs and retains honest source labels for previews that are not original season trailers. Build 19: 7 title-specific videos (5 trailers and 2 plainly labeled official compilations); 16 candidate poster IDs matched by title and film/series release. Playback and poster HTTP loading are not asserted.",
   "auditVersion": 16,
@@ -455,6 +456,11 @@
       "score": 81,
       "basis": "Rotten Tomatoes Season 1; this is season-specific",
       "url": "https://www.rottentomatoes.com/tv/greenleaf/s01"
+    },
+    "A Christmas Carol": {
+      "score": 98,
+      "basis": "Rotten Tomatoes 1984 George C. Scott adaptation · 50 reviews",
+      "url": "https://www.rottentomatoes.com/m/1063489-christmas_carol"
     }
   },
   "posterQa": {
