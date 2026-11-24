@@ -1,7 +1,7 @@
 {
   "title": "Williams TV Guide three-build audit — repository verified, live browser access blocked",
   "asOf": "2026-11-24",
-  "currentGuide": "https://inactentertainment.github.io/tv-guide/media-build24.html?v=45",
+  "currentGuide": "https://inactentertainment.github.io/tv-guide/media-build24.html?v=46",
   "liveTestPage": "https://inactentertainment.github.io/tv-guide/tv-guide-live-acceptance.html",
   "catalogCount": 170,
   "summary": {
@@ -12,11 +12,11 @@
     "videos": {
       "verified_publisher_video_candidate": 29,
       "legacy_in_page_clip": 13,
-      "official_publisher_page": 4,
+      "in_guide_youtube_candidate": 11,
       "catalog_video_id": 86,
       "identified_video_candidate": 11,
-      "in_guide_youtube_candidate": 9,
       "in_guide_vimeo_trailer": 1,
+      "official_publisher_page": 2,
       "publisher_link": 4,
       "publisher_page_only": 10,
       "historical_commons_video": 3
@@ -31,7 +31,7 @@
     "addedFromThisPass": 18,
     "remainingWithoutExplicitMedia": 0,
     "criticUnrated": 15,
-    "publisherPageOnly": 18,
+    "publisherPageOnly": 16,
     "browserPlaybackUnverified": 170,
     "inPageArchiveVideoCandidates": 13,
     "cardsWithoutAnyMediaReference": 0
@@ -177,9 +177,10 @@
       "category": "Series",
       "poster": "existing_asset",
       "imdb": null,
-      "video": "official_publisher_page",
+      "video": "in_guide_youtube_candidate",
       "score": "present",
-      "mediaSource": "https://www.hbomax.com/video/watch/dcb45403-7aea-4865-8e76-88cf834d5716"
+      "mediaSource": "HBO official Deadwood original-series trailer, published April 19, 2017",
+      "videoId": "mFIojradr4Y"
     },
     {
       "title": "Chernobyl",
@@ -373,9 +374,10 @@
       "category": "Christmas",
       "poster": "existing_asset",
       "imdb": null,
-      "video": "official_publisher_page",
+      "video": "in_guide_youtube_candidate",
       "score": "present",
-      "mediaSource": "https://www.tcm.com/watchtcm/titles/2099"
+      "mediaSource": "Warner On Demand official 1983 A Christmas Story film trailer, published 2017",
+      "videoId": "CpuXbG7k2ME"
     },
     {
       "title": "Boys Go to Jupiter",
@@ -1786,7 +1788,7 @@
   ],
   "trailerPatchMappings": 83,
   "now": "2026-11-24",
-  "sourcePatchVersion": 13,
+  "sourcePatchVersion": 14,
   "notes": [
     "No media IDs inferred for an unrelated remake or different series; historical clips and publisher-only pages have separate status.",
     "Numerical critic scores are only filled with explicitly sourced edition-specific figures; other titles show unavailable.",
@@ -1803,19 +1805,11 @@
       "Charade",
       "Carmen Jones",
       "Santa Claus Conquers the Martians",
-      "A Christmas Carol"
+      "A Christmas Carol",
+      "Deadwood",
+      "A Christmas Story"
     ],
     "remainingPublisherPages": [
-      {
-        "title": "Deadwood",
-        "platform": "HBO Max",
-        "kind": "official_publisher_page"
-      },
-      {
-        "title": "A Christmas Story",
-        "platform": "HBO Max",
-        "kind": "official_publisher_page"
-      },
       {
         "title": "Columbo",
         "platform": "Peacock",
@@ -1898,6 +1892,7 @@
       }
     ],
     "liveBrowser": "Could not resolve GitHub Pages domain from runtime; user-side acceptance page provided",
-    "meaning": "All cards have media references, but embedded playback and visual poster accuracy are not certified by a live browser."
+    "meaning": "All cards have media references, but embedded playback and visual poster accuracy are not certified by a live browser.",
+    "liveBrowserStatus": "NOT VERIFIED. GitHub Pages hostname cannot be resolved in this runtime; use browser acceptance page to test playback and screenshots."
   }
 }
