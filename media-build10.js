@@ -25,7 +25,7 @@ let logo=document.createElement('img');logo.className='sport-badge';logo.src='ht
 const anchor=card.querySelector('.sport-top')||card.querySelector('.eventmain');if(anchor)anchor.insertAdjacentElement('afterend',badge);
 }
 const direct={'Good Omens':'gDoDy5ZWWcY','A Christmas Story':'etfV8MjPWXE'};
-window.addEventListener('click',event=>{const btn=event.target.closest?.('#platforms .trailerBtn');if(!btn||!direct[btn.dataset.title]||(btn.dataset.title==='Good Omens'&&btn.dataset.build23Media))return;
+window.addEventListener('click',event=>{const btn=event.target.closest?.('#platforms .trailerBtn');if(!btn||!direct[btn.dataset.title]||btn.dataset.build23Media==='connected')return;
 event.preventDefault();event.stopImmediatePropagation();const id=direct[btn.dataset.title],modal=document.getElementById('videoModal'),box=document.getElementById('videoBox');if(!modal||!box)return;
 document.getElementById('videoTitle').textContent=btn.dataset.title+' — Trailer';box.replaceChildren();box.classList.add('media-picker');
 const f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0';f.title=btn.dataset.title+' trailer';f.allow='autoplay;encrypted-media;picture-in-picture';f.allowFullscreen=true;f.style.cssText='width:100%;min-height:270px;aspect-ratio:16/9;border:0';box.append(f);
