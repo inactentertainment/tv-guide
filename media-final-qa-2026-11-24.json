@@ -1,7 +1,7 @@
 {
   "title": "Williams TV Guide three-build audit — repository verified, live browser access blocked",
   "asOf": "2026-11-24",
-  "currentGuide": "https://inactentertainment.github.io/tv-guide/media-build24.html?v=41",
+  "currentGuide": "https://inactentertainment.github.io/tv-guide/media-build24.html?v=42",
   "liveTestPage": "https://inactentertainment.github.io/tv-guide/tv-guide-live-acceptance.html",
   "catalogCount": 170,
   "summary": {
@@ -10,9 +10,9 @@
       "imdb_poster_candidate": 120
     },
     "videos": {
-      "verified_publisher_video_candidate": 28,
+      "verified_publisher_video_candidate": 29,
       "legacy_in_page_clip": 13,
-      "no_explicit_video_mapping": 39,
+      "no_explicit_video_mapping": 38,
       "catalog_video_id": 86,
       "publisher_link": 4
     },
@@ -22,7 +22,7 @@
       "sourced_patch": 9
     },
     "originalWithoutVideoMappings": 67,
-    "newlyMappedCards": 28
+    "newlyMappedCards": 29
   },
   "outstanding": {
     "videosWithoutExplicitVerifiedMediaMapping": [
@@ -55,11 +55,6 @@
         "title": "I Swear",
         "platform": "Netflix",
         "category": "Movies"
-      },
-      {
-        "title": "The Marvelous Mrs. Maisel",
-        "platform": "Prime Video",
-        "category": "Series"
       },
       {
         "title": "Brooklyn Nine-Nine",
@@ -877,8 +872,10 @@
       "category": "Series",
       "poster": "imdb_poster_candidate",
       "imdb": "tt5788792",
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "fOmwkTrW4OQ",
+      "source": "Prime Video official 2017 series trailer"
     },
     {
       "title": "Bosch",
@@ -1906,5 +1903,6 @@
       "video": "publisher_link",
       "score": "not_sourced"
     }
-  ]
+  ],
+  "trailerPatchMappings": 83
 }
