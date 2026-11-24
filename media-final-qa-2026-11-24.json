@@ -1,0 +1,1910 @@
+{
+  "title": "Williams TV Guide three-build audit — repository verified, live browser access blocked",
+  "asOf": "2026-11-24",
+  "currentGuide": "https://inactentertainment.github.io/tv-guide/media-build24.html?v=41",
+  "liveTestPage": "https://inactentertainment.github.io/tv-guide/tv-guide-live-acceptance.html",
+  "catalogCount": 170,
+  "summary": {
+    "posters": {
+      "existing_asset": 50,
+      "imdb_poster_candidate": 120
+    },
+    "videos": {
+      "verified_publisher_video_candidate": 28,
+      "legacy_in_page_clip": 13,
+      "no_explicit_video_mapping": 39,
+      "catalog_video_id": 86,
+      "publisher_link": 4
+    },
+    "criticScores": {
+      "present": 145,
+      "not_sourced": 16,
+      "sourced_patch": 9
+    },
+    "originalWithoutVideoMappings": 67,
+    "newlyMappedCards": 28
+  },
+  "outstanding": {
+    "videosWithoutExplicitVerifiedMediaMapping": [
+      {
+        "title": "Deadwood",
+        "platform": "HBO Max",
+        "category": "Series"
+      },
+      {
+        "title": "Mare of Easttown",
+        "platform": "HBO Max",
+        "category": "Series"
+      },
+      {
+        "title": "When a Witness Recants",
+        "platform": "HBO Max",
+        "category": "Movies"
+      },
+      {
+        "title": "This Is Not a War Story",
+        "platform": "HBO Max",
+        "category": "Movies"
+      },
+      {
+        "title": "A Christmas Story",
+        "platform": "HBO Max",
+        "category": "Christmas"
+      },
+      {
+        "title": "I Swear",
+        "platform": "Netflix",
+        "category": "Movies"
+      },
+      {
+        "title": "The Marvelous Mrs. Maisel",
+        "platform": "Prime Video",
+        "category": "Series"
+      },
+      {
+        "title": "Brooklyn Nine-Nine",
+        "platform": "Peacock",
+        "category": "Series"
+      },
+      {
+        "title": "Columbo",
+        "platform": "Peacock",
+        "category": "Series"
+      },
+      {
+        "title": "Bel-Air",
+        "platform": "Peacock",
+        "category": "Series"
+      },
+      {
+        "title": "The Best Man",
+        "platform": "Peacock",
+        "category": "Black Cinema"
+      },
+      {
+        "title": "Bel-Air",
+        "platform": "Peacock",
+        "category": "Black Cinema"
+      },
+      {
+        "title": "The Dick Van Dyke Show",
+        "platform": "Tubi",
+        "category": "Series"
+      },
+      {
+        "title": "The Carol Burnett Show",
+        "platform": "Tubi",
+        "category": "Series"
+      },
+      {
+        "title": "The Twilight Zone",
+        "platform": "Tubi",
+        "category": "Series"
+      },
+      {
+        "title": "21 Jump Street",
+        "platform": "Tubi",
+        "category": "Series"
+      },
+      {
+        "title": "Highway to Heaven",
+        "platform": "Tubi",
+        "category": "Series"
+      },
+      {
+        "title": "The Rockford Files",
+        "platform": "Tubi",
+        "category": "Series"
+      },
+      {
+        "title": "Forensic Files",
+        "platform": "Tubi",
+        "category": "Series"
+      },
+      {
+        "title": "Cold Case Files",
+        "platform": "Tubi",
+        "category": "Series"
+      },
+      {
+        "title": "Alfred Hitchcock Presents",
+        "platform": "Tubi",
+        "category": "Series"
+      },
+      {
+        "title": "Night of the Living Dead",
+        "platform": "Tubi",
+        "category": "Movies"
+      },
+      {
+        "title": "His Girl Friday",
+        "platform": "Tubi",
+        "category": "Movies"
+      },
+      {
+        "title": "Charade",
+        "platform": "Tubi",
+        "category": "Movies"
+      },
+      {
+        "title": "The General",
+        "platform": "Tubi",
+        "category": "Movies"
+      },
+      {
+        "title": "The Stranger",
+        "platform": "Tubi",
+        "category": "Movies"
+      },
+      {
+        "title": "The Little Shop of Horrors",
+        "platform": "Tubi",
+        "category": "Movies"
+      },
+      {
+        "title": "The Last Man on Earth",
+        "platform": "Tubi",
+        "category": "Movies"
+      },
+      {
+        "title": "D.O.A.",
+        "platform": "Tubi",
+        "category": "Movies"
+      },
+      {
+        "title": "Detour",
+        "platform": "Tubi",
+        "category": "Movies"
+      },
+      {
+        "title": "The 39 Steps",
+        "platform": "Tubi",
+        "category": "Movies"
+      },
+      {
+        "title": "The Jackie Robinson Story",
+        "platform": "Tubi",
+        "category": "Black Cinema"
+      },
+      {
+        "title": "Carmen Jones",
+        "platform": "Tubi",
+        "category": "Black Cinema"
+      },
+      {
+        "title": "The Blood of Jesus",
+        "platform": "Tubi",
+        "category": "Black Cinema"
+      },
+      {
+        "title": "Within Our Gates",
+        "platform": "Tubi",
+        "category": "Black Cinema"
+      },
+      {
+        "title": "Daughters of the Dust",
+        "platform": "Tubi",
+        "category": "Black Cinema"
+      },
+      {
+        "title": "Santa Claus Conquers the Martians",
+        "platform": "Tubi",
+        "category": "Christmas"
+      },
+      {
+        "title": "The Great Rupert",
+        "platform": "Tubi",
+        "category": "Christmas"
+      },
+      {
+        "title": "A Christmas Carol",
+        "platform": "Tubi",
+        "category": "Christmas"
+      }
+    ],
+    "scoresWithoutVerifiedNumericConsensus": [
+      {
+        "title": "The Man with the Bag",
+        "platform": "Prime Video"
+      },
+      {
+        "title": "The Dick Van Dyke Show",
+        "platform": "Tubi"
+      },
+      {
+        "title": "The Carol Burnett Show",
+        "platform": "Tubi"
+      },
+      {
+        "title": "21 Jump Street",
+        "platform": "Tubi"
+      },
+      {
+        "title": "Highway to Heaven",
+        "platform": "Tubi"
+      },
+      {
+        "title": "The Rockford Files",
+        "platform": "Tubi"
+      },
+      {
+        "title": "Forensic Files",
+        "platform": "Tubi"
+      },
+      {
+        "title": "Cold Case Files",
+        "platform": "Tubi"
+      },
+      {
+        "title": "Alfred Hitchcock Presents",
+        "platform": "Tubi"
+      },
+      {
+        "title": "The Blood of Jesus",
+        "platform": "Tubi"
+      },
+      {
+        "title": "Within Our Gates",
+        "platform": "Tubi"
+      },
+      {
+        "title": "Scrooge",
+        "platform": "Tubi"
+      },
+      {
+        "title": "Beyond Tomorrow",
+        "platform": "Tubi"
+      },
+      {
+        "title": "The Great Rupert",
+        "platform": "Tubi"
+      },
+      {
+        "title": "The Haves and the Have Nots",
+        "platform": "Tubi"
+      },
+      {
+        "title": "Give Me Some Sugah",
+        "platform": "Netflix"
+      }
+    ],
+    "postersWithoutAnyReference": [],
+    "embeddedPlaybackNotBrowserTested": true,
+    "imageCorrectnessNotBrowserVisuallyVerified": true
+  },
+  "sports": {
+    "officialLeagueSources": [
+      "https://www.nba.com/news/key-dates",
+      "https://www.nfl.com/schedules/2026/by-week/reg-13",
+      "https://www.ufc.com/event/ufc-335",
+      "https://www.premierboxingchampions.com/events/391735",
+      "https://www.unitedcup.com/en/about/broadcasters",
+      "https://www.wtt.com/schedule"
+    ],
+    "verification": "Specific featured dates checked against official sources; all highlight embed permissions, game images and entire event catalog remain visually unverified.",
+    "inGuideVerifiedRelatedPreviews": "PBC Benavidez–Cieslak press conference, PBC Ortiz–Thurman shared event press conference, UFC 335 UFC Español promotion"
+  },
+  "jukebox": {
+    "sourcePage": "ie-jukebox.html",
+    "externalAssets": 17,
+    "verifiedAssetsPresentInIERepository": 17,
+    "remotePlaybackStatus": "Not verified — live browser access blocked at network boundary",
+    "localBrowserAutomationAttempt": "Chromium received ERR_BLOCKED_BY_ADMINISTRATOR for GitHub Pages and IEPLR on 2026-11-24",
+    "manualAcceptanceTestPage": "tv-guide-live-acceptance.html"
+  },
+  "caveats": [
+    "A valid studio YouTube ID is not an embedding success test.",
+    "Posters are source-backed candidates, not visually checked matches.",
+    "Unmapped older films may have excerpts or public-domain footage instead of a modern official trailer.",
+    "No additional vendor or paid service was added."
+  ],
+  "records": [
+    {
+      "title": "The Knick",
+      "platform": "HBO Max",
+      "category": "Series",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "QXxDK0s8hL0",
+      "source": "Cinemax official Season 2 trailer; season-specific"
+    },
+    {
+      "title": "The Night Of",
+      "platform": "HBO Max",
+      "category": "Series",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "556N5vojtp0",
+      "source": "HBO verified Season 1 official trailer (2016)"
+    },
+    {
+      "title": "Show Me a Hero",
+      "platform": "HBO Max",
+      "category": "Series",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "legacy_in_page_clip",
+      "score": "present"
+    },
+    {
+      "title": "We Own This City",
+      "platform": "HBO Max",
+      "category": "Series",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "legacy_in_page_clip",
+      "score": "present"
+    },
+    {
+      "title": "Deadwood",
+      "platform": "HBO Max",
+      "category": "Series",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "Chernobyl",
+      "platform": "HBO Max",
+      "category": "Series",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "s9APLXM9Ei8",
+      "source": "HBO official 2019 trailer"
+    },
+    {
+      "title": "Band of Brothers",
+      "platform": "HBO Max",
+      "category": "Series",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Mare of Easttown",
+      "platform": "HBO Max",
+      "category": "Series",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "Marty Supreme",
+      "platform": "HBO Max",
+      "category": "Movies",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Lurker",
+      "platform": "HBO Max",
+      "category": "Movies",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "legacy_in_page_clip",
+      "score": "present"
+    },
+    {
+      "title": "Companion",
+      "platform": "HBO Max",
+      "category": "Movies",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "Qr_kX0D3DNA",
+      "source": "Warner Bros. official 2025 trailer"
+    },
+    {
+      "title": "Sorry, Baby",
+      "platform": "HBO Max",
+      "category": "Movies",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "Rc0jgWoZo9w",
+      "source": "A24 official 2025 trailer"
+    },
+    {
+      "title": "Bring Her Back",
+      "platform": "HBO Max",
+      "category": "Movies",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "kBskrYZfhw8",
+      "source": "A24 official 2025 trailer"
+    },
+    {
+      "title": "If I Had Legs I'd Kick You",
+      "platform": "HBO Max",
+      "category": "Movies",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "legacy_in_page_clip",
+      "score": "present"
+    },
+    {
+      "title": "When a Witness Recants",
+      "platform": "HBO Max",
+      "category": "Movies",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "This Is Not a War Story",
+      "platform": "HBO Max",
+      "category": "Movies",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "A Black Lady Sketch Show",
+      "platform": "HBO Max",
+      "category": "Black Cinema",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "legacy_in_page_clip",
+      "score": "present"
+    },
+    {
+      "title": "I May Destroy You",
+      "platform": "HBO Max",
+      "category": "Black Cinema",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "DTjlurdbNnw",
+      "source": "HBO verified official series trailer (2020)"
+    },
+    {
+      "title": "South Side",
+      "platform": "HBO Max",
+      "category": "Black Cinema",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "legacy_in_page_clip",
+      "score": "present"
+    },
+    {
+      "title": "Watchmen",
+      "platform": "HBO Max",
+      "category": "Black Cinema",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "legacy_in_page_clip",
+      "score": "present"
+    },
+    {
+      "title": "Going to Mars: The Nikki Giovanni Project",
+      "platform": "HBO Max",
+      "category": "Black Cinema",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "A Christmas Carol (1938)",
+      "platform": "HBO Max",
+      "category": "Christmas",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Shop Around the Corner",
+      "platform": "HBO Max",
+      "category": "Christmas",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Meet Me in St. Louis",
+      "platform": "HBO Max",
+      "category": "Christmas",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "A Christmas Story",
+      "platform": "HBO Max",
+      "category": "Christmas",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "Boys Go to Jupiter",
+      "platform": "HBO Max",
+      "category": "Christmas",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Queen's Gambit",
+      "platform": "Netflix",
+      "category": "Series",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Blue Eye Samurai",
+      "platform": "Netflix",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt13309742",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Black Doves",
+      "platform": "Netflix",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt27995113",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Diplomat",
+      "platform": "Netflix",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt17491088",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Baby Reindeer",
+      "platform": "Netflix",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt13649112",
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "eafm1gB6SCM",
+      "source": "Netflix official 2024 trailer"
+    },
+    {
+      "title": "Unbelievable",
+      "platform": "Netflix",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt7909970",
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "QTIkUzkbzQk",
+      "source": "Netflix official 2019 series trailer"
+    },
+    {
+      "title": "Maid",
+      "platform": "Netflix",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt11337908",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Dark",
+      "platform": "Netflix",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt5753856",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Stranger Things",
+      "platform": "Netflix",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt4574334",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Crown",
+      "platform": "Netflix",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt4786824",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "His Three Daughters",
+      "platform": "Netflix",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt28491891",
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "K0jwAP2fS1E",
+      "source": "Netflix official 2024 trailer"
+    },
+    {
+      "title": "Hit Man",
+      "platform": "Netflix",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt20215968",
+      "video": "legacy_in_page_clip",
+      "score": "present"
+    },
+    {
+      "title": "Train Dreams",
+      "platform": "Netflix",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt29768334",
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "_Nk8TrBHOrA",
+      "source": "Netflix official 2025 trailer"
+    },
+    {
+      "title": "Glass Onion: A Knives Out Mystery",
+      "platform": "Netflix",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt11564570",
+      "video": "legacy_in_page_clip",
+      "score": "present"
+    },
+    {
+      "title": "Wallace & Gromit: Vengeance Most Fowl",
+      "platform": "Netflix",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt17163970",
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "X0ZGf2B01uU",
+      "source": "Netflix verified 2024 official trailer"
+    },
+    {
+      "title": "Wake Up Dead Man: A Knives Out Mystery",
+      "platform": "Netflix",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt14364480",
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "0hc8yz5-d5Y",
+      "source": "Netflix official 2025 theatrical trailer"
+    },
+    {
+      "title": "Whiplash",
+      "platform": "Netflix",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt2582802",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The President's Cake",
+      "platform": "Netflix",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt36580119",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Forty-Year-Old Version",
+      "platform": "Netflix",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt10642834",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "I Swear",
+      "platform": "Netflix",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt31514146",
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "Supacell",
+      "platform": "Netflix",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt16283758",
+      "video": "legacy_in_page_clip",
+      "score": "present"
+    },
+    {
+      "title": "When They See Us",
+      "platform": "Netflix",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt7137906",
+      "video": "legacy_in_page_clip",
+      "score": "present"
+    },
+    {
+      "title": "Ma Rainey's Black Bottom",
+      "platform": "Netflix",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt10514222",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Da 5 Bloods",
+      "platform": "Netflix",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt9777644",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Forty-Year-Old Version",
+      "platform": "Netflix",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt10642834",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Jingle Jangle: A Christmas Journey",
+      "platform": "Netflix",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt7736496",
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "aYPUYVgwLWY",
+      "source": "Netflix official film trailer (2020)"
+    },
+    {
+      "title": "Robin Robin",
+      "platform": "Netflix",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt11332850",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Alien Xmas",
+      "platform": "Netflix",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt11332750",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "A Nonsense Christmas with Sabrina Carpenter",
+      "platform": "Netflix",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt33427273",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Klaus",
+      "platform": "Netflix",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt4729430",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Best Christmas Pageant Ever",
+      "platform": "Netflix",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt2347285",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Jingle Jangle: A Christmas Journey",
+      "platform": "Netflix",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt7736496",
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "aYPUYVgwLWY",
+      "source": "Netflix official film trailer (2020)"
+    },
+    {
+      "title": "The Marvelous Mrs. Maisel",
+      "platform": "Prime Video",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt5788792",
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "Bosch",
+      "platform": "Prime Video",
+      "category": "Series",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "vuVAP_4TQEY",
+      "source": "Prime Video verified Season 1 official trailer (2015)"
+    },
+    {
+      "title": "Undone",
+      "platform": "Prime Video",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt8101850",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "A Very English Scandal",
+      "platform": "Prime Video",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt6938856",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Underground Railroad",
+      "platform": "Prime Video",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt6704972",
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "_Pq5Usc_JDA",
+      "source": "Prime Video official 2021 trailer"
+    },
+    {
+      "title": "Fleabag",
+      "platform": "Prime Video",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt5687612",
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "I5Uv6cb9YRs",
+      "source": "Prime Video verified Season 1 official trailer (2016)"
+    },
+    {
+      "title": "The Expanse",
+      "platform": "Prime Video",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt3230854",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Boys",
+      "platform": "Prime Video",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt1190634",
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "M1bhOaLV4FU",
+      "source": "Prime Video UK official 2019 series trailer"
+    },
+    {
+      "title": "The English",
+      "platform": "Prime Video",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt11771270",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Good Omens",
+      "platform": "Prime Video",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt1869454",
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "kpKkh64jgPI",
+      "source": "Prime Video official 2026 final-season trailer · labeled season-specific"
+    },
+    {
+      "title": "Sound of Metal",
+      "platform": "Prime Video",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt5363618",
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "VFOrGkAvjAE",
+      "source": "Prime Video official film trailer (2020)"
+    },
+    {
+      "title": "Are You There God? It's Me, Margaret.",
+      "platform": "Prime Video",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt9185206",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Good Will Hunting",
+      "platform": "Prime Video",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0119217",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Big Sick",
+      "platform": "Prime Video",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt5462602",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Report",
+      "platform": "Prime Video",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt8236336",
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "qOTS-_tSc84",
+      "source": "Prime Video India official 2019 film trailer"
+    },
+    {
+      "title": "Manchester by the Sea",
+      "platform": "Prime Video",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt4034228",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Vast of Night",
+      "platform": "Prime Video",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt6803046",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Brittany Runs a Marathon",
+      "platform": "Prime Video",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt7671064",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Thirteen Lives",
+      "platform": "Prime Video",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt12262116",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Underground Railroad",
+      "platform": "Prime Video",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt6704972",
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "_Pq5Usc_JDA",
+      "source": "Prime Video official 2021 trailer"
+    },
+    {
+      "title": "The Burial",
+      "platform": "Prime Video",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt5648882",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Big Sick",
+      "platform": "Prime Video",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt5462602",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "A League of Their Own",
+      "platform": "Prime Video",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt8226360",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Twelve Years a Slave",
+      "platform": "Prime Video",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt2024544",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "American Fiction",
+      "platform": "Prime Video",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt23561236",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "It's a Wonderful Life",
+      "platform": "Prime Video",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0038650",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Man with the Bag",
+      "platform": "Prime Video",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt16995302",
+      "video": "legacy_in_page_clip",
+      "score": "not_sourced"
+    },
+    {
+      "title": "Candy Cane Lane",
+      "platform": "Prime Video",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt21328106",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Your Christmas or Mine?",
+      "platform": "Prime Video",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt21994906",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Holiday",
+      "platform": "Prime Video",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0457939",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Poker Face",
+      "platform": "Peacock",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt14269590",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Traitors",
+      "platform": "Peacock",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt15557874",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Resort",
+      "platform": "Peacock",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt11897688",
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "0DmeT1GLQn8",
+      "source": "Peacock verified 2022 official series trailer"
+    },
+    {
+      "title": "Dr. Death",
+      "platform": "Peacock",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt9179552",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Capture",
+      "platform": "Peacock",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt8201186",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Office",
+      "platform": "Peacock",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0386676",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Parks and Recreation",
+      "platform": "Peacock",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt1266020",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Brooklyn Nine-Nine",
+      "platform": "Peacock",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt2467372",
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "Columbo",
+      "platform": "Peacock",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt1466074",
+      "video": "no_explicit_video_mapping",
+      "score": "sourced_patch"
+    },
+    {
+      "title": "Bel-Air",
+      "platform": "Peacock",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt12878838",
+      "video": "no_explicit_video_mapping",
+      "score": "sourced_patch"
+    },
+    {
+      "title": "The Holdovers",
+      "platform": "Peacock",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt14849194",
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "AhKLpJmHhIg",
+      "source": "Focus Features official 2023 trailer"
+    },
+    {
+      "title": "Oppenheimer",
+      "platform": "Peacock",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt15398776",
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "bK6ldnjE3Y0",
+      "source": "Universal Pictures official 2023 trailer"
+    },
+    {
+      "title": "The Wild Robot",
+      "platform": "Peacock",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt29623480",
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "67vbA5ZJdKQ",
+      "source": "Universal Pictures official 2024 trailer"
+    },
+    {
+      "title": "The Super Mario Bros. Movie",
+      "platform": "Peacock",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt6718170",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Bikeriders",
+      "platform": "Peacock",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt21454134",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Northman",
+      "platform": "Peacock",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt11138512",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Black Phone",
+      "platform": "Peacock",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt7144666",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Get Out",
+      "platform": "Peacock",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt5052448",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Fabelmans",
+      "platform": "Peacock",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt14208870",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Bad Guys",
+      "platform": "Peacock",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt8115900",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Get Out",
+      "platform": "Peacock",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt5052448",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Best Man",
+      "platform": "Peacock",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0168501",
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "Bel-Air",
+      "platform": "Peacock",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt12878838",
+      "video": "no_explicit_video_mapping",
+      "score": "sourced_patch"
+    },
+    {
+      "title": "The Wiz",
+      "platform": "Peacock",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0078504",
+      "video": "legacy_in_page_clip",
+      "score": "present"
+    },
+    {
+      "title": "American Fiction",
+      "platform": "Peacock",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt23561236",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Holdovers",
+      "platform": "Peacock",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt14849194",
+      "video": "verified_publisher_video_candidate",
+      "score": "present",
+      "videoId": "AhKLpJmHhIg",
+      "source": "Focus Features official 2023 trailer"
+    },
+    {
+      "title": "How the Grinch Stole Christmas",
+      "platform": "Peacock",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0170016",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Love Actually",
+      "platform": "Peacock",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0314331",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Last Christmas",
+      "platform": "Peacock",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt8623904",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Family Stone",
+      "platform": "Peacock",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0356680",
+      "video": "publisher_link",
+      "score": "present"
+    },
+    {
+      "title": "The Prisoner",
+      "platform": "Tubi",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0061287",
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Dick Van Dyke Show",
+      "platform": "Tubi",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0054533",
+      "video": "no_explicit_video_mapping",
+      "score": "not_sourced"
+    },
+    {
+      "title": "The Carol Burnett Show",
+      "platform": "Tubi",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0061240",
+      "video": "no_explicit_video_mapping",
+      "score": "not_sourced"
+    },
+    {
+      "title": "The Twilight Zone",
+      "platform": "Tubi",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0052520",
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "21 Jump Street",
+      "platform": "Tubi",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0092312",
+      "video": "no_explicit_video_mapping",
+      "score": "not_sourced"
+    },
+    {
+      "title": "Highway to Heaven",
+      "platform": "Tubi",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0086730",
+      "video": "no_explicit_video_mapping",
+      "score": "not_sourced"
+    },
+    {
+      "title": "The Rockford Files",
+      "platform": "Tubi",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0071042",
+      "video": "no_explicit_video_mapping",
+      "score": "not_sourced"
+    },
+    {
+      "title": "Forensic Files",
+      "platform": "Tubi",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0247882",
+      "video": "no_explicit_video_mapping",
+      "score": "not_sourced"
+    },
+    {
+      "title": "Cold Case Files",
+      "platform": "Tubi",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0426666",
+      "video": "no_explicit_video_mapping",
+      "score": "not_sourced"
+    },
+    {
+      "title": "Alfred Hitchcock Presents",
+      "platform": "Tubi",
+      "category": "Series",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0047708",
+      "video": "no_explicit_video_mapping",
+      "score": "not_sourced"
+    },
+    {
+      "title": "Night of the Living Dead",
+      "platform": "Tubi",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0063350",
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "His Girl Friday",
+      "platform": "Tubi",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0032599",
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "Charade",
+      "platform": "Tubi",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0056923",
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "The General",
+      "platform": "Tubi",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0017925",
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "The Stranger",
+      "platform": "Tubi",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0038991",
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "The Little Shop of Horrors",
+      "platform": "Tubi",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0054033",
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "The Last Man on Earth",
+      "platform": "Tubi",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0058700",
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "D.O.A.",
+      "platform": "Tubi",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0042369",
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "Detour",
+      "platform": "Tubi",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0037638",
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "The 39 Steps",
+      "platform": "Tubi",
+      "category": "Movies",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0026029",
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "The Jackie Robinson Story",
+      "platform": "Tubi",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0042609",
+      "video": "no_explicit_video_mapping",
+      "score": "sourced_patch"
+    },
+    {
+      "title": "Carmen Jones",
+      "platform": "Tubi",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0046828",
+      "video": "no_explicit_video_mapping",
+      "score": "sourced_patch"
+    },
+    {
+      "title": "The Blood of Jesus",
+      "platform": "Tubi",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0033406",
+      "video": "no_explicit_video_mapping",
+      "score": "not_sourced"
+    },
+    {
+      "title": "Within Our Gates",
+      "platform": "Tubi",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0011870",
+      "video": "no_explicit_video_mapping",
+      "score": "not_sourced"
+    },
+    {
+      "title": "Daughters of the Dust",
+      "platform": "Tubi",
+      "category": "Black Cinema",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0104057",
+      "video": "no_explicit_video_mapping",
+      "score": "present"
+    },
+    {
+      "title": "Scrooge",
+      "platform": "Tubi",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0026972",
+      "video": "publisher_link",
+      "score": "not_sourced"
+    },
+    {
+      "title": "Santa Claus Conquers the Martians",
+      "platform": "Tubi",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0058548",
+      "video": "no_explicit_video_mapping",
+      "score": "sourced_patch"
+    },
+    {
+      "title": "Beyond Tomorrow",
+      "platform": "Tubi",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0032247",
+      "video": "publisher_link",
+      "score": "not_sourced"
+    },
+    {
+      "title": "The Great Rupert",
+      "platform": "Tubi",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0042524",
+      "video": "no_explicit_video_mapping",
+      "score": "not_sourced"
+    },
+    {
+      "title": "A Christmas Carol",
+      "platform": "Tubi",
+      "category": "Christmas",
+      "poster": "imdb_poster_candidate",
+      "imdb": "tt0087056",
+      "video": "no_explicit_video_mapping",
+      "score": "sourced_patch",
+      "scoreBasis": "Rotten Tomatoes 1984 George C. Scott adaptation · 50 reviews"
+    },
+    {
+      "title": "Fences",
+      "platform": "Tubi",
+      "category": "Black Cinema",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Last Black Man in San Francisco",
+      "platform": "Tubi",
+      "category": "Black Cinema",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Aftersun",
+      "platform": "Tubi",
+      "category": "Movies",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "First Cow",
+      "platform": "Tubi",
+      "category": "Movies",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Legion",
+      "platform": "Tubi",
+      "category": "Series",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Empire",
+      "platform": "Tubi",
+      "category": "Black Cinema",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Greenleaf",
+      "platform": "Tubi",
+      "category": "Black Cinema",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "sourced_patch"
+    },
+    {
+      "title": "The Haves and the Have Nots",
+      "platform": "Tubi",
+      "category": "Black Cinema",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "not_sourced"
+    },
+    {
+      "title": "Menace II Society",
+      "platform": "Tubi",
+      "category": "Black Cinema",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Hustle & Flow",
+      "platform": "Tubi",
+      "category": "Black Cinema",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Juice",
+      "platform": "Tubi",
+      "category": "Black Cinema",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "New Jack City",
+      "platform": "Tubi",
+      "category": "Black Cinema",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Beverly Hills Cop",
+      "platform": "Tubi",
+      "category": "Black Cinema",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Creed",
+      "platform": "Tubi",
+      "category": "Black Cinema",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Creed II",
+      "platform": "Tubi",
+      "category": "Black Cinema",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Woman King",
+      "platform": "Tubi",
+      "category": "Black Cinema",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Star",
+      "platform": "Tubi",
+      "category": "Black Cinema",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "sourced_patch"
+    },
+    {
+      "title": "Everything Everywhere All at Once",
+      "platform": "Tubi",
+      "category": "Movies",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Farewell",
+      "platform": "Tubi",
+      "category": "Movies",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Florida Project",
+      "platform": "Tubi",
+      "category": "Movies",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "The Lighthouse",
+      "platform": "Tubi",
+      "category": "Movies",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "catalog_video_id",
+      "score": "present"
+    },
+    {
+      "title": "Give Me Some Sugah",
+      "platform": "Netflix",
+      "category": "Movies",
+      "poster": "existing_asset",
+      "imdb": null,
+      "video": "publisher_link",
+      "score": "not_sourced"
+    }
+  ]
+}
