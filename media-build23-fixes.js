@@ -26,7 +26,7 @@ const mode=override?.url&&!override.url.includes('youtube.com/results')?'externa
 button.classList.remove('media-connected','media-external','media-search','pending','unverified');
 button.classList.add('media-'+mode);
 button.dataset.build23Media=mode;button.style.opacity='1';
-if(mode==='connected'){button.dataset.id=id;button.textContent=override?.label||(button.textContent.toLowerCase().includes('preview')?'Watch Preview':'Watch Trailer');button.title=override?.note||'Video linked; embedding depends on publisher permissions.'}
+if(mode==='connected'){button.dataset.id=id;button.textContent=override?.label||(item.videoKind==='highlights'?'▶ Watch Highlights':item.videoKind==='preview'?'▶ Watch Preview':'▶ Watch Trailer');button.title=override?.note||item.videoSourceLabel||'Video linked; embedding depends on publisher permissions.'}
 else if(mode==='external'){button.textContent=override.label;button.title=override.note+' (opens an in-guide publisher preview panel)'}
 else{button.textContent='Find Title Preview';button.title='No confirmed direct video; opens title-specific search'}
 records.push({title:item.title,platform:item.platform,mode,id:valid(id)?id:''});
@@ -36,6 +36,7 @@ const modal=document.getElementById('videoModal'),box=document.getElementById('v
 const title=document.getElementById('videoTitle');if(title)title.textContent=item.title+' — '+label;
 box.replaceChildren();box.classList.add('media-picker');
 const iframe=document.createElement('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(id)+'?autoplay=1&rel=0';iframe.title=item.title+' '+label;iframe.allow='autoplay;encrypted-media;picture-in-picture';iframe.allowFullscreen=true;iframe.style.cssText='width:100%;aspect-ratio:16/9;min-height:270px;border:0';box.append(iframe);
+if(item.videoSourceLabel){const p=document.createElement('p');p.className='playnote';p.textContent='Source: '+item.videoSourceLabel+'. Playback within Williams TV Guide depends on video publisher permissions.';box.append(p)}
 const a=document.createElement('a');a.className='mini media-link';a.textContent='Watch directly on YouTube if blocked';a.href='https://www.youtube.com/watch?v='+id;a.target='_blank';a.rel='noopener noreferrer';box.append(a);
 modal.classList.add('open');document.body.classList.add('noscroll');
 }
