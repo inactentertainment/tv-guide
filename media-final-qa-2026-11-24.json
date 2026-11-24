@@ -1,7 +1,7 @@
 {
   "title": "Williams TV Guide three-build audit — repository verified, live browser access blocked",
   "asOf": "2026-11-24",
-  "currentGuide": "https://inactentertainment.github.io/tv-guide/media-build24.html?v=42",
+  "currentGuide": "https://inactentertainment.github.io/tv-guide/media-build24.html?v=43",
   "liveTestPage": "https://inactentertainment.github.io/tv-guide/tv-guide-live-acceptance.html",
   "catalogCount": 170,
   "summary": {
@@ -12,30 +12,26 @@
     "videos": {
       "verified_publisher_video_candidate": 29,
       "legacy_in_page_clip": 13,
-      "no_explicit_video_mapping": 38,
+      "official_publisher_page": 4,
       "catalog_video_id": 86,
-      "publisher_link": 4
+      "identified_video_candidate": 11,
+      "no_explicit_video_mapping": 20,
+      "publisher_link": 4,
+      "historical_commons_video": 3
     },
     "criticScores": {
       "present": 145,
-      "not_sourced": 16,
-      "sourced_patch": 9
+      "not_sourced": 15,
+      "sourced_patch": 10
     },
     "originalWithoutVideoMappings": 67,
-    "newlyMappedCards": 29
+    "newlyMappedCards": 29,
+    "addedFromThisPass": 18,
+    "remainingWithoutExplicitMedia": 20,
+    "criticUnrated": 15
   },
   "outstanding": {
     "videosWithoutExplicitVerifiedMediaMapping": [
-      {
-        "title": "Deadwood",
-        "platform": "HBO Max",
-        "category": "Series"
-      },
-      {
-        "title": "Mare of Easttown",
-        "platform": "HBO Max",
-        "category": "Series"
-      },
       {
         "title": "When a Witness Recants",
         "platform": "HBO Max",
@@ -47,47 +43,7 @@
         "category": "Movies"
       },
       {
-        "title": "A Christmas Story",
-        "platform": "HBO Max",
-        "category": "Christmas"
-      },
-      {
-        "title": "I Swear",
-        "platform": "Netflix",
-        "category": "Movies"
-      },
-      {
-        "title": "Brooklyn Nine-Nine",
-        "platform": "Peacock",
-        "category": "Series"
-      },
-      {
-        "title": "Columbo",
-        "platform": "Peacock",
-        "category": "Series"
-      },
-      {
-        "title": "Bel-Air",
-        "platform": "Peacock",
-        "category": "Series"
-      },
-      {
-        "title": "The Best Man",
-        "platform": "Peacock",
-        "category": "Black Cinema"
-      },
-      {
-        "title": "Bel-Air",
-        "platform": "Peacock",
-        "category": "Black Cinema"
-      },
-      {
         "title": "The Dick Van Dyke Show",
-        "platform": "Tubi",
-        "category": "Series"
-      },
-      {
-        "title": "The Carol Burnett Show",
         "platform": "Tubi",
         "category": "Series"
       },
@@ -107,11 +63,6 @@
         "category": "Series"
       },
       {
-        "title": "The Rockford Files",
-        "platform": "Tubi",
-        "category": "Series"
-      },
-      {
         "title": "Forensic Files",
         "platform": "Tubi",
         "category": "Series"
@@ -127,22 +78,7 @@
         "category": "Series"
       },
       {
-        "title": "Night of the Living Dead",
-        "platform": "Tubi",
-        "category": "Movies"
-      },
-      {
-        "title": "His Girl Friday",
-        "platform": "Tubi",
-        "category": "Movies"
-      },
-      {
         "title": "Charade",
-        "platform": "Tubi",
-        "category": "Movies"
-      },
-      {
-        "title": "The General",
         "platform": "Tubi",
         "category": "Movies"
       },
@@ -152,22 +88,7 @@
         "category": "Movies"
       },
       {
-        "title": "The Little Shop of Horrors",
-        "platform": "Tubi",
-        "category": "Movies"
-      },
-      {
-        "title": "The Last Man on Earth",
-        "platform": "Tubi",
-        "category": "Movies"
-      },
-      {
         "title": "D.O.A.",
-        "platform": "Tubi",
-        "category": "Movies"
-      },
-      {
-        "title": "Detour",
         "platform": "Tubi",
         "category": "Movies"
       },
@@ -193,11 +114,6 @@
       },
       {
         "title": "Within Our Gates",
-        "platform": "Tubi",
-        "category": "Black Cinema"
-      },
-      {
-        "title": "Daughters of the Dust",
         "platform": "Tubi",
         "category": "Black Cinema"
       },
@@ -256,10 +172,6 @@
       },
       {
         "title": "The Blood of Jesus",
-        "platform": "Tubi"
-      },
-      {
-        "title": "Within Our Gates",
         "platform": "Tubi"
       },
       {
@@ -360,8 +272,9 @@
       "category": "Series",
       "poster": "existing_asset",
       "imdb": null,
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "official_publisher_page",
+      "score": "present",
+      "mediaSource": "https://www.hbomax.com/video/watch/dcb45403-7aea-4865-8e76-88cf834d5716"
     },
     {
       "title": "Chernobyl",
@@ -389,8 +302,10 @@
       "category": "Series",
       "poster": "existing_asset",
       "imdb": null,
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "identified_video_candidate",
+      "score": "present",
+      "mediaId": "a-RkBkz45gs",
+      "mediaSource": "HBO Max Asia original limited-series official trailer (2021)"
     },
     {
       "title": "Marty Supreme",
@@ -550,8 +465,9 @@
       "category": "Christmas",
       "poster": "existing_asset",
       "imdb": null,
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "official_publisher_page",
+      "score": "present",
+      "mediaSource": "https://www.tcm.com/watchtcm/titles/2099"
     },
     {
       "title": "Boys Go to Jupiter",
@@ -751,8 +667,10 @@
       "category": "Movies",
       "poster": "imdb_poster_candidate",
       "imdb": "tt31514146",
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "identified_video_candidate",
+      "score": "present",
+      "mediaId": "oeWqQN3snCU",
+      "mediaSource": "STUDIOCANAL official UK trailer for 2025 film starring Robert Aramayo"
     },
     {
       "title": "Supacell",
@@ -1225,8 +1143,10 @@
       "category": "Series",
       "poster": "imdb_poster_candidate",
       "imdb": "tt2467372",
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "identified_video_candidate",
+      "score": "present",
+      "mediaId": "D1UzmW77F30",
+      "mediaSource": "FOX original 2013 first-look series promo; publisher identity of upload not independently verified"
     },
     {
       "title": "Columbo",
@@ -1234,8 +1154,9 @@
       "category": "Series",
       "poster": "imdb_poster_candidate",
       "imdb": "tt1466074",
-      "video": "no_explicit_video_mapping",
-      "score": "sourced_patch"
+      "video": "official_publisher_page",
+      "score": "sourced_patch",
+      "mediaSource": "https://www.peacocktv.com/watch-online/tv/columbo-new/6941257837221375112"
     },
     {
       "title": "Bel-Air",
@@ -1243,8 +1164,10 @@
       "category": "Series",
       "poster": "imdb_poster_candidate",
       "imdb": "tt12878838",
-      "video": "no_explicit_video_mapping",
-      "score": "sourced_patch"
+      "video": "identified_video_candidate",
+      "score": "sourced_patch",
+      "mediaId": "7KjK0ytxh-Y",
+      "mediaSource": "Peacock verified final-season 2025 trailer (season-specific)"
     },
     {
       "title": "The Holdovers",
@@ -1357,8 +1280,9 @@
       "category": "Black Cinema",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0168501",
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "official_publisher_page",
+      "score": "present",
+      "mediaSource": "https://www.peacocktv.com/watch-online/movies/the-best-man/bc4f55f1-4a22-3fde-844d-f63a9a98c798"
     },
     {
       "title": "Bel-Air",
@@ -1366,8 +1290,10 @@
       "category": "Black Cinema",
       "poster": "imdb_poster_candidate",
       "imdb": "tt12878838",
-      "video": "no_explicit_video_mapping",
-      "score": "sourced_patch"
+      "video": "identified_video_candidate",
+      "score": "sourced_patch",
+      "mediaId": "7KjK0ytxh-Y",
+      "mediaSource": "Peacock verified final-season 2025 trailer (season-specific)"
     },
     {
       "title": "The Wiz",
@@ -1458,8 +1384,10 @@
       "category": "Series",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0061240",
-      "video": "no_explicit_video_mapping",
-      "score": "not_sourced"
+      "video": "identified_video_candidate",
+      "score": "not_sourced",
+      "mediaId": "TwPgITi3YFI",
+      "mediaSource": "The Carol Burnett Show Official YouTube highlights (not series trailer)"
     },
     {
       "title": "The Twilight Zone",
@@ -1494,8 +1422,10 @@
       "category": "Series",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0071042",
-      "video": "no_explicit_video_mapping",
-      "score": "not_sourced"
+      "video": "identified_video_candidate",
+      "score": "not_sourced",
+      "mediaId": "v8BS4RqpUKk",
+      "mediaSource": "1970s original James Garner Rockford Files clip; not 2026 reboot trailer"
     },
     {
       "title": "Forensic Files",
@@ -1530,8 +1460,9 @@
       "category": "Movies",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0063350",
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "historical_commons_video",
+      "score": "present",
+      "mediaSource": "Wikimedia Commons original trailer"
     },
     {
       "title": "His Girl Friday",
@@ -1539,8 +1470,9 @@
       "category": "Movies",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0032599",
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "historical_commons_video",
+      "score": "present",
+      "mediaSource": "Wikimedia Commons original trailer"
     },
     {
       "title": "Charade",
@@ -1557,8 +1489,10 @@
       "category": "Movies",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0017925",
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "identified_video_candidate",
+      "score": "present",
+      "mediaId": "7EcZPcFfjqY",
+      "mediaSource": "Movieclips Classic Trailers: Buster Keaton The General 1926, linked by Dartmouth College"
     },
     {
       "title": "The Stranger",
@@ -1575,8 +1509,10 @@
       "category": "Movies",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0054033",
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "identified_video_candidate",
+      "score": "present",
+      "mediaId": "tY2KCl79Do8",
+      "mediaSource": "Archival trailer, original Roger Corman 1960 film; not the 1986 musical"
     },
     {
       "title": "The Last Man on Earth",
@@ -1584,8 +1520,10 @@
       "category": "Movies",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0058700",
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "identified_video_candidate",
+      "score": "present",
+      "mediaId": "6jslewlA8ik",
+      "mediaSource": "Archival 1964 theatrical/TV trailers, Vincent Price; exact edition"
     },
     {
       "title": "D.O.A.",
@@ -1602,8 +1540,9 @@
       "category": "Movies",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0037638",
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "historical_commons_video",
+      "score": "present",
+      "mediaSource": "Wikimedia Commons original trailer"
     },
     {
       "title": "The 39 Steps",
@@ -1648,7 +1587,8 @@
       "poster": "imdb_poster_candidate",
       "imdb": "tt0011870",
       "video": "no_explicit_video_mapping",
-      "score": "not_sourced"
+      "score": "sourced_patch",
+      "scoreBasis": "Rotten Tomatoes critic score (1920 film; five critic reviews)"
     },
     {
       "title": "Daughters of the Dust",
@@ -1656,8 +1596,10 @@
       "category": "Black Cinema",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0104057",
-      "video": "no_explicit_video_mapping",
-      "score": "present"
+      "video": "identified_video_candidate",
+      "score": "present",
+      "mediaId": "q5X1nEElc1k",
+      "mediaSource": "Cohen Media Group 25th anniversary restoration trailer, 1991 film"
     },
     {
       "title": "Scrooge",
@@ -1904,5 +1846,12 @@
       "score": "not_sourced"
     }
   ],
-  "trailerPatchMappings": 83
+  "trailerPatchMappings": 83,
+  "now": "2026-11-24",
+  "sourcePatchVersion": 11,
+  "notes": [
+    "No media IDs inferred for an unrelated remake or different series; historical clips and publisher-only pages have separate status.",
+    "Numerical critic scores are only filled with explicitly sourced edition-specific figures; other titles show unavailable.",
+    "Live browser playback remained blocked by network; repository syntax and dependencies can be verified but cannot certify actual playback."
+  ]
 }
