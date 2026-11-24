@@ -93,7 +93,10 @@ for(const kind of ['fights','football']){
  }
 }
 const known=[
- {match:'Green Bay Packers at Los Angeles Rams',id:'__Po3YTD_2w',caption:'NBC Sports preview: Packers and Rams Thanksgiving Eve matchup (discussion published May 14, 2026; not game highlights)'}
+ {match:'Green Bay Packers at Los Angeles Rams',id:'__Po3YTD_2w',caption:'NBC Sports preview: Packers and Rams Thanksgiving Eve matchup (discussion published May 14, 2026; not game highlights)'},
+ {match:'David Benavidez vs. Michal Cieslak',id:'d6oRLEzN5cE',caption:'Premier Boxing Champions official kickoff press conference · October 28, 2026 · preview, not fight footage'},
+ {match:'Vergil Ortiz Jr. vs. Keith Thurman',id:'d6oRLEzN5cE',caption:'Premier Boxing Champions shared event press conference featuring Ortiz and Thurman · preview, not fight footage'},
+ {match:'UFC 335: Charles Oliveira vs. Diego Lopes',id:'8TXbVk5RPgA',caption:'Official UFC Español UFC 335 Oliveira vs Lopes promotional preview · not fight highlights'}
 ];
 function openInPage(title,video){
  const modal=$('#videoModal'),box=$('#videoBox');if(!modal||!box)return false;
@@ -101,7 +104,7 @@ function openInPage(title,video){
  box.replaceChildren();box.classList.add('media-picker');
  const frame=doc.createElement('iframe');frame.title=title+' preview';frame.src='https://www.youtube-nocookie.com/embed/'+video.id+'?autoplay=1&rel=0';frame.allow='autoplay;encrypted-media;picture-in-picture';frame.allowFullscreen=true;
  frame.style.cssText='display:block;width:100%;aspect-ratio:16/9;min-height:240px;border:0;border-radius:8px';box.append(frame);
- const note=doc.createElement('p');note.className='playnote';note.textContent=video.caption+'. Related footage is not the scheduled match itself.';box.append(note);
+ const note=doc.createElement('p');note.className='playnote';note.textContent=video.caption+'. Match footage is not available before the scheduled event.';box.append(note);
  const a=doc.createElement('a');a.href='https://www.youtube.com/watch?v='+video.id;a.target='_blank';a.rel='noopener';a.textContent='Watch video on YouTube if embed is restricted';a.className='mini media-link';box.append(a);
  modal.classList.add('open');doc.body.classList.add('noscroll');return true;
 }
@@ -112,7 +115,7 @@ for(const sectionId of ['fights','football']){
  const candidate=known.find(v=>title.includes(v.match));
  const play=doc.createElement('button');play.type='button';play.className='tvguide-inline-video';
  if(candidate){
- play.textContent=sectionId==='football'?'▶ Watch matchup preview':'▶ Watch fighter highlights';play.dataset.status='connected';
+ play.textContent='▶ Watch official preview';play.dataset.status='connected';
  play.onclick=()=>{openInPage(title,candidate)};
  }else{
  play.textContent='▶ Find video preview';play.dataset.status='search';
