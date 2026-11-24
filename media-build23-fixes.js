@@ -44,7 +44,7 @@ const mode=override?.url&&!override.url.includes('youtube.com/results')?'externa
 button.classList.remove('media-connected','media-external','media-search','pending','unverified');
 button.classList.add('media-'+mode);
 button.dataset.build23Media=mode;button.style.opacity='1';
-if(mode==='connected'){button.dataset.id=id;button.textContent=override?.label||(item.videoKind==='highlights'?'▶ Watch Highlights':item.videoKind==='preview'?'▶ Watch Preview':'▶ Watch Trailer');button.title=override?.note||item.videoSourceLabel||'Video linked; embedding depends on publisher permissions.'}
+if(mode==='connected'){button.dataset.id=id;button.textContent=override?.label||(item.videoKind==='episode'?'▶ Watch Episode':item.videoKind==='highlights'?'▶ Watch Highlights':item.videoKind==='preview'?'▶ Watch Preview':'▶ Watch Trailer');button.title=override?.note||item.videoSourceLabel||'Video linked; embedding depends on publisher permissions.'}
 else if(mode==='external'){button.textContent=override.label;button.title=override.note+' (opens an in-guide publisher preview panel)'}
 else{button.textContent='Find Title Preview';button.title='No confirmed direct video; opens title-specific search'}
 records.push({title:item.title,platform:item.platform,mode,id:valid(id)?id:''});
