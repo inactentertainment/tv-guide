@@ -80,7 +80,7 @@ const mode=button.dataset.build23Media;
 if(window.WilliamsClassicMedia?.[item.title]&&window.WilliamsPlayClassicMedia?.(item.title))return;
 if(window.WilliamsVimeoMedia?.[item.title]&&window.WilliamsPlayVimeoMedia?.(item.title))return;
 if(source?.id){openPlayer(item,source.id,source.label||'Trailer');return;}
-if(source?.url){publisherPanel(item,source);return;}
+if(source?.url){const preferred=new Set(['Carmen Jones','Charade','Santa Claus Conquers the Martians']);if(preferred.has(item.title)&&valid(button.dataset.id)){openPlayer(item,button.dataset.id,'Verified original-film trailer');return;}publisherPanel(item,source);return;}
 if(mode==='connected'){
  const id=button.dataset.id;
  if(valid(id))openPlayer(item,id,button.textContent.trim()||'Trailer');
