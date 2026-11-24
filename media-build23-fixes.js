@@ -40,7 +40,8 @@ for(const button of root.querySelectorAll('.trailerBtn')){
 const card=button.closest('.card'),item=byKey.get(card?.dataset.key)||byTitle.get(clean(button.dataset.title));if(!item)continue;
 const override=overrides.get(clean(item.title));
 const id=override?.id||(valid(item.trailer)?item.trailer:valid(button.dataset.id)?button.dataset.id:'');
-const mode=override?.url&&!override.url.includes('youtube.com/results')?'external':valid(id)?'connected':'search';
+const archivalPreferred=new Set(['Carmen Jones','Charade','Santa Claus Conquers the Martians','A Christmas Carol']);
+const mode=override?.url&&!override.url.includes('youtube.com/results')&&!(archivalPreferred.has(item.title)&&valid(id))?'external':valid(id)?'connected':'search';
 button.classList.remove('media-connected','media-external','media-search','pending','unverified');
 button.classList.add('media-'+mode);
 button.dataset.build23Media=mode;button.style.opacity='1';
@@ -80,7 +81,7 @@ const mode=button.dataset.build23Media;
 if(window.WilliamsClassicMedia?.[item.title]&&window.WilliamsPlayClassicMedia?.(item.title))return;
 if(window.WilliamsVimeoMedia?.[item.title]&&window.WilliamsPlayVimeoMedia?.(item.title))return;
 if(source?.id){openPlayer(item,source.id,source.label||'Trailer');return;}
-if(source?.url){const preferred=new Set(['Carmen Jones','Charade','Santa Claus Conquers the Martians','A Christmas Carol']);if(preferred.has(item.title)&&valid(button.dataset.id)){openPlayer(item,button.dataset.id,'Title-matched archival film trailer');return;}publisherPanel(item,source);return;}
+if(source?.url){if(new Set(['Carmen Jones','Charade','Santa Claus Conquers the Martians','A Christmas Carol']).has(item.title)&&valid(item.trailer)){openPlayer(item,item.trailer,'Title-matched archival film trailer');return;}publisherPanel(item,source);return;}
 if(mode==='connected'){
  const id=button.dataset.id;
  if(valid(id))openPlayer(item,id,button.textContent.trim()||'Trailer');
