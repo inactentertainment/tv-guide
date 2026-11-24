@@ -1,7 +1,7 @@
 {
   "title": "Williams TV Guide three-build audit — repository verified, live browser access blocked",
   "asOf": "2026-11-24",
-  "currentGuide": "https://inactentertainment.github.io/tv-guide/media-build24.html?v=44",
+  "currentGuide": "https://inactentertainment.github.io/tv-guide/media-build24.html?v=45",
   "liveTestPage": "https://inactentertainment.github.io/tv-guide/tv-guide-live-acceptance.html",
   "catalogCount": 170,
   "summary": {
@@ -15,10 +15,10 @@
       "official_publisher_page": 4,
       "catalog_video_id": 86,
       "identified_video_candidate": 11,
-      "in_guide_youtube_candidate": 5,
+      "in_guide_youtube_candidate": 9,
       "in_guide_vimeo_trailer": 1,
       "publisher_link": 4,
-      "publisher_page_only": 14,
+      "publisher_page_only": 10,
       "historical_commons_video": 3
     },
     "criticScores": {
@@ -31,8 +31,10 @@
     "addedFromThisPass": 18,
     "remainingWithoutExplicitMedia": 0,
     "criticUnrated": 15,
-    "publisherPageOnly": 22,
-    "browserPlaybackUnverified": 170
+    "publisherPageOnly": 47,
+    "browserPlaybackUnverified": 170,
+    "inPageArchiveVideoCandidates": 13,
+    "cardsWithoutAnyMediaReference": 0
   },
   "outstanding": {
     "videosWithoutExplicitVerifiedMediaMapping": [],
@@ -1397,9 +1399,11 @@
       "category": "Movies",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0056923",
-      "video": "publisher_page_only",
+      "video": "in_guide_youtube_candidate",
       "score": "present",
-      "videoSource": "https://www.criterion.com/films/603"
+      "videoSource": "https://www.criterion.com/films/603",
+      "videoId": "C6T2Q4XO7uA",
+      "mediaSource": "Music Box Theatre original 1963 Charade trailer"
     },
     {
       "title": "The General",
@@ -1490,9 +1494,11 @@
       "category": "Black Cinema",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0046828",
-      "video": "publisher_page_only",
+      "video": "in_guide_youtube_candidate",
       "score": "sourced_patch",
-      "videoSource": "https://vidiotsfoundation.org/movies/carmen-jones/"
+      "videoSource": "https://vidiotsfoundation.org/movies/carmen-jones/",
+      "videoId": "hp-Ym8EW9uc",
+      "mediaSource": "AFI FEST 2016 embedded 1954 Carmen Jones trailer"
     },
     {
       "title": "The Blood of Jesus",
@@ -1541,9 +1547,11 @@
       "category": "Christmas",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0058548",
-      "video": "publisher_page_only",
+      "video": "in_guide_youtube_candidate",
       "score": "sourced_patch",
-      "videoSource": "https://www.americangenrefilm.com/home-videos/santa-claus-conquers-the-martians-other-holiday-hallucinations/"
+      "videoSource": "https://www.americangenrefilm.com/home-videos/santa-claus-conquers-the-martians-other-holiday-hallucinations/",
+      "videoId": "X06DV3Hx_Q4",
+      "mediaSource": "American Genre Film Archive official 1964 restoration trailer"
     },
     {
       "title": "Beyond Tomorrow",
@@ -1570,10 +1578,12 @@
       "category": "Christmas",
       "poster": "imdb_poster_candidate",
       "imdb": "tt0087056",
-      "video": "publisher_page_only",
+      "video": "in_guide_youtube_candidate",
       "score": "sourced_patch",
       "scoreBasis": "Rotten Tomatoes 1984 George C. Scott adaptation · 50 reviews",
-      "videoSource": "https://www.primevideo.com/detail/0LPKRTRVW8X1G281M4J4C58C0N"
+      "videoSource": "https://www.primevideo.com/detail/0LPKRTRVW8X1G281M4J4C58C0N",
+      "videoId": "cLsiz2JuhEE",
+      "mediaSource": "Archival trailer for 1984 George C. Scott film; independently uploaded (not official broadcaster channel)"
     },
     {
       "title": "Fences",
@@ -1776,7 +1786,7 @@
   ],
   "trailerPatchMappings": 83,
   "now": "2026-11-24",
-  "sourcePatchVersion": 12,
+  "sourcePatchVersion": 13,
   "notes": [
     "No media IDs inferred for an unrelated remake or different series; historical clips and publisher-only pages have separate status.",
     "Numerical critic scores are only filled with explicitly sourced edition-specific figures; other titles show unavailable.",
@@ -1787,5 +1797,205 @@
     "All 170 cards have poster assets or IMDb-image candidates, but every image has not been visually certified.",
     "The copied IE jukebox and 17 source dependencies exist but real audio/video playback remains unverified owing to blocked browser access.",
     "Critic scores are left unavailable for titles with no verifiable numeric critics consensus."
-  ]
+  ],
+  "finalPass": {
+    "convertedPublisherToInPage": [
+      "Charade",
+      "Carmen Jones",
+      "Santa Claus Conquers the Martians",
+      "A Christmas Carol"
+    ],
+    "remainingPublisherPages": [
+      {
+        "title": "The Knick",
+        "platform": "HBO Max"
+      },
+      {
+        "title": "The Night Of",
+        "platform": "HBO Max"
+      },
+      {
+        "title": "Deadwood",
+        "platform": "HBO Max"
+      },
+      {
+        "title": "Chernobyl",
+        "platform": "HBO Max"
+      },
+      {
+        "title": "Companion",
+        "platform": "HBO Max"
+      },
+      {
+        "title": "Sorry, Baby",
+        "platform": "HBO Max"
+      },
+      {
+        "title": "Bring Her Back",
+        "platform": "HBO Max"
+      },
+      {
+        "title": "I May Destroy You",
+        "platform": "HBO Max"
+      },
+      {
+        "title": "A Christmas Story",
+        "platform": "HBO Max"
+      },
+      {
+        "title": "Baby Reindeer",
+        "platform": "Netflix"
+      },
+      {
+        "title": "Unbelievable",
+        "platform": "Netflix"
+      },
+      {
+        "title": "His Three Daughters",
+        "platform": "Netflix"
+      },
+      {
+        "title": "Train Dreams",
+        "platform": "Netflix"
+      },
+      {
+        "title": "Wallace & Gromit: Vengeance Most Fowl",
+        "platform": "Netflix"
+      },
+      {
+        "title": "Wake Up Dead Man: A Knives Out Mystery",
+        "platform": "Netflix"
+      },
+      {
+        "title": "Jingle Jangle: A Christmas Journey",
+        "platform": "Netflix"
+      },
+      {
+        "title": "Jingle Jangle: A Christmas Journey",
+        "platform": "Netflix"
+      },
+      {
+        "title": "The Marvelous Mrs. Maisel",
+        "platform": "Prime Video"
+      },
+      {
+        "title": "Bosch",
+        "platform": "Prime Video"
+      },
+      {
+        "title": "The Underground Railroad",
+        "platform": "Prime Video"
+      },
+      {
+        "title": "Fleabag",
+        "platform": "Prime Video"
+      },
+      {
+        "title": "The Boys",
+        "platform": "Prime Video"
+      },
+      {
+        "title": "Good Omens",
+        "platform": "Prime Video"
+      },
+      {
+        "title": "Sound of Metal",
+        "platform": "Prime Video"
+      },
+      {
+        "title": "The Report",
+        "platform": "Prime Video"
+      },
+      {
+        "title": "The Underground Railroad",
+        "platform": "Prime Video"
+      },
+      {
+        "title": "The Resort",
+        "platform": "Peacock"
+      },
+      {
+        "title": "Columbo",
+        "platform": "Peacock"
+      },
+      {
+        "title": "The Holdovers",
+        "platform": "Peacock"
+      },
+      {
+        "title": "Oppenheimer",
+        "platform": "Peacock"
+      },
+      {
+        "title": "The Wild Robot",
+        "platform": "Peacock"
+      },
+      {
+        "title": "The Best Man",
+        "platform": "Peacock"
+      },
+      {
+        "title": "The Holdovers",
+        "platform": "Peacock"
+      },
+      {
+        "title": "The Family Stone",
+        "platform": "Peacock"
+      },
+      {
+        "title": "The Dick Van Dyke Show",
+        "platform": "Tubi"
+      },
+      {
+        "title": "21 Jump Street",
+        "platform": "Tubi"
+      },
+      {
+        "title": "Highway to Heaven",
+        "platform": "Tubi"
+      },
+      {
+        "title": "The Stranger",
+        "platform": "Tubi"
+      },
+      {
+        "title": "D.O.A.",
+        "platform": "Tubi"
+      },
+      {
+        "title": "The 39 Steps",
+        "platform": "Tubi"
+      },
+      {
+        "title": "The Jackie Robinson Story",
+        "platform": "Tubi"
+      },
+      {
+        "title": "The Blood of Jesus",
+        "platform": "Tubi"
+      },
+      {
+        "title": "Within Our Gates",
+        "platform": "Tubi"
+      },
+      {
+        "title": "Scrooge",
+        "platform": "Tubi"
+      },
+      {
+        "title": "Beyond Tomorrow",
+        "platform": "Tubi"
+      },
+      {
+        "title": "The Great Rupert",
+        "platform": "Tubi"
+      },
+      {
+        "title": "Give Me Some Sugah",
+        "platform": "Netflix"
+      }
+    ],
+    "liveBrowser": "Could not resolve GitHub Pages domain from runtime; user-side acceptance page provided",
+    "meaning": "All cards have media references, but embedded playback and visual poster accuracy are not certified by a live browser."
+  }
 }
