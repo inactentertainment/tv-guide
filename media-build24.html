@@ -79,6 +79,7 @@ if(film.platform==='Tubi'&&film.cat==='Christmas'&&film.title==='A Christmas Car
  film.officialWatchPage='https://tubitv.com/movies/100055922/a-christmas-carol';
 }
 const matchTrailer=fixes.trailers[film.title];
+if(matchTrailer){film.videoSourceLabel=matchTrailer.source||'Source not specified';film.videoKind=/highlights|clip|archival footage/i.test(matchTrailer.source||'')?'highlights':/final.season|season.specific|first.look|promo|preview/i.test(matchTrailer.source||'')?'preview':'trailer';}
 if(matchTrailer && film.trailer!==matchTrailer.id){
 film.trailer=matchTrailer.id;
 film.verifiedTrailer=true;
