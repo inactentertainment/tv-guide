@@ -40,15 +40,15 @@ if(boxing){
  boxing.hidden=true;
 }
 const fightsData=[
- {date:'2026-11-28',title:'Agit Kabayel vs. Nelson Hysa',detail:'WBC heavyweight boxing · Düsseldorf, Germany · DAZN',url:'https://www.boxingscene.com/schedule',kind:'Boxing'},
- {date:'2026-12-12',title:'Dmitry Bivol vs. Callum Smith',detail:'Unified light heavyweight boxing · Yekaterinburg, Russia',url:'https://www.cbssports.com/boxing/news/boxing-schedule-for-2026-dates-tyson-fury-vs-anthony-joshua-david-benavidez-dmitry-bivol/',kind:'Boxing'},
- {date:'2026-12-12',title:'Erislandy Lara vs. Tim Tszyu',detail:'WBA middleweight boxing · Gold Coast, Australia · DAZN',url:'https://www.cbssports.com/boxing/news/boxing-schedule-for-2026-dates-tyson-fury-vs-anthony-joshua-david-benavidez-dmitry-bivol/',kind:'Boxing'},
- {date:'2026-12-19',title:'Devin Haney vs. Liam Paro',detail:'Unified welterweight boxing · San Francisco · DAZN',url:'https://www.cbssports.com/boxing/news/boxing-schedule-for-2026-dates-tyson-fury-vs-anthony-joshua-david-benavidez-dmitry-bivol/',kind:'Boxing'},
- {date:'2026-12-19',title:'Anthony Cacace vs. Nick Ball',detail:'WBA junior lightweight boxing · Belfast · DAZN',url:'https://www.cbssports.com/boxing/news/boxing-schedule-for-2026-dates-tyson-fury-vs-anthony-joshua-david-benavidez-dmitry-bivol/',kind:'Boxing'},
+ {date:'2026-11-28',title:'Agit Kabayel vs. Nelson Hysa',detail:'WBC heavyweight boxing · Nov 28 · Düsseldorf, Germany · DAZN · start time unconfirmed',url:'https://wbcboxing.com/en/events/agit-kabayel-vs-nelson-hysa/',kind:'Boxing'},
+ {date:'2026-12-12',title:'Dmitry Bivol vs. Callum Smith',detail:'Unified light heavyweight boxing · Dec 12 · Yekaterinburg · broadcast time unconfirmed',url:'https://www.wbaboxing.com/wba-fights-schedule',kind:'Boxing'},
+ {date:'2026-12-12',title:'Erislandy Lara vs. Tim Tszyu',detail:'WBA middleweight boxing · Dec 12, 7:30 PM ET event · Gold Coast · DAZN',url:'https://www.premierboxingchampions.com/bouts/780508',kind:'Boxing'},
+ {date:'2026-12-19',title:'Devin Haney vs. Liam Paro',detail:'Unified welterweight boxing · Dec 19 · Chase Center San Francisco · start time unconfirmed',url:'https://www.chasecenter.com/events/haney-vs-paro-20261219/',kind:'Boxing'},
+ {date:'2026-12-19',title:'Anthony Cacace vs. Nick Ball',detail:'WBA junior lightweight boxing · Dec 19 · Belfast · DAZN · start time unconfirmed',url:'https://theo2belfast.com/events/cacace-v-ball',kind:'Boxing'},
  {date:'2026-12-05',title:'David Benavidez vs. Michal Cieslak',detail:'Cruiserweight title unification · Dec 5, 8:00 PM ET event · DAZN PPV via Prime Video',url:'https://www.premierboxingchampions.com/events/391735',kind:'Boxing'},
  {date:'2026-12-05',title:'Vergil Ortiz Jr. vs. Keith Thurman',detail:'Boxing co-main event · Dec 5, 8:00 PM ET event · DAZN PPV via Prime Video',url:'https://www.premierboxingchampions.com/events/391735',kind:'Boxing'},
  {date:'2026-12-05',title:'UFC Fight Night: Israel Adesanya vs. Shara Magomedov',detail:'UFC Fight Night · Dec 5, 1:00 PM ET main card · Paramount+',url:'https://www.ufc.com/event/ufc-fight-night-december-05-2026',kind:'UFC'},
- {date:'2026-12-11',title:'Tyson Fury vs. Anthony Joshua',detail:'Heavyweight boxing · Dec 11, 8:00 PM ET event · Netflix',url:'https://www.cbssports.com/boxing/news/boxing-schedule-for-2026-dates-tyson-fury-vs-anthony-joshua-david-benavidez-dmitry-bivol/',kind:'Boxing'},
+ {date:'2026-12-11',title:'Tyson Fury vs. Anthony Joshua',detail:'Heavyweight boxing · Dec 11 · Cardiff · Netflix · exact bell time TBD',url:'https://www.netflix.com/tudum/features/tyson-fury-anthony-joshua-live-on-netflix',kind:'Boxing'},
  {date:'2026-12-12',title:'UFC 335: Charles Oliveira vs. Diego Lopes',detail:'UFC 335 · Dec 12, 9:00 PM ET main card · Paramount+',url:'https://www.ufc.com/event/ufc-335',kind:'UFC'}
 ];
 function sportsCard(event){
