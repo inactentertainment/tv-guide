@@ -19,7 +19,7 @@ for(const card of root.querySelectorAll('.card')){
  img.decoding='async';
  ledger.tagged++;
 }
-fetch('./media-build19-patches.json?v=6',{cache:'force-cache'}).then(r=>r.ok?r.json():null).then(patch=>{
+fetch('./media-build19-patches.json?v=8',{cache:'force-cache'}).then(r=>r.ok?r.json():null).then(patch=>{
  if(!patch||!patch.posterImdb)return;
  for(const card of root.querySelectorAll('.card')){
  const item=known.get(card.dataset.key);if(!item)continue;
