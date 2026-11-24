@@ -31,7 +31,7 @@
     "addedFromThisPass": 18,
     "remainingWithoutExplicitMedia": 0,
     "criticUnrated": 15,
-    "publisherPageOnly": 47,
+    "publisherPageOnly": 18,
     "browserPlaybackUnverified": 170,
     "inPageArchiveVideoCandidates": 13,
     "cardsWithoutAnyMediaReference": 0
@@ -1807,192 +1807,94 @@
     ],
     "remainingPublisherPages": [
       {
-        "title": "The Knick",
-        "platform": "HBO Max"
-      },
-      {
-        "title": "The Night Of",
-        "platform": "HBO Max"
-      },
-      {
         "title": "Deadwood",
-        "platform": "HBO Max"
-      },
-      {
-        "title": "Chernobyl",
-        "platform": "HBO Max"
-      },
-      {
-        "title": "Companion",
-        "platform": "HBO Max"
-      },
-      {
-        "title": "Sorry, Baby",
-        "platform": "HBO Max"
-      },
-      {
-        "title": "Bring Her Back",
-        "platform": "HBO Max"
-      },
-      {
-        "title": "I May Destroy You",
-        "platform": "HBO Max"
+        "platform": "HBO Max",
+        "kind": "official_publisher_page"
       },
       {
         "title": "A Christmas Story",
-        "platform": "HBO Max"
-      },
-      {
-        "title": "Baby Reindeer",
-        "platform": "Netflix"
-      },
-      {
-        "title": "Unbelievable",
-        "platform": "Netflix"
-      },
-      {
-        "title": "His Three Daughters",
-        "platform": "Netflix"
-      },
-      {
-        "title": "Train Dreams",
-        "platform": "Netflix"
-      },
-      {
-        "title": "Wallace & Gromit: Vengeance Most Fowl",
-        "platform": "Netflix"
-      },
-      {
-        "title": "Wake Up Dead Man: A Knives Out Mystery",
-        "platform": "Netflix"
-      },
-      {
-        "title": "Jingle Jangle: A Christmas Journey",
-        "platform": "Netflix"
-      },
-      {
-        "title": "Jingle Jangle: A Christmas Journey",
-        "platform": "Netflix"
-      },
-      {
-        "title": "The Marvelous Mrs. Maisel",
-        "platform": "Prime Video"
-      },
-      {
-        "title": "Bosch",
-        "platform": "Prime Video"
-      },
-      {
-        "title": "The Underground Railroad",
-        "platform": "Prime Video"
-      },
-      {
-        "title": "Fleabag",
-        "platform": "Prime Video"
-      },
-      {
-        "title": "The Boys",
-        "platform": "Prime Video"
-      },
-      {
-        "title": "Good Omens",
-        "platform": "Prime Video"
-      },
-      {
-        "title": "Sound of Metal",
-        "platform": "Prime Video"
-      },
-      {
-        "title": "The Report",
-        "platform": "Prime Video"
-      },
-      {
-        "title": "The Underground Railroad",
-        "platform": "Prime Video"
-      },
-      {
-        "title": "The Resort",
-        "platform": "Peacock"
+        "platform": "HBO Max",
+        "kind": "official_publisher_page"
       },
       {
         "title": "Columbo",
-        "platform": "Peacock"
-      },
-      {
-        "title": "The Holdovers",
-        "platform": "Peacock"
-      },
-      {
-        "title": "Oppenheimer",
-        "platform": "Peacock"
-      },
-      {
-        "title": "The Wild Robot",
-        "platform": "Peacock"
+        "platform": "Peacock",
+        "kind": "official_publisher_page"
       },
       {
         "title": "The Best Man",
-        "platform": "Peacock"
-      },
-      {
-        "title": "The Holdovers",
-        "platform": "Peacock"
+        "platform": "Peacock",
+        "kind": "official_publisher_page"
       },
       {
         "title": "The Family Stone",
-        "platform": "Peacock"
+        "platform": "Peacock",
+        "kind": "publisher_link"
       },
       {
         "title": "The Dick Van Dyke Show",
-        "platform": "Tubi"
+        "platform": "Tubi",
+        "kind": "publisher_page_only"
       },
       {
         "title": "21 Jump Street",
-        "platform": "Tubi"
+        "platform": "Tubi",
+        "kind": "publisher_page_only"
       },
       {
         "title": "Highway to Heaven",
-        "platform": "Tubi"
+        "platform": "Tubi",
+        "kind": "publisher_page_only"
       },
       {
         "title": "The Stranger",
-        "platform": "Tubi"
+        "platform": "Tubi",
+        "kind": "publisher_page_only"
       },
       {
         "title": "D.O.A.",
-        "platform": "Tubi"
+        "platform": "Tubi",
+        "kind": "publisher_page_only"
       },
       {
         "title": "The 39 Steps",
-        "platform": "Tubi"
+        "platform": "Tubi",
+        "kind": "publisher_page_only"
       },
       {
         "title": "The Jackie Robinson Story",
-        "platform": "Tubi"
+        "platform": "Tubi",
+        "kind": "publisher_page_only"
       },
       {
         "title": "The Blood of Jesus",
-        "platform": "Tubi"
+        "platform": "Tubi",
+        "kind": "publisher_page_only"
       },
       {
         "title": "Within Our Gates",
-        "platform": "Tubi"
+        "platform": "Tubi",
+        "kind": "publisher_page_only"
       },
       {
         "title": "Scrooge",
-        "platform": "Tubi"
+        "platform": "Tubi",
+        "kind": "publisher_link"
       },
       {
         "title": "Beyond Tomorrow",
-        "platform": "Tubi"
+        "platform": "Tubi",
+        "kind": "publisher_link"
       },
       {
         "title": "The Great Rupert",
-        "platform": "Tubi"
+        "platform": "Tubi",
+        "kind": "publisher_page_only"
       },
       {
         "title": "Give Me Some Sugah",
-        "platform": "Netflix"
+        "platform": "Netflix",
+        "kind": "publisher_link"
       }
     ],
     "liveBrowser": "Could not resolve GitHub Pages domain from runtime; user-side acceptance page provided",
