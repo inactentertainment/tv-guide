@@ -70,6 +70,7 @@ const releases={
 };
 const release=releases[film.title];
 if(release){film.status='Coming soon · '+release.date+' · '+release.source;film.releaseDateConfirmed=release.date;}
+if(film.platform==='Peacock'&&film.title==='The Best Man'){film.status='Peacock lists a STARZ add-on · not confirmed included in base Peacock subscription';film.availabilityNote='1999 film: check the Peacock listing before watching';}
 if(film.platform==='Tubi'&&film.cat==='Christmas'&&film.title==='A Christmas Carol'){
  film.genre='1984 · Holiday fantasy · George C. Scott';
  film.cast='George C. Scott, David Warner, Susannah York, Edward Woodward';
