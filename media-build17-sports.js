@@ -71,7 +71,7 @@ function player(id,title,notes,links=[]){
 }
 window.addEventListener('click',evt=>{
  const trailer=evt.target.closest?.('#platforms .trailerBtn');
- if(trailer&&extraTrailers.has(trailer.dataset.title)){
+ if(trailer&&extraTrailers.has(trailer.dataset.title)&&!trailer.dataset.build23Media){
  evt.preventDefault();evt.stopImmediatePropagation();
  const title=trailer.dataset.title;player(extraTrailers.get(title),title+' — Trailer / Preview','Title-specific trailer or preview; verify the publisher');return;
  }
