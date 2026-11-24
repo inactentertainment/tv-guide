@@ -1,0 +1,80 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Williams TV Guide — Live Acceptance Check</title><style>
+*{box-sizing:border-box}body{background:#101c2b;color:#eee5d4;font:15px/1.5 Georgia,serif;margin:0;padding:20px;max-width:1020px;margin-inline:auto}h1{color:#f9d897;font-size:1.8rem}h2{color:#e9c98a;margin:20px 0 7px;font-size:1.13rem}button,a{color:#ffe4a6}button{background:#5b412c;border:1px solid #b49360;border-radius:8px;padding:11px 16px;cursor:pointer;font:700 14px Georgia,serif}.flag{font-weight:700}li{margin:6px 0;padding:5px 9px;border-bottom:1px solid #ffffff18}.ok{color:#a3d0a2}.warn{color:#ffce86}.fail{color:#ff9d92}#report{white-space:pre-wrap;background:#192638;padding:10px;border:1px solid #5e7081;max-height:240px;overflow:auto;font:12px monospace}iframe#guide{width:100%;height:540px;border:1px solid #79634b;border-radius:9px;background:#081220}details{margin:8px 0}summary{cursor:pointer;color:#ffe2a4}p{color:#ddd1bb}.small{font-size:12px;color:#bbafa0}</style></head><body>
+<h1>Williams TV Guide — Live Acceptance Check</h1>
+<p>This independent QA page tests the actual published guide in your browser without changing its layout or watchlist. It checks structural controls, loaded posters, trailer mappings and the original IE jukebox. Audio and YouTube playback still require a human visual/listening check because browsers block automatic playback and publishers can block embeds.</p>
+<button id="run">Run automatic QA</button> <button id="copy" disabled>Copy QA results</button>
+<h2>Automated findings</h2><ol id="results"><li>Ready to test.</li></ol>
+<details><summary>Raw report</summary><pre id="report">No results yet.</pre></details>
+<h2>Live guide</h2><p class="small">You can click the jukebox and open a film trailer directly in the guide below. Test music, movie videos, fade effects and navigation here after the automated check.</p>
+<iframe id="guide" title="Published Williams TV Guide" loading="eager" src="./media-build24.html?v=41"></iframe>
+<script>
+(()=>{'use strict';
+const $=s=>document.querySelector(s),results=$('#results'),report=$('#report'),frame=$('#guide');
+let output=[],raw=[];
+function add(status,label,detail){const li=document.createElement('li');li.className=status;li.textContent=(status==='ok'?'PASS':status==='warn'?'CHECK':'FAIL')+' — '+label+(detail?' · '+detail:'');results.append(li);output.push({status,label,detail})}
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+function guideDoc(){try{return frame.contentDocument||null}catch{return null}}
+async function waitForGuide(maxMs){const until=Date.now()+maxMs;while(Date.now()<until){const d=guideDoc();if(d?.querySelector('#platforms .card')&&d?.querySelector('.quicknav'))return d;await sleep(300)}return null}
+async function run(){
+ $('#run').disabled=true;$('#copy').disabled=true;results.replaceChildren();output=[];
+ const started=Date.now();
+ try{
+ const d=await waitForGuide(20000);
+ if(!d){add('fail','Guide failed to initialize','No card list and sticky navigation within 20 seconds');return}
+ const nav=d.querySelector('.quicknav');
+ add('ok','Guide document and navigation loaded',d.title);
+ const cards=[...d.querySelectorAll('#platforms .card')];
+ add(cards.length>=160?'ok':'warn','Movie and series cards',cards.length+' cards rendered');
+ const sections=['basketball','fights','football','tennis'].map(id=>({id,yes:!!d.getElementById(id)}));
+ for(const s of sections)add(s.yes?'ok':'fail','Sports section '+s.id);
+ const iconNav=[...nav.querySelectorAll('.williams-sports-three a')].map(a=>a.getAttribute('href'));
+ add(iconNav.includes('#tennis')&&iconNav.length>=4?'ok':'fail','Four sticky sports icons',iconNav.join(', '));
+ const buttons=[...d.querySelectorAll('#platforms .trailerBtn')];
+ const modes=buttons.reduce((a,b)=>(a[b.dataset.build23Media||'unspecified']=(a[b.dataset.build23Media||'unspecified']||0)+1,a),{});
+ add('ok','Trailer/preview controls',buttons.length+' cards · '+JSON.stringify(modes));
+ const invalidIDs=buttons.filter(b=>b.dataset.id&&!/^[A-Za-z0-9_-]{11}$/.test(b.dataset.id));
+ add(invalidIDs.length?'fail':'ok','Video ID format',invalidIDs.length+' malformed identifiers');
+ const filmImages=[...d.querySelectorAll('#platforms .card img.poster')];
+ // Lazy posters are deliberately not all requested at once: the result is an observed snapshot, not a false assertion of completion.
+ const loaded=filmImages.filter(im=>im.complete&&im.naturalWidth>0).length;
+ const broken=filmImages.filter(im=>im.complete&&im.naturalWidth===0).length;
+ add(broken?'warn':'ok','Poster element snapshot',loaded+' loaded · '+broken+' failed · '+(cards.length-filmImages.length)+' without an img tag. Lazy-loaded images are not all tested.');
+ const jukebox=nav.querySelector('.dock-jukebox');
+ add(jukebox?'ok':'fail','Jukebox button in sticky navigation');
+ const panel=d.getElementById('holidayJukebox');
+ add(panel?'ok':'fail','Jukebox panel exists');
+ if(jukebox&&panel){
+ jukebox.click();await sleep(3500);
+ const open=panel.classList.contains('open');
+ add(open?'ok':'fail','Jukebox opens from navigation');
+ const player=panel.querySelector('iframe');
+ const src=player?.getAttribute('src')||'';
+ add(src.includes('ie-jukebox.html')?'ok':'fail','Local IE jukebox loaded by panel',src);
+ let inner=null;try{inner=player?.contentDocument}catch{}
+ if(inner){
+ add(inner.getElementById('music-panel')?'ok':'fail','Original IE music panel present');
+ add(inner.getElementById('music-video-slot')?'ok':'fail','Original IE video panel present');
+ const g=inner.getElementById('listen-genre');
+ add(g?.options.length>0?'ok':'warn','Original IE genre catalog initialized',(g?.options.length||0)+' options');
+ add(inner.getElementById('master-play')?'ok':'fail','Original IE play control present');
+ add(inner.getElementById('music-volume')?'ok':'fail','Original IE volume control present');
+ }else add('warn','Original jukebox iframe document not readable','Check whether the browser blocked the document');
+ jukebox.click();await sleep(150);
+ add(!panel.classList.contains('open')?'ok':'fail','Jukebox closes from navigation');
+ }
+ const audit=d.defaultView?.WilliamsMediaQualityAudit?.();
+ if(audit){raw.push({runtimeMediaAudit:audit});add('ok','Runtime movie/sports coverage diagnostics','Read raw report for counts')}
+ const edition=d.defaultView?.WilliamsMovieEditionAudit?.();
+ if(edition){raw.push({editionAudit:edition});add('ok','Poster edition diagnostics','Read raw report for candidate matches')}
+ add('warn','Audio and YouTube playback','Not automatically certifiable. Play one IE track and one movie/tennis video manually in the guide below.');
+ }catch(e){add('fail','Acceptance-check exception',String(e))}
+ finally{
+ const summary={checkedAt:new Date().toISOString(),elapsedMs:Date.now()-started,origin:location.origin,checks:output,extra:raw};
+ report.textContent=JSON.stringify(summary,null,2);
+ $('#copy').disabled=false;$('#run').disabled=false;
+ }
+}
+$('#run').onclick=run;
+$('#copy').onclick=()=>navigator.clipboard?.writeText(report.textContent);
+})();
+</script></body></html>
