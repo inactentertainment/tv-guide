@@ -1,0 +1,109 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Williams TV Guide — Build 47</title><style>body{font:18px system-ui;background:#081220;color:#fff;padding:30px}a{color:#ffdc6c}</style></head><body><p>Opening Williams TV Guide…</p><script>
+(async()=>{try{
+let source=await fetch('./index.html?v=47',{cache:'no-store'});if(!source.ok)throw Error('Unable to load approved guide');
+let html=await source.text();if(!html.includes('id="videoModal"'))throw Error('Guide markup changed unexpectedly');
+const response=await fetch('./media-build12-catalog.json?v=47',{cache:'no-store'});if(!response.ok)throw Error('Curated catalog not available');
+const additional=((await response.json()).items||[]).filter(item=>item.title!=='Moonlight');
+const match=html.match(/(<script id="data" type="application\/json">)([\s\S]*?)(<\/script>)/);
+if(!match)throw Error('Catalog not found');
+const catalog=JSON.parse(match[2]);
+// Correct ambiguous NBA team names against the league's published 2026-27 fixtures.
+const identifiedNBA={
+ '2026-11-27|Los Angeles vs San Antonio':'Los Angeles Lakers at San Antonio Spurs',
+ '2026-12-18|Los Angeles vs Miami':'LA Clippers at Miami Heat',
+ '2026-12-23|Houston vs Philadelphia':'Houston Rockets at Philadelphia 76ers',
+ '2026-12-23|Denver vs Los Angeles':'Denver Nuggets at Los Angeles Lakers',
+ '2026-12-31|Denver vs Minnesota':'Denver Nuggets at Minnesota Timberwolves'
+};
+for(const game of catalog.sports||[]){
+ const matchName=identifiedNBA[game.date+'|'+game.match];
+ if(matchName)game.match=matchName;
+ if(game.date==='2026-12-18'&&matchName){
+  game.note='Start-time discrepancy: NBA lists 7:00 PM ET; Prime Video lists 6:30 PM ET. Confirm broadcast closer to game time.';
+ }
+}
+
+// Requested exclusion: never include Moonlight in this viewing edition.
+catalog.items=catalog.items.filter(item=>item.title!=='Moonlight');
+for(const title of catalog.items){
+ if(title.title==='The Further Adventures of Cliff Booth')title.title='The Further Mis-Adventures of Cliff Booth';
+}
+// Remove duplicate aliases of the same film within a platform/category.
+const seenEdition=new Set();
+catalog.items=catalog.items.filter(film=>{const key=film.platform+'|'+film.cat+'|'+film.title;if(seenEdition.has(key))return false;seenEdition.add(key);return true});
+
+const netflixFirst=catalog.items.findIndex(item=>item.platform==='Netflix'&&item.cat!=='Series');
+const sugah={
+ platform:'Netflix',cat:netflixFirst>=0?catalog.items[netflixFirst].cat:'Movies',
+ title:'Give Me Some Sugah',status:'Coming soon · December 16, 2026',
+ verifiedTrailer:false,genre:'2026 · Inspiring drama',score:null,
+ scoreLabel:'Critic score not yet available',
+ desc:'A Chicago bakery owner makes an unexpected discovery that offers a second chance to heal family wounds.',
+ longDesc:'Inspired by the true story of Lenore Lindsey, a Chicago baker makes a discovery that brings family, purpose, and hope together.',
+ appeal:'Inspiring drama with Taraji P. Henson and Joey Bada$$, produced by Tyler Perry and DeVon Franklin.',
+ cast:'Taraji P. Henson, Joey Bada$$, Aunjanue Ellis-Taylor, Russell Hornsby',
+ poster:'https://dnm.nflximg.net/api/v6/a01MIaQTUgSJoLaS_OCn68Eg3hU/AAAAQYnwLTvk0sosP94GLboZKt0LDjmZcsFnwO-XKHQ8JIEDtUWDZYM8BaSUR5kVFTP7RSu9ffjXbZW6RWL-8aEZWWfYV8lLvAhrRCc5egZ7eu3T5FaY7RiK2Tzp_IelmxgAQkrlkUntsbBgUJ7uQ7AKhgFg.jpg?r=d8e',
+ trailerPage:'https://www.netflix.com/tudum/articles/tyler-perry-give-me-some-sugah',
+ facets:['Black Cinema','Drama','Family']
+};
+const alreadySugah=catalog.items.findIndex(item=>item.platform==='Netflix'&&/give me some sugah/i.test(item.title));
+if(alreadySugah>=0)catalog.items.splice(alreadySugah,1);
+const firstMovie=catalog.items.findIndex(item=>item.platform==='Netflix'&&item.cat!=='Series');
+catalog.items.splice(firstMovie>=0?firstMovie:0,0,sugah);
+
+let included=0;for(const movie of additional){
+if(catalog.items.some(e=>e.platform===movie.platform&&e.title===movie.title&&e.cat===movie.cat))continue;
+let idx=catalog.items.findIndex(e=>e.platform===movie.platform&&e.cat===movie.cat);
+if(movie.priority==='front'&&idx!==-1)catalog.items.splice(idx,0,movie);else catalog.items.push(movie);
+included++;
+}
+const qa=await fetch('./media-build19-patches.json?v=47',{cache:'no-store'});
+if(!qa.ok)throw Error('Video/poster QA update unavailable');
+const fixes=await qa.json();
+let updatedTrailers=0,updatedPosters=0;
+for(const film of catalog.items){
+const releases={
+ 'Bad Day':{date:'December 11, 2026',source:'Netflix'},
+ 'Give Me Some Sugah':{date:'December 16, 2026',source:'Netflix'},
+ 'The Further Mis-Adventures of Cliff Booth':{date:'December 23, 2026',source:'Netflix · IMAX November 25'},
+ 'The Man with the Bag':{date:'December 2, 2026',source:'Prime Video'}
+};
+const release=releases[film.title];
+if(release){film.status='Coming soon · '+release.date+' · '+release.source;film.releaseDateConfirmed=release.date;}
+if(film.platform==='Peacock'&&film.title==='The Best Man'){film.status='Peacock lists a STARZ add-on · not confirmed included in base Peacock subscription';film.availabilityNote='1999 film: check the Peacock listing before watching';}
+if(film.platform==='Tubi'&&film.cat==='Christmas'&&film.title==='A Christmas Carol'){
+ film.genre='1984 · Holiday fantasy · George C. Scott';
+ film.cast='George C. Scott, David Warner, Susannah York, Edward Woodward';
+ film.desc='George C. Scott stars as Ebenezer Scrooge in the 1984 television adaptation of Dickens’s Christmas classic.';
+ film.longDesc='The 1984 Clive Donner adaptation starring George C. Scott, identified as an individual film rather than an unspecified collection of Christmas Carol adaptations.';
+ film.status='Tubi · 1984 edition · with ads; availability may change';
+ film.officialWatchPage='https://tubitv.com/movies/100055922/a-christmas-carol';
+}
+const matchTrailer=fixes.trailers[film.title];
+if(matchTrailer){film.videoSourceLabel=matchTrailer.source||'Source not specified';film.videoKind=/full.episode|episode marathon/i.test(matchTrailer.source||'')?'episode':/highlights|clip|archival footage|highlight reel/i.test(matchTrailer.source||'')?'highlights':/final.season|season.specific|first.look|promo|preview/i.test(matchTrailer.source||'')?'preview':'trailer';}
+if(matchTrailer && film.trailer!==matchTrailer.id){
+film.trailer=matchTrailer.id;
+film.verifiedTrailer=true;
+updatedTrailers++;
+}
+if(!film.poster && fixes.posterImdb[film.title]){
+film.poster='https://images.metahub.space/poster/medium/'+fixes.posterImdb[film.title]+'/img';
+updatedPosters++;
+}
+if(fixes.criticScores?.[film.title]){
+const rating=fixes.criticScores[film.title];
+film.score=rating.score;
+film.scoreSource=rating.url;
+film.scoreBasis=rating.basis;
+film.scoreLabel=rating.basis;
+}
+if(!Number.isFinite(film.score) && (film.score===null||film.score===undefined||film.score===''))film.scoreLabel='Critic score unavailable';
+}
+html=html.replace(match[0],match[1]+JSON.stringify(catalog)+match[3]);
+html=html.replace("if('IntersectionObserver'in window){const ob=","if(false){const ob=");
+const scripts=['media-build11-enhancements.js?v=47','media-build17-sports.js?v=47','media-build10.js?v=47','media-build17-posters.js?v=47','media-build11-trailers.js?v=47','media-build13-jukebox.js?v=47','media-build12-trailers.js?v=47','media-build17-navfix.js?v=47','media-build17-qa.js?v=47','media-build19-previews.js?v=47','media-build24-video-fallback.js?v=47','media-build23-fixes.js?v=47','media-build25-sports-catalog.js?v=47','media-sticky-sports-nav.js?v=47','media-guide-refinements.js?v=47','media-tennis-section.js?v=47','media-ie-jukebox-connection.js?v=47','media-quality-audit.js?v=47','media-movie-edition-qa.js?v=47','media-classic-trailers.js?v=47','media-original-vimeo-trailer.js?v=47'];
+const insert=scripts.map(x=>'<script defer src="./'+x+'"></'+'script>').join('');
+html=html.replace(/<\/body>\s*<\/html>\s*$/i,insert+'</body></html>');
+document.open();document.write(html);document.close();
+}catch(err){document.body.innerHTML='<h1>Unable to open the TV Guide</h1><p>'+String(err.message)+'</p><p><a href="./media-build11.html">Open the previous working edition</a></p>';}})();
+</script></body></html>
